@@ -10,3 +10,4 @@
 .product-grid{grid-template-columns:repeat(5,1fr)}
 @media(max-width:1050px){.product-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.product-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(58px,18vw,72px)}.hero-label{font-size:7px;gap:10px}}
+.device-stage{position:relative;padding-bottom:11%}.device-stage .device-frame{position:relative;z-index:2}.device-reflection{position:absolute;z-index:1;top:83%;left:1%;width:99%;height:auto;transform:perspective(1500px) rotateY(-13deg) rotateX(2deg) rotateZ(-1.5deg) scaleY(-1);transform-origin:center right;opacity:.13;filter:blur(2px) saturate(.65);pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.72),transparent 54%);mask-image:linear-gradient(to bottom,rgba(0,0,0,.72),transparent 54%)}.device-stage+.coordinate{position:relative;z-index:3;margin-top:14px}@media(max-width:620px){.device-stage{padding-bottom:0}.device-reflection{display:none}}

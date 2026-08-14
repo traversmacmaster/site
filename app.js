@@ -17,5 +17,31 @@ toggle.addEventListener("click", () => { const open = toggle.getAttribute("aria-
 const wave = document.querySelector("#wave");
 wave.innerHTML = Array.from({length: 72}, (_, i) => `<i style="height:${18 + Math.abs(Math.sin(i * .51) * 58 + Math.cos(i * .17) * 20)}%"></i>`).join("");
 
+const heroSlides = [
+  {name: "HexD TimeField", image: "./assets/products/timefield/hero-frozen-wave.png", alt: "HexD TimeField with a frozen six-second audio waveform", href: "./products/timefield/"},
+  {name: "A/VM Mosh", image: "./assets/products/avm/hero-action.png", alt: "A/VM audio video mosh instrument processing video in realtime", href: "./products/avm/"},
+  {name: "DrawTable", image: "./assets/products/drawtable/hero.png", alt: "DrawTable drawable wavetable synthesizer interface", href: "#tools"}
+];
+const heroImage = document.querySelector("#hero-device");
+const heroLink = document.querySelector("#hero-link");
+const heroProduct = document.querySelector("#hero-product");
+const heroIndex = document.querySelector("#hero-index");
+const heroDots = document.querySelector("#hero-dots");
+let activeHero = 0;
+let heroTimer;
+heroDots.innerHTML = heroSlides.map((slide, index) => `<button type="button" aria-label="Show ${slide.name}" data-slide="${index}"></button>`).join("");
+function showHero(index) {
+  activeHero = (index + heroSlides.length) % heroSlides.length;
+  const slide = heroSlides[activeHero];
+  heroImage.classList.add("switching");
+  setTimeout(() => { heroImage.src = slide.image; heroImage.alt = slide.alt; heroLink.href = slide.href; heroProduct.textContent = slide.name; heroIndex.textContent = `FEATURED / 00${activeHero + 1}`; document.querySelector(".reflection-clip").style.backgroundImage = `url("${slide.image}")`; heroDots.querySelectorAll("button").forEach((dot, i) => dot.classList.toggle("active", i === activeHero)); heroImage.classList.remove("switching"); }, 160);
+}
+function restartHeroTimer() { clearInterval(heroTimer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) heroTimer = setInterval(() => showHero(activeHero + 1), 6500); }
+document.querySelector("#hero-prev").addEventListener("click", () => { showHero(activeHero - 1); restartHeroTimer(); });
+document.querySelector("#hero-next").addEventListener("click", () => { showHero(activeHero + 1); restartHeroTimer(); });
+heroDots.addEventListener("click", event => { const dot = event.target.closest("button[data-slide]"); if (dot) { showHero(Number(dot.dataset.slide)); restartHeroTimer(); } });
+heroDots.querySelector("button").classList.add("active");
+restartHeroTimer();
+
 const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add("visible")), {threshold: .12});
 document.querySelectorAll(".reveal").forEach(element => observer.observe(element));

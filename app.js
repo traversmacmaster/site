@@ -34,7 +34,7 @@ function showHero(index) {
   activeHero = (index + heroSlides.length) % heroSlides.length;
   const slide = heroSlides[activeHero];
   heroImage.classList.add("switching");
-  setTimeout(() => { heroImage.src = slide.image; heroImage.alt = slide.alt; heroLink.href = slide.href; heroProduct.textContent = slide.name; heroIndex.textContent = `FEATURED / 00${activeHero + 1}`; document.querySelector(".reflection-clip").style.backgroundImage = `url("${slide.image}")`; heroDots.querySelectorAll("button").forEach((dot, i) => dot.classList.toggle("active", i === activeHero)); heroImage.classList.remove("switching"); }, 160);
+  setTimeout(() => { heroImage.src = slide.image; heroImage.alt = slide.alt; heroLink.href = slide.href; heroProduct.textContent = slide.name; heroIndex.textContent = `FEATURED / 00${activeHero + 1}`; heroDots.querySelectorAll("button").forEach((dot, i) => dot.classList.toggle("active", i === activeHero)); heroImage.classList.remove("switching"); }, 160);
 }
 function restartHeroTimer() { clearInterval(heroTimer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) heroTimer = setInterval(() => showHero(activeHero + 1), 6500); }
 document.querySelector("#hero-prev").addEventListener("click", () => { showHero(activeHero - 1); restartHeroTimer(); });

@@ -19,8 +19,8 @@ const wave = document.querySelector("#wave");
 wave.innerHTML = Array.from({length: 72}, (_, i) => `<i style="height:${18 + Math.abs(Math.sin(i * .51) * 58 + Math.cos(i * .17) * 20)}%"></i>`).join("");
 
 const heroSlides = [
-  {name: "TimeField", image: "./assets/products/timefield/hero-frozen-wave.png", alt: "TimeField with a frozen six-second audio waveform", href: "./products/timefield/"},
-  {name: "AuViMosh", image: "./assets/products/avm/hero-action.png", alt: "AuViMosh audio video mosh instrument processing video in realtime", href: "./products/avm/"},
+  {name: "TimeField", image: "./assets/products/timefield/ui-2026.png", alt: "TimeField temporal instrument interface", href: "./products/timefield/"},
+  {name: "AuViMosh", image: "./assets/products/avm/ui-2026.png", alt: "AuViMosh audio video mosh interface", href: "./products/avm/"},
   {name: "DrawTable", image: "./assets/products/drawtable/hero.png", alt: "DrawTable drawable wavetable synthesizer interface", href: "#tools"}
 ];
 const heroImage = document.querySelector("#hero-device");

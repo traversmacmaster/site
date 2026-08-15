@@ -3,11 +3,12 @@ import { products } from "./data/products.js";
 const grid = document.querySelector("#product-grid");
 grid.innerHTML = products.filter(product => product.featured).map((product, index) => `
   <article class="product-card reveal">
+    <div class="product-heading"><h3>${product.name}</h3></div>
     <a class="product-image" href="${product.appUrl ? `./${product.appUrl}` : (["timefield", "avm"].includes(product.slug) ? `./products/${product.slug}/` : "#")}">
       <img src="./${product.image}" alt="${product.name} product artwork">
       <span class="index">0${index + 1}</span><span class="status">${product.status}</span>
     </a>
-    <div class="product-info"><div><p>${product.category}</p><h3>${product.name}</h3></div><span class="price ${product.pricingType.toLowerCase()}">${product.pricingType}${product.appUrl ? " / OPEN APP →" : " / COMING SOON"}</span></div>
+    <div class="product-info"><p>${product.category}</p><span class="price ${product.pricingType.toLowerCase()}">${product.pricingType}${product.appUrl ? " / OPEN APP →" : " / COMING SOON"}</span></div>
   </article>`).join("");
 
 document.querySelector("#year").textContent = new Date().getFullYear();
@@ -18,8 +19,8 @@ const wave = document.querySelector("#wave");
 wave.innerHTML = Array.from({length: 72}, (_, i) => `<i style="height:${18 + Math.abs(Math.sin(i * .51) * 58 + Math.cos(i * .17) * 20)}%"></i>`).join("");
 
 const heroSlides = [
-  {name: "HexD TimeField", image: "./assets/products/timefield/hero-frozen-wave.png", alt: "HexD TimeField with a frozen six-second audio waveform", href: "./products/timefield/"},
-  {name: "A/VM Mosh", image: "./assets/products/avm/hero-action.png", alt: "A/VM audio video mosh instrument processing video in realtime", href: "./products/avm/"},
+  {name: "TimeField", image: "./assets/products/timefield/hero-frozen-wave.png", alt: "TimeField with a frozen six-second audio waveform", href: "./products/timefield/"},
+  {name: "AuViMosh", image: "./assets/products/avm/hero-action.png", alt: "AuViMosh audio video mosh instrument processing video in realtime", href: "./products/avm/"},
   {name: "DrawTable", image: "./assets/products/drawtable/hero.png", alt: "DrawTable drawable wavetable synthesizer interface", href: "#tools"}
 ];
 const heroImage = document.querySelector("#hero-device");

@@ -1,6 +1,6 @@
 export const products = [
   {
-    name: "HexD TimeField", slug: "timefield", category: "Temporal instrument",
+    name: "TimeField", slug: "timefield", category: "Temporal instrument",
     shortDescription: "Six heads. Six seconds. Play the immediate past.",
     longDescription: "TimeField continuously captures the previous six seconds of incoming audio and turns that recent history into a playable six-head temporal instrument.",
     image: "assets/products/timefield/hero-frozen-wave.png", heroImage: "assets/products/timefield/hero-frozen-wave.png",
@@ -10,7 +10,7 @@ export const products = [
     features: ["Six temporal heads", "Six-second rolling field", "Freeze + six Record Fields", "6×16 trigger sequencer", "Stretch, Reverse + Drift", "Guarded feedback", "MIDI performance", "Standalone + VST3"]
   },
   {
-    name: "A/VM", slug: "avm", category: "Audio / video mosh instrument",
+    name: "AuViMosh", slug: "avm", category: "Audio / video mosh instrument",
     shortDescription: "Destroy motion. Infect sound.",
     longDescription: "An experimental audio/video mosh instrument for live image corruption, sound-driven motion and unstable feedback systems.",
     image: "assets/products/avm/hero-action.png", heroImage: "assets/products/avm/hero-action.png",
@@ -20,10 +20,10 @@ export const products = [
     features: ["A / B / C video sources", "Motion transfer + inject", "Drawable mosh region", "Realtime preview", "Audio Mosh", "Source bleed + grain processing", "Spectral swap + feedback", "Video export"]
   },
   {
-    name: "HexD", slug: "hexd", category: "Six-slot drum instrument", shortDescription: "A compact six-voice sample drum instrument.", longDescription: "A focused drum instrument built for direct performance.", image: "assets/products/hexd/card.png", heroImage: "assets/products/hexd/card.png", platform: "Windows", standalone: true, vst3: true, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "ACTIVE", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, headline: "SIX SLOTS. ZERO FRICTION.", features: []
+    name: "HEXIT:B", slug: "hexd", category: "Sample Based Drum Machine", shortDescription: "A compact six-voice sample based drum machine.", longDescription: "A focused sample based drum machine built for direct performance.", image: "assets/products/hexd/card.png", heroImage: "assets/products/hexd/card.png", platform: "Windows", standalone: true, vst3: true, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "ACTIVE", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, headline: "SAMPLE BASED. PERFORMANCE READY.", features: []
   },
   {
-    name: "AnD", slug: "and", category: "Analog drum machine", shortDescription: "A twelve-voice percussion synthesizer.", longDescription: "An original native percussion synthesizer under active development.", image: "assets/products/and/card.png", heroImage: "assets/products/and/card.png", platform: "Windows", standalone: true, vst3: true, pricingType: "MEMBER", publicPrice: null, membershipAvailability: true, status: "COMING SOON", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, headline: "ANALOG. NERVE. DRUM.", features: []
+    name: "HEXIT:A", slug: "and", category: "Analog Drum Machine", shortDescription: "A twelve-voice analog drum machine.", longDescription: "An original native analog drum machine under active development.", image: "assets/products/and/card.png", heroImage: "assets/products/and/card.png", platform: "Windows", standalone: true, vst3: true, pricingType: "MEMBER", publicPrice: null, membershipAvailability: true, status: "COMING SOON", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, headline: "ANALOG. NERVE. DRUM.", features: []
   },
   {
     name: "ReelVault", slug: "reelvault", category: "Archive film web app",

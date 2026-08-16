@@ -8,7 +8,7 @@ grid.innerHTML = products.filter(product => product.featured).map((product, inde
       <img src="./${product.image}" alt="${product.name} product artwork">
       <span class="index">0${index + 1}</span><span class="status">${product.status}</span>
     </a>
-    <div class="product-info"><p>${product.category}</p><span class="price ${product.pricingType.toLowerCase()}">${product.pricingType}${product.appUrl ? " / OPEN APP →" : " / COMING SOON"}</span></div>
+    <div class="product-info"><p>${product.category}</p>${product.appUrl ? `<a class="try-now" href="./${product.appUrl}">TRY IT NOW →</a>` : `<span class="price ${product.pricingType.toLowerCase()}">${product.pricingType} / COMING SOON</span>`}</div>
   </article>`).join("");
 
 document.querySelector("#year").textContent = new Date().getFullYear();

@@ -8,7 +8,7 @@ document.title = `${product.name} — Travers MacMaster`;
 const base = "../../";
 root.innerHTML = `
   <section class="product-hero">
-    <div class="product-title"><p class="eyebrow"><span>PRODUCT</span> ${product.status}</p><h1>${product.name}</h1><h2>${product.headline}</h2><p>${product.longDescription}</p><div class="actions"><a class="button primary" href="${product.purchaseUrl}">Purchase — Coming soon</a><a class="button" href="${product.patreonUrl}">Patreon ↗</a></div></div>
+    <div class="product-title"><p class="eyebrow"><span>PRODUCT</span> ${product.status}</p><h1>${product.name}</h1><h2>${product.headline}</h2><p>${product.longDescription}</p><div class="actions">${product.appUrl ? `<a class="button primary" href="../../${product.appUrl}">Try It Now →</a>` : `<a class="button primary" href="${product.purchaseUrl}">Purchase — Coming soon</a>`}<a class="button" href="${product.patreonUrl}">Patreon ↗</a></div></div>
     <div class="detail-image"><img src="${base}${product.heroImage}" alt="${product.name} interface or product artwork"></div>
   </section>
   <section class="spec-bar"><div><small>LICENSE</small><b>${product.pricingType}</b></div><div><small>PLATFORM</small><b>${product.platform}</b></div><div><small>STANDALONE</small><b>${product.standalone ? "YES" : "NO"}</b></div><div><small>VST3</small><b>${product.vst3 ? "YES" : "NO"}</b></div></section>

@@ -14,8 +14,8 @@ export const products = [
     shortDescription: "Destroy motion. Infect sound.",
     longDescription: "An experimental audio/video mosh instrument for live image corruption, sound-driven motion and unstable feedback systems.",
     image: "assets/products/avm/ui-2026.png", heroImage: "assets/products/avm/ui-2026.png",
-    platform: "Desktop", standalone: true, vst3: false, pricingType: "PREMIUM", publicPrice: null, membershipAvailability: true, status: "IN DEVELOPMENT",
-    purchaseUrl: "#purchase-coming-soon", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
+    platform: "Web + Windows", standalone: true, vst3: false, pricingType: "PREMIUM", publicPrice: null, membershipAvailability: true, status: "1.0 · WEB LIVE",
+    purchaseUrl: "#purchase-coming-soon", appUrl: "apps/auvimosh/", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
     headline: "DESTROY MOTION. INFECT SOUND.",
     features: ["A / B / C video sources", "Motion transfer + inject", "Drawable mosh region", "Realtime preview", "Audio Mosh", "Source bleed + grain processing", "Spectral swap + feedback", "Video export"]
   },

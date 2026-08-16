@@ -1,4 +1,4 @@
-import { products } from "./data/products.js";
+import { products } from "./data/products.js?v=20260816b";
 
 const grid = document.querySelector("#product-grid");
 grid.innerHTML = products.filter(product => product.featured).map((product, index) => `
@@ -20,7 +20,7 @@ wave.innerHTML = Array.from({length: 72}, (_, i) => `<i style="height:${18 + Mat
 
 const heroSlides = [
   {name: "TimeField", image: "./assets/products/timefield/ui-2026.png", alt: "TimeField temporal instrument interface", href: "./products/timefield/"},
-  {name: "AuViMosh", image: "./assets/products/avm/ui-2026.png", alt: "AuViMosh audio video mosh interface", href: "./products/avm/"},
+  {name: "AuViMosh", image: "./assets/products/avm/ui-2026-trim.png", alt: "AuViMosh audio video mosh interface", href: "./products/avm/"},
   {name: "DrawTable", image: "./assets/products/drawtable/hero.png", alt: "DrawTable drawable wavetable synthesizer interface", href: "#tools"}
 ];
 const heroImage = document.querySelector("#hero-device");

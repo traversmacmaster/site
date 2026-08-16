@@ -1,4 +1,4 @@
-import { getProduct } from "./data/products.js";
+import { getProduct } from "./data/products.js?v=20260816b";
 
 const slug = document.body.dataset.product;
 const product = getProduct(slug);

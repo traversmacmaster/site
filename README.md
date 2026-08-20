@@ -1,7 +1,11 @@
-# Travers MacMaster — Instrument Lab
+# Travers MacMaster — Art / Sound / Experiment
 
-Static, GitHub Pages-compatible storefront for Travers MacMaster's audio tools, apps, games, music, and experiments.
+Static, GitHub Pages-compatible site for Travers MacMaster's art, sound, experiments, and original tools.
 
-The site uses plain HTML, CSS, and JavaScript. Product information lives in `data/products.js`; add or update a record there to change the featured catalog. TimeField and AuViMosh use the reusable product-detail renderer in `product-page.js`.
+Replaceable homepage content lives in `data/content.js`. The complete tool catalog lives in `data/products.js`; legacy commerce and availability fields remain there for possible future use but are not rendered publicly. TimeField and AuViMosh use the shared tool-detail renderer in `product-page.js`.
 
-ReelVault is bundled as a self-contained web app under `apps/reelvault/` and is linked from the navigation and its FREE product card.
+Routes: `/`, `/work/`, `/sound/`, `/tools/`, `/experiments/`, `/about/`, `/products/timefield/`, and `/products/avm/`.
+
+## Restoring commerce later
+
+The dormant `pricingType`, `publicPrice`, `membershipAvailability`, `purchaseUrl`, and support-link fields remain in the catalog. A future presentation can consume those fields in a dedicated availability component without changing the gallery or tool-exhibit architecture. No pricing model has been selected or exposed by the current renderer.

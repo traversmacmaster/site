@@ -6,7 +6,7 @@ export const products = [
     image: "assets/products/timefield/ui-2026.png", heroImage: "assets/products/timefield/ui-2026.png",
     platform: "Windows", standalone: true, vst3: true, pricingType: "PREMIUM", publicPrice: null, membershipAvailability: true, status: "BETA",
     purchaseUrl: "#purchase-coming-soon", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
-    headline: "SEQUENCE THE PAST.",
+    headline: "SEQUENCE THE PAST.", homePreview: true, exhibitNotes: "REALTIME RECORDING / SIX HEADS / TEMPORAL PLAYBACK", toolsUsedIn: [],
     features: ["Six temporal heads", "Six-second rolling field", "Freeze + six Record Fields", "6×16 trigger sequencer", "Stretch, Reverse + Drift", "Guarded feedback", "MIDI performance", "Standalone + VST3"]
   },
   {
@@ -16,14 +16,14 @@ export const products = [
     image: "assets/products/avm/ui-2026-trim.png", heroImage: "assets/products/avm/ui-2026-trim.png",
     platform: "Web + Windows", standalone: true, vst3: false, pricingType: "PREMIUM", publicPrice: null, membershipAvailability: true, status: "1.0 · WEB LIVE",
     purchaseUrl: "#purchase-coming-soon", appUrl: "apps/auvimosh/", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
-    headline: "DESTROY MOTION. INFECT SOUND.",
+    headline: "DESTROY MOTION. INFECT SOUND.", homePreview: true, exhibitNotes: "DATAMOSH / AUDIO MOSH / VIDEO PROCESSING", toolsUsedIn: [],
     features: ["A / B / C video sources", "Motion transfer + inject", "Drawable mosh region", "Realtime preview", "Audio Mosh", "Source bleed + grain processing", "Spectral swap + feedback", "Video export"]
   },
   {
-    name: "HEXIT:B", slug: "hexd", category: "Sample Based Drum Machine", shortDescription: "A compact six-voice sample based drum machine.", longDescription: "A focused sample based drum machine built for direct performance.", image: "assets/products/hexd/ui-2026.png", heroImage: "assets/products/hexd/ui-2026.png", platform: "Windows", standalone: true, vst3: true, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "ACTIVE", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, headline: "SAMPLE BASED. PERFORMANCE READY.", features: []
+    name: "HEXIT:B", slug: "hexd", category: "Sample Based Drum Machine", shortDescription: "A compact six-voice sample based drum machine.", longDescription: "A focused sample based drum machine built for direct performance.", image: "assets/products/hexd/ui-2026.png", heroImage: "assets/products/hexd/ui-2026.png", platform: "Windows", standalone: true, vst3: true, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "ACTIVE", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, homePreview: true, exhibitNotes: "SIX VOICES / SAMPLE PLAYBACK / DIRECT PERFORMANCE", toolsUsedIn: [], headline: "SAMPLE BASED. PERFORMANCE READY.", features: []
   },
   {
-    name: "HEXIT:A", slug: "and", category: "Analog Drum Machine", shortDescription: "A six-voice analog drum machine.", longDescription: "A native six-voice analog drum machine built for direct performance.", image: "assets/products/and/ui-2026.png", heroImage: "assets/products/and/ui-2026.png", platform: "Windows", standalone: true, vst3: true, pricingType: "MEMBER", publicPrice: null, membershipAvailability: true, status: "COMING SOON", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, headline: "ANALOG. NERVE. DRUM.", features: []
+    name: "HEXIT:A", slug: "and", category: "Analog Drum Machine", shortDescription: "A six-voice analog drum machine.", longDescription: "A native six-voice analog drum machine built for direct performance.", image: "assets/products/and/ui-2026.png", heroImage: "assets/products/and/ui-2026.png", platform: "Windows", standalone: true, vst3: true, pricingType: "MEMBER", publicPrice: null, membershipAvailability: true, status: "COMING SOON", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, homePreview: false, exhibitNotes: "SIX VOICES / ANALOG SYNTHESIS / DIRECT PERFORMANCE", toolsUsedIn: [], headline: "ANALOG. NERVE. DRUM.", features: []
   },
   {
     name: "ReelVault", slug: "reelvault", category: "Archive film web app",
@@ -32,7 +32,7 @@ export const products = [
     image: "assets/products/reelvault/card.png", heroImage: "assets/products/reelvault/card.png",
     platform: "Web", standalone: true, vst3: false, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "LIVE",
     purchaseUrl: "apps/reelvault/", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
-    appUrl: "apps/reelvault/", headline: "THE ARCHIVE, UNCOVERED.", features: []
+    appUrl: "apps/reelvault/", headline: "THE ARCHIVE, UNCOVERED.", homePreview: false, exhibitNotes: "ARCHIVE SEARCH / WATCH / COLLECT", toolsUsedIn: [], features: []
   },
   {
     name: "DrawTable", slug: "drawtable", category: "Drawable wavetable synthesizer",
@@ -41,7 +41,7 @@ export const products = [
     image: "assets/products/drawtable/card.png", heroImage: "assets/products/drawtable/hero.png",
     platform: "Windows", standalone: true, vst3: false, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "IN DEVELOPMENT",
     purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
-    headline: "YOU DRAW THE OSCILLATOR.", features: []
+    headline: "YOU DRAW THE OSCILLATOR.", homePreview: false, exhibitNotes: "DRAWN WAVETABLES / FRAME MORPHING / SOUND", toolsUsedIn: [], features: []
   }
 ];
 

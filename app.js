@@ -1,48 +1,9 @@
-import { products } from "./data/products.js?v=20260816b";
-
-const grid = document.querySelector("#product-grid");
-grid.innerHTML = products.filter(product => product.featured).map((product, index) => `
-  <article class="product-card reveal">
-    <div class="product-heading"><h3>${product.name}</h3></div>
-    <a class="product-image" href="${product.appUrl ? `./${product.appUrl}` : (["timefield", "avm"].includes(product.slug) ? `./products/${product.slug}/` : "#")}">
-      <img src="./${product.image}" alt="${product.name} product artwork">
-      <span class="index">0${index + 1}</span><span class="status">${product.status}</span>
-    </a>
-    <div class="product-info"><p>${product.category}</p>${product.appUrl ? `<a class="try-now" href="./${product.appUrl}">TRY IT NOW →</a>` : `<span class="price ${product.pricingType.toLowerCase()}">${product.pricingType} / COMING SOON</span>`}</div>
-  </article>`).join("");
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-const toggle = document.querySelector(".nav-toggle");
-toggle.addEventListener("click", () => { const open = toggle.getAttribute("aria-expanded") === "true"; toggle.setAttribute("aria-expanded", String(!open)); document.querySelector("#nav").classList.toggle("open", !open); });
-
-const wave = document.querySelector("#wave");
-wave.innerHTML = Array.from({length: 72}, (_, i) => `<i style="height:${18 + Math.abs(Math.sin(i * .51) * 58 + Math.cos(i * .17) * 20)}%"></i>`).join("");
-
-const heroSlides = [
-  {name: "TimeField", image: "./assets/products/timefield/ui-2026.png", alt: "TimeField temporal instrument interface", href: "./products/timefield/"},
-  {name: "AuViMosh", image: "./assets/products/avm/ui-2026-trim.png", alt: "AuViMosh audio video mosh interface", href: "./products/avm/"},
-  {name: "DrawTable", image: "./assets/products/drawtable/hero.png", alt: "DrawTable drawable wavetable synthesizer interface", href: "#tools"}
-];
-const heroImage = document.querySelector("#hero-device");
-const heroLink = document.querySelector("#hero-link");
-const heroProduct = document.querySelector("#hero-product");
-const heroIndex = document.querySelector("#hero-index");
-const heroDots = document.querySelector("#hero-dots");
-let activeHero = 0;
-let heroTimer;
-heroDots.innerHTML = heroSlides.map((slide, index) => `<button type="button" aria-label="Show ${slide.name}" data-slide="${index}"></button>`).join("");
-function showHero(index) {
-  activeHero = (index + heroSlides.length) % heroSlides.length;
-  const slide = heroSlides[activeHero];
-  heroImage.classList.add("switching");
-  setTimeout(() => { heroImage.src = slide.image; heroImage.alt = slide.alt; heroLink.href = slide.href; heroProduct.textContent = slide.name; heroIndex.textContent = `FEATURED / 00${activeHero + 1}`; heroDots.querySelectorAll("button").forEach((dot, i) => dot.classList.toggle("active", i === activeHero)); heroImage.classList.remove("switching"); }, 160);
-}
-function restartHeroTimer() { clearInterval(heroTimer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) heroTimer = setInterval(() => showHero(activeHero + 1), 6500); }
-document.querySelector("#hero-prev").addEventListener("click", () => { showHero(activeHero - 1); restartHeroTimer(); });
-document.querySelector("#hero-next").addEventListener("click", () => { showHero(activeHero + 1); restartHeroTimer(); });
-heroDots.addEventListener("click", event => { const dot = event.target.closest("button[data-slide]"); if (dot) { showHero(Number(dot.dataset.slide)); restartHeroTimer(); } });
-heroDots.querySelector("button").classList.add("active");
-restartHeroTimer();
-
-const observer = new IntersectionObserver(entries => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add("visible")), {threshold: .12});
-document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+import { siteContent } from "./data/content.js";
+import { products } from "./data/products.js";
+const esc=value=>String(value).replace(/[&<>'"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
+function media(work,index){if(!work.media?.sources?.length)return `<div class="media-placeholder ${work.orientation||"landscape"}"><span>${esc(work.placeholder)}</span><small>${esc(work.preferredMedia)}</small></div>`;const sources=work.media.sources.map(source=>`<source src="${esc(source.src)}" type="${esc(source.type)}">`).join("");return `<div class="work-media ${work.orientation||"landscape"}"><video ${index===0?'preload="metadata"':'preload="none"'} ${work.poster?`poster="${esc(work.poster)}"`:""} muted loop playsinline data-autoplay>${sources}</video><button class="sound-toggle" type="button">SOUND OFF</button></div>`}
+document.querySelector("#featured-work").innerHTML=siteContent.featuredWorks.map((work,index)=>`<article class="featured-work section-rule reveal"><div class="work-label"><b>FEATURED / ${String(index+1).padStart(3,"0")}</b><span>${esc(work.title)}</span></div>${media(work,index)}<div class="work-meta"><span>${esc(work.type)} / ${esc(work.year)}</span>${work.toolsUsed?.length?`<p>MADE WITH ${work.toolsUsed.join(" / ")}</p>`:""}</div></article>`).join("");
+const details=new Set(["timefield","avm"]);document.querySelector("#tool-preview").innerHTML=products.filter(product=>product.homePreview).slice(0,3).map((product,index)=>{const href=details.has(product.slug)?`./products/${product.slug}/`:"./tools/";return `<article class="product-card reveal"><div class="product-heading"><h3>${esc(product.name)}</h3></div><a class="product-image" href="${href}"><img loading="lazy" src="./${esc(product.image)}" alt="${esc(product.name)} interface"><span class="index">0${index+1}</span></a><div class="product-info"><p>${esc(product.category)}</p><span class="technical">${esc(product.exhibitNotes)}</span><a class="view-link" href="${href}">VIEW →</a></div></article>`}).join("");
+document.querySelector("#social-links").innerHTML=siteContent.socials.map(social=>social.url?`<a href="${esc(social.url)}" target="_blank" rel="noreferrer">${esc(social.label)} ↗</a>`:`<span>${esc(social.label)} <small>[ URL NEEDED ]</small></span>`).join("");document.querySelector("#year").textContent=new Date().getFullYear();
+const toggle=document.querySelector(".nav-toggle");toggle.addEventListener("click",()=>{const open=toggle.getAttribute("aria-expanded")==="true";toggle.setAttribute("aria-expanded",String(!open));document.querySelector("#nav").classList.toggle("open",!open)});
+const reduced=matchMedia("(prefers-reduced-motion: reduce)");const videos=new IntersectionObserver(entries=>entries.forEach(entry=>{const video=entry.target;if(entry.isIntersecting&&!reduced.matches)video.play().catch(()=>video.controls=true);else video.pause()}),{threshold:.55});document.querySelectorAll("video[data-autoplay]").forEach(video=>videos.observe(video));document.addEventListener("click",event=>{const button=event.target.closest(".sound-toggle");if(!button)return;const video=button.parentElement.querySelector("video");video.muted=!video.muted;button.textContent=video.muted?"SOUND OFF":"SOUND ON"});const reveals=new IntersectionObserver(entries=>entries.forEach(entry=>entry.isIntersecting&&entry.target.classList.add("visible")),{threshold:.08});document.querySelectorAll(".reveal").forEach(element=>reveals.observe(element));

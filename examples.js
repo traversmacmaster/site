@@ -1,0 +1,5 @@
+import { esc } from './catalog.js';
+export function examples(p,base='../../'){
+  if(!p.examples?.length&&!p.video)return '';
+  return `<section class="machine-examples section-rule"><div class="section-heading"><div><p class="eyebrow">Made with ${esc(p.name)}</p><h2>Studies &amp; motion</h2></div></div>${p.video?`<figure class="demo-video"><video controls loop playsinline preload="none" poster="${base}${esc(p.video.poster)}" aria-label="${esc(p.video.label)}"><source src="${base}${esc(p.video.src)}" type="video/webm">Your browser cannot play this video. <a href="${base}${esc(p.video.src)}">Download the WebM</a>.</video><figcaption>${esc(p.video.label)} · Repeats during playback. <a href="${base}${esc(p.video.src)}">Open video ↗</a></figcaption></figure>`:''}<div class="example-grid">${(p.examples||[]).map(item=>`<figure><a href="${base}${esc(item.src)}" target="_blank" rel="noopener"><img src="${base}${esc(item.src)}" alt="${esc(item.alt)}" loading="lazy"></a><figcaption>${esc(item.caption)} <span>View full resolution ↗</span></figcaption></figure>`).join('')}</div></section>`;
+}

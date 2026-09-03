@@ -51,13 +51,13 @@ export const products = [
     name: "HEXIT:A", slug: "and", disciplines: ["audio"], category: "Analog Drum Machine", shortDescription: "A six-voice analog drum machine.", longDescription: "A native six-voice analog drum machine built for direct performance.", image: "assets/products/and/ui-2026.png", heroImage: "assets/products/and/ui-2026.png", platform: "Windows", standalone: true, vst3: true, pricingType: "MEMBER", publicPrice: null, membershipAvailability: true, status: "COMING SOON", purchaseUrl: "#", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true, homePreview: false, exhibitNotes: "SIX VOICES / ANALOG SYNTHESIS / DIRECT PERFORMANCE", toolsUsedIn: [], headline: "ANALOG. NERVE. DRUM.", features: []
   },
   {
-    name: "ReelVault", slug: "reelvault", disciplines: ["archive"], category: "Archive film web app",
+    name: "StreamArch", slug: "streamarch", disciplines: ["archive"], category: "Archive film web app",
     shortDescription: "Discover, watch and collect cinema history.",
     longDescription: "A fully functional browser for films preserved by the Internet Archive.",
     image: "assets/products/reelvault/card.png", heroImage: "assets/products/reelvault/card.png",
     platform: "Web", standalone: true, vst3: false, pricingType: "FREE", publicPrice: null, membershipAvailability: false, status: "LIVE",
-    purchaseUrl: "apps/reelvault/", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
-    appUrl: "apps/reelvault/", headline: "THE ARCHIVE, UNCOVERED.", homePreview: false, exhibitNotes: "ARCHIVE SEARCH / WATCH / COLLECT", toolsUsedIn: [], features: []
+    purchaseUrl: "apps/streamarch/", githubUrl: "https://github.com/", patreonUrl: "https://www.patreon.com/", featured: true,
+    appUrl: "apps/streamarch/", headline: "STREAM. PRESERVE. ARCHIVE.", homePreview: false, exhibitNotes: "ARCHIVE SEARCH / WATCH / COLLECT", toolsUsedIn: [], features: []
   },
   {
     name: "DrawTable", slug: "drawtable", disciplines: ["audio"], category: "Drawable wavetable synthesizer",

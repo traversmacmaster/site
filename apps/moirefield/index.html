@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MOIRÉFIELD</title>
+    <script type="module" crossorigin src="./assets/index-uc02ru56.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CPdMq3dw.css">
+  <meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/moirefield/"></head>
+  <body>
+    <header>
+      <div class="brand">
+        <span>≋</span>
+        <div>
+          <b>MOIRÉFIELD</b><small>INTERFERENCE DRAWING INSTRUMENT</small>
+        </div>
+      </div>
+      <div class="mode">
+        <button data-mode="classic" class="active">CLASSIC</button
+        ><button data-mode="lab">LAB</button>
+      </div>
+      <div class="mutator">
+        <button id="mutate">✦ MUTATE</button
+        ><select id="mutationAmount">
+          <option>SUBTLE</option>
+          <option>MEDIUM</option>
+          <option>WILD</option></select
+        ><label><input id="seedLock" type="checkbox" /> SEED LOCK</label
+        ><input id="seed" type="number" value="1847" />
+      </div>
+      <nav>
+        <button id="undo">↶</button><button id="redo">↷</button
+        ><button id="newProject">NEW</button
+        ><button id="openProject">OPEN</button
+        ><button id="saveProject">SAVE</button>
+      </nav>
+    </header>
+    <main>
+      <aside class="panel left">
+        <section>
+          <h2><i>01</i> PATTERN LAYERS <button id="addLayer">＋</button></h2>
+          <div id="layers"></div>
+          <div class="layer-actions">
+            <button id="duplicate">DUPLICATE</button
+            ><button id="deleteLayer">DELETE</button
+            ><button id="moveUp">↑</button><button id="moveDown">↓</button>
+          </div>
+        </section>
+        <section>
+          <h3>RELATIONSHIP PRESETS</h3>
+          <div class="inline">
+            <select id="preset">
+              <option value="angle">ANGLE DRIFT</option>
+              <option value="scale">SCALE BEAT</option>
+              <option value="circles">OFFSET CIRCLES</option>
+              <option value="radial">RADIAL INTERFERENCE</option>
+              <option value="dots">DOT WARP</option>
+              <option value="triple">TRIPLE FIELD</option></select
+            ><button id="loadPreset">LOAD</button>
+          </div>
+        </section>
+        <section>
+          <h3>PATTERN GENERATOR <em>PATTERN SPACE</em></h3>
+          <select id="pattern">
+            <option value="lines">PARALLEL LINES</option>
+            <option value="grid">GRID</option>
+            <option value="circles">CONCENTRIC CIRCLES</option>
+            <option value="radial">RADIAL LINES</option>
+            <option value="dotGrid">DOT GRID</option>
+            <option value="dotRadial">DOT RADIAL</option>
+            <option value="waves">WAVES</option>
+            <option value="crosshatch">CROSSHATCH</option>
+            <option value="rings">RINGS</option>
+            <option value="spiral">SPIRAL</option>
+          </select>
+          <div id="patternControls"></div>
+        </section>
+        <section class="hint">
+          <b>DIRECT CONTROL</b
+          ><span
+            >DRAG — position layer · colored center handles —
+            generator/warp</span
+          ><span>SHIFT + DRAG — rotate</span
+          ><span>WHEEL — scale · SHIFT fine · CTRL ultra-fine</span>
+        </section>
+      </aside>
+      <section class="stage">
+        <div class="tabs">
+          <button data-view="output" class="active">OUTPUT</button
+          ><button data-view="sourceA">SOURCE A</button
+          ><button data-view="sourceB">SOURCE B</button
+          ><button data-view="split">SPLIT</button><span></span
+          ><label><input id="handles" type="checkbox" checked /> HANDLES</label>
+        </div>
+        <div id="workspace">
+          <figure id="mainPane">
+            <canvas id="canvas"></canvas>
+            <figcaption>
+              <b id="viewLabel">LIVE INTERFERENCE</b
+              ><span id="canvasReadout"></span>
+            </figcaption>
+            <div id="overlay">
+              <div class="cross" title="Layer position"></div>
+              <div class="rotate-handle" title="Rotation"></div>
+              <div class="generator-handle" title="Generator center">G</div>
+              <div class="warp-handle" title="Warp center">W</div>
+            </div>
+          </figure>
+          <figure id="splitA">
+            <canvas></canvas>
+            <figcaption>SOURCE A</figcaption>
+          </figure>
+          <figure id="splitB">
+            <canvas></canvas>
+            <figcaption>SOURCE B</figcaption>
+          </figure>
+        </div>
+        <footer>
+          <button id="play">❚❚</button
+          ><button id="performanceRecord">● REC</button
+          ><button id="performancePlay">▶ TAKE</button><span class="live"></span
+          ><b>LIVE</b><span id="status">Simple + simple = complex.</span
+          ><button id="fit">FIT</button
+          ><label
+            >ZOOM
+            <input
+              id="zoom"
+              type="range"
+              min=".2"
+              max="4"
+              step=".01"
+              value="1" /></label
+          ><span id="fps">60 FPS</span>
+        </footer>
+      </section>
+      <aside class="panel right">
+        <section>
+          <h2><i>02</i> RELATIONSHIP</h2>
+          <div id="inspector"></div>
+          <label class="lock"
+            ><input id="lockOffset" type="checkbox" /> LOCK + OFFSET</label
+          >
+          <div id="deltaControls"></div>
+        </section>
+        <section>
+          <h3>TRANSFORM <em>LAYER SPACE</em></h3>
+          <div id="transformControls"></div>
+        </section>
+        <section>
+          <h3>APPEARANCE / COMPOSITE</h3>
+          <div class="inline">
+            <label>INK <input id="layerColor" type="color" /></label
+            ><label
+              >BLEND
+              <select id="blend">
+                <option>normal</option>
+                <option selected>multiply</option>
+                <option>screen</option>
+                <option>difference</option>
+                <option>add</option>
+                <option>darken</option>
+                <option>lighten</option>
+              </select></label
+            >
+          </div>
+        </section>
+        <section>
+          <h3>AUTO MOTION</h3>
+          <label class="toggle"
+            ><input id="motionEnabled" type="checkbox" /> ENABLE LAYER
+            MOTION</label
+          >
+          <div id="motionControls"></div>
+        </section>
+        <section id="lab" hidden>
+          <h3>LAB — LAYER WARP <em>WARP SPACE</em></h3>
+          <select id="warpType">
+            <option value="none">NONE</option>
+            <option value="bulge">BULGE</option>
+            <option value="twist">TWIST</option>
+            <option value="wave">WAVE</option>
+            <option value="pinch">PINCH</option>
+          </select>
+          <div id="warpControls"></div>
+        </section>
+        <section>
+          <h3>SNAPSHOTS</h3>
+          <div class="inline">
+            <button id="takeSnapshot">＋ CAPTURE</button
+            ><select id="snapshots">
+              <option value="">NO SNAPSHOTS</option></select
+            ><button id="restoreSnapshot">RESTORE</button>
+          </div>
+        </section>
+        <section>
+          <h3>CANVAS / STILL EXPORT <em>OUTPUT SPACE</em></h3>
+          <div class="inline">
+            <select id="aspect">
+              <option value="1920,1080">16:9</option>
+              <option value="1080,1920">9:16 · VERTICAL</option>
+              <option value="1080,1080">1:1</option>
+              <option value="1080,1350">4:5</option>
+              <option value="custom">CUSTOM</option></select
+            ><input id="background" type="color" value="#f5f2ea" />
+          </div>
+          <div class="export">
+            <input id="exportW" type="number" value="4096" /><span>×</span
+            ><input id="exportH" type="number" value="2304" /><select
+              id="exportFormat"
+            >
+              <option>PNG</option>
+              <option>JPEG</option>
+              <option>WEBP</option></select
+            ><button id="exportStill" class="primary">EXPORT STILL</button>
+          </div>
+          <div class="video-export">
+            <label
+              >SOURCE<select id="videoSource">
+                <option value="canvas">CANVAS · CLEAN ARTWORK</option>
+                <option value="window">WINDOW · INCLUDE CONTROLS</option>
+              </select></label
+            ><small
+              >Window includes the interface, fitted to output size. Browser:
+              choose this tab/window. No audio.</small
+            >
+            <div class="recorder-heading">
+              <span class="rec-dot"></span>
+              <div>
+                <h3>LIVE RECORD</h3>
+                <small>Records the output while you perform</small>
+              </div>
+            </div>
+            <div class="export">
+              <input
+                id="videoW"
+                type="number"
+                min="256"
+                max="3840"
+                value="1920"
+              /><span>×</span
+              ><input
+                id="videoH"
+                type="number"
+                min="256"
+                max="3840"
+                value="1080"
+              /><span></span>
+            </div>
+            <div class="video-settings">
+              <label
+                >MAX SECONDS<input
+                  id="videoDuration"
+                  type="number"
+                  min="1"
+                  max="300"
+                  value="30" /></label
+              ><label
+                >FRAME RATE<select id="videoFps">
+                  <option>24</option>
+                  <option selected>30</option>
+                  <option>60</option>
+                </select></label
+              ><label
+                >FILE TYPE<select id="videoFormat">
+                  <option value="mp4" selected>MP4</option>
+                  <option value="webm">WEBM</option>
+                </select></label
+              >
+            </div>
+            <button id="exportVideo" class="video-button">
+              ● START LIVE RECORDING
+            </button>
+            <div id="videoProgress" class="video-progress"><i></i></div>
+            <small id="videoStatus"
+              >Ready · captures the clean output canvas, without interface
+              controls.</small
+            >
+          </div>
+        </section>
+      </aside>
+    </main>
+    <div id="toast"></div>
+  </body>
+</html>

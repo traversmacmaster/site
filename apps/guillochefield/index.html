@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>GUILLOCHÉ</title>
+    <script type="module" crossorigin src="./assets/index-CWMLO5aR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-LxbolbJH.css">
+  <meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/guillochefield/"></head>
+  <body>
+    <header>
+      <div>
+        <h1>GUILLOCHÉ</h1>
+        <span>MECHANICAL ENGRAVING INSTRUMENT</span>
+      </div>
+      <nav>
+        <button id="newPass">NEW PASS</button
+        ><button id="duplicatePass">DUPLICATE</button
+        ><button id="snapshot">SNAPSHOT</button><button id="save">SAVE</button
+        ><button id="load">LOAD</button><button id="exportPng">PNG</button
+        ><button id="exportSvg">TRUE SVG</button>
+      </nav>
+    </header>
+    <main>
+      <aside id="left">
+        <section>
+          <h2>MACHINE</h2>
+          <div class="tabs">
+            <button data-mode="classic" class="active">CLASSIC</button
+            ><button data-mode="lab">LAB</button>
+          </div>
+          <label
+            >MECHANISM<select id="machinePreset">
+              <option value="rose">ROSE ENGINE</option>
+              <option value="lathe">GEOMETRIC LATHE</option>
+            </select></label
+          >
+          <div id="machineControls"></div>
+        </section>
+        <section>
+          <h2>OSCILLATOR A</h2>
+          <div id="oscAControls"></div>
+        </section>
+        <section>
+          <h2>OSCILLATOR B</h2>
+          <label class="toggle"
+            ><input id="oscBEnabled" type="checkbox" /> ENABLED</label
+          >
+          <div id="oscBControls"></div>
+        </section>
+      </aside>
+      <div id="stage">
+        <div id="stagebar">
+          <div class="tabs">
+            <button data-view="art" class="active">ART</button
+            ><button data-view="mechanism">MECHANISM</button
+            ><button data-view="split">SPLIT</button>
+          </div>
+          <span id="closure">CLOSED · 1 REV</span
+          ><span id="readout">θ 0.000°</span>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div id="transport">
+          <button id="cut" class="primary">CUT</button
+          ><button id="pause">PAUSE</button><button id="stop">STOP</button
+          ><button id="complete">COMPLETE</button
+          ><button id="cutter" class="down">CUTTER DOWN</button
+          ><label
+            >SPEED
+            <input
+              id="speed"
+              type="range"
+              min="0.1"
+              max="8"
+              step="0.1"
+              value="1" /></label
+          ><label
+            ><input id="continueUp" type="checkbox" checked /> ADVANCE WHILE
+            UP</label
+          >
+        </div>
+      </div>
+      <aside id="right">
+        <section>
+          <h2>BACKGROUND / EXPORT</h2>
+          <label>CANVAS<select id="canvasPreset"><option value="1920,1080">16:9</option><option value="1080,1920">9:16 · VERTICAL</option><option value="1080,1080" selected>1:1</option><option value="1080,1350">4:5</option><option value="custom">CUSTOM</option></select></label>
+          <label class="toggle"><input id="transparentBackground" type="checkbox" /> TRANSPARENT BACKGROUND</label>
+          <label>COLOR / VIDEO<input id="backgroundColor" type="color" value="#f0eadc" /></label>
+          <small>Checkerboard is preview only. PNG and SVG preserve transparency.</small>
+          <label>CANVAS / PNG WIDTH<input id="exportWidth" type="number" min="256" max="8192" value="1080" /></label>
+          <label>CANVAS / PNG HEIGHT<input id="exportHeight" type="number" min="256" max="8192" value="1080" /></label>
+          <div class="tabs"><button id="savePng">EXPORT PNG</button><button id="saveSvg">EXPORT SVG</button></div>
+        </section>
+        <div id="recordingPanel"></div>
+        <section>
+          <h2>PERFORMANCE</h2>
+          <div class="tabs">
+            <button data-behavior="reactive">REACTIVE</button
+            ><button data-behavior="accumulate" class="active">
+              ACCUMULATE
+            </button>
+          </div>
+          <button id="record">● RECORD</button
+          ><button id="replay">REPLAY</button
+          ><button id="clear">CLEAR CUT</button>
+        </section>
+        <details class="abuse-panel">
+          <summary>ENGRAVER ABUSE</summary>
+          <label><input id="abuseEnabled" type="checkbox" /> ENGAGE LAB</label>
+          <label>DRIP<input data-abuse="drip.amount" type="range" min="0" max="8" step="0.1" value="0" /></label>
+          <label>SPRAY<input data-abuse="spray.amount" type="range" min="0" max="5" step="0.1" value="0" /></label>
+          <label>SKID<input data-abuse="skid.amount" type="range" min="0" max="8" step="0.1" value="0" /></label>
+          <label>CHATTER<input data-abuse="chatter.amount" type="range" min="0" max="8" step="0.1" value="0" /></label>
+          <label>BLOT<input data-abuse="blot.amount" type="range" min="0" max="5" step="0.1" value="0" /></label>
+          <label>SPARK<input data-abuse="spark.amount" type="range" min="0" max="3" step="0.1" value="0" /></label>
+          <button id="resetAbuse">RESET LAB</button>
+        </details>
+        <section>
+          <h2>CUTTER STYLE</h2>
+          <label>COLOR<input id="color" type="color" value="#171512" /></label
+          ><label
+            >WIDTH<input
+              id="lineWidth"
+              type="range"
+              min="0.2"
+              max="8"
+              step="0.05"
+              value="1.15" /><output></output></label
+          ><label
+            >OPACITY<input
+              id="opacity"
+              type="range"
+              min="0.05"
+              max="1"
+              step="0.01"
+              value="0.88" /><output></output
+          ></label>
+        </section>
+        <section>
+          <h2>PASSES</h2>
+          <div id="passes"></div>
+        </section>
+        <section>
+          <h2>OUTPUT SPACE</h2>
+          <div id="outputControls"></div>
+          <label
+            >SYMMETRY<select id="symmetry">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>6</option>
+              <option>8</option>
+              <option>12</option>
+            </select></label
+          ><label><input id="mirrorX" type="checkbox" /> MIRROR X</label
+          ><label><input id="mirrorY" type="checkbox" /> MIRROR Y</label>
+        </section>
+        <section>
+          <h2>MUTATE</h2>
+          <label>SEED<input id="seed" type="number" value="1847" /></label>
+          <div class="mutates">
+            <button data-mutate="subtle">SUBTLE</button
+            ><button data-mutate="medium">MEDIUM</button
+            ><button data-mutate="wild">WILD</button>
+          </div>
+        </section>
+        <section>
+          <h2>SNAPSHOTS</h2>
+          <div id="snapshots"></div>
+        </section>
+      </aside>
+    </main>
+    <div id="toast"></div>
+  </body>
+</html>

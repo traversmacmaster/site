@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# App archives use HTML noindex so crawlers can read the exclusion.
+Sitemap: https://traversmacmaster.com/sitemap.xml

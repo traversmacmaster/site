@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HARMANO</title>
+    <script type="module" crossorigin src="./assets/index-Bdp-LJw9.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DAGSs_s1.css">
+  <meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/harmano/"></head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="brand">
+          <span class="mark"></span>
+          <div>
+            <h1>HARMANO</h1>
+            <p>DIGITAL HARMONOGRAPH</p>
+          </div>
+        </div>
+        <div class="preset-strip">
+          <span>RELATION</span
+          ><select id="preset"></select>
+        </div>
+        <div class="file-actions">
+          <button id="undo" title="Ctrl+Z">UNDO</button
+          ><button id="redo" title="Ctrl+Y">REDO</button
+          ><button id="newProject">NEW</button
+          ><button id="openProject">OPEN</button
+          ><button id="saveProject">SAVE</button
+          ><button class="accent" id="exportSvg">EXPORT SVG</button
+          ><button id="exportPng">PNG</button>
+        </div>
+      </header>
+      <main>
+        <aside class="left panel">
+          <div class="mode-tabs">
+            <button data-mode="classic" class="active">CLASSIC</button
+            ><button data-mode="lab">LAB</button>
+          </div>
+          <div class="panel-heading">
+            <span>PENDULUM BANK</span><small>LIVE CIRCUIT</small>
+          </div>
+          <div id="oscillators"></div>
+          <section class="ratio-box">
+            <div class="label-row">
+              <label>FUNDAMENTAL RATIO</label
+              ><output id="ratioExact">3 : 2</output>
+            </div>
+            <div class="ratio-entry">
+              <input
+                id="ratioX"
+                type="number"
+                min="1"
+                max="32"
+                value="3"
+              /><span>:</span
+              ><input
+                id="ratioY"
+                type="number"
+                min="1"
+                max="32"
+                value="2"
+              /><button id="applyRatio">TUNE</button>
+            </div>
+            <div class="shape-controls">
+              <label
+                >WIDTH
+                <input
+                  id="widthScale"
+                  type="range"
+                  min="0.25"
+                  max="2.5"
+                  step="0.01"
+                /><output id="widthScaleOut">1.00×</output></label
+              >
+              <label
+                >HEIGHT
+                <input
+                  id="heightScale"
+                  type="range"
+                  min="0.25"
+                  max="2.5"
+                  step="0.01"
+                /><output id="heightScaleOut">1.00×</output></label
+              >
+            </div>
+          </section>
+          <section class="drift">
+            <div class="label-row">
+              <label>DRIFT</label><output id="driftOut">−0.0030 Hz</output>
+            </div>
+            <input
+              id="drift"
+              type="range"
+              min="-0.05"
+              max="0.05"
+              step="0.0001"
+            />
+            <div class="scale">
+              <span>−</span><i></i><span>EXACT</span><i></i><span>+</span>
+            </div>
+          </section>
+        </aside>
+        <section class="stage">
+          <div class="stage-toolbar">
+            <div>
+              <span class="status-dot"></span><b id="status">READY</b
+              ><span id="elapsed">00:00.0</span>
+            </div>
+            <div>
+              <button id="fit">FIT VIEW</button><button id="zoomOut">−</button
+              ><span id="zoomLabel">100%</span><button id="zoomIn">+</button
+              ><button id="mechanismToggle" class="active">MECHANISM</button>
+            </div>
+          </div>
+          <div id="viewport">
+            <canvas id="canvas"></canvas
+            ><svg
+              id="mechanism"
+              viewBox="0 0 1000 700"
+              preserveAspectRatio="none"
+            >
+              <g id="mechanismArt"></g>
+            </svg>
+            <div class="canvas-label">
+              <span id="canvasSize">1200 × 900</span><span>VECTOR FIELD</span>
+            </div>
+          </div>
+          <div class="transport">
+            <button id="draw" class="draw"><span>▶</span> DRAW</button
+            ><button id="pause">Ⅱ PAUSE</button><button id="stop">■ STOP</button
+            ><button id="complete">COMPLETE DRAWING</button
+            ><button id="penLift">PEN LIFT</button>
+            <div class="speed">
+              <label>SPEED</label
+              ><input
+                id="speed"
+                type="range"
+                min="0.25"
+                max="4"
+                value="1"
+                step="0.25"
+              /><output id="speedOut">1.00×</output>
+            </div>
+          </div>
+        </section>
+        <aside class="right panel">
+          <section>
+            <div class="panel-heading">
+              <span>PEN</span><small>NO. 01</small>
+            </div>
+            <div class="pen-grid">
+              <label>INK <input id="penColor" type="color" /></label
+              ><label
+                >WIDTH
+                <input
+                  id="penWidth"
+                  type="range"
+                  min="0.25"
+                  max="6"
+                  step="0.25" /><output id="penWidthOut"></output></label
+              ><label
+                >OPACITY
+                <input
+                  id="penOpacity"
+                  type="range"
+                  min="0.05"
+                  max="1"
+                  step="0.05" /><output id="penOpacityOut"></output
+              ></label>
+            </div>
+          </section>
+          <section>
+            <div class="panel-heading">
+              <span>MACHINE READOUT</span><small>LIVE</small>
+            </div>
+            <dl id="readout"></dl>
+            <div class="completion">
+              <label
+                >END THRESHOLD
+                <input
+                  id="threshold"
+                  type="number"
+                  min="0.01"
+                  max="20"
+                  step="0.01"
+                /><span>px</span></label
+              ><label
+                >MAX DURATION
+                <input
+                  id="maxDuration"
+                  type="number"
+                  min="1"
+                  max="3600"
+                  step="1"
+                /><span>s</span></label
+              >
+            </div>
+          </section>
+          <section class="layers-section">
+            <div class="panel-heading">
+              <span>DRAWING PLATES</span><button id="clear">CLEAR ALL</button>
+            </div>
+            <div id="layers"></div>
+          </section>
+          <section>
+            <div class="panel-heading"><span>PAPER</span></div>
+            <div class="paper-grid">
+              <select id="sizePreset">
+                <option value="1920,1080" selected>16:9</option>
+                <option value="1080,1920">9:16 · VERTICAL</option>
+                <option value="1080,1080">1:1</option>
+                <option value="1080,1350">4:5</option>
+                <option value="custom">CUSTOM</option></select
+              ><label>WIDTH <input id="canvasWidth" type="number" min="256" max="8192" value="1920" /></label
+              ><label>HEIGHT <input id="canvasHeight" type="number" min="256" max="8192" value="1080" /></label
+              ><label
+                >GROUND
+                <input id="background" type="color" value="#e9e3d6" /></label
+              ><label class="check"
+                ><input id="transparent" type="checkbox" /> TRANSPARENT
+                PNG</label
+              >
+            </div>
+          </section>
+        </aside>
+      </main>
+      <footer>
+        <span>OSCILLATOR ENGINE / <b>SINE</b></span
+        ><span>PARAMETERS ARE LIVE · HOLD SHIFT FOR FINE ADJUSTMENT</span
+        ><span id="pointCount">0 POINTS</span>
+      </footer>
+    </div>
+    <div id="toast"></div>
+  </body>
+</html>

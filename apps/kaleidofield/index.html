@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KALEIDOFIELD</title>
+    <script type="module" crossorigin src="./assets/index-C23VvlwB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BvdP1OBl.css">
+  <meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/kaleidofield/"></head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">◇</span>
+        <div>
+          <b>KALEIDOFIELD</b><small>VIRTUAL KALEIDOSCOPE INSTRUMENT</small>
+        </div>
+      </div>
+      <div class="mode-switch" aria-label="Operating mode">
+        <button data-mode="classic" class="active">CLASSIC</button
+        ><button data-mode="lab">LAB</button>
+      </div>
+      <div class="mutation-deck">
+        <button id="mutate" class="mutate-button">✦ MUTATE</button
+        ><select id="mutationAmount" aria-label="Mutation amount">
+          <option value="subtle">SUBTLE</option>
+          <option value="medium" selected>MEDIUM</option>
+          <option value="wild">WILD</option></select
+        ><label class="seed-lock"
+          ><input id="seedLock" type="checkbox" /> LOCK</label
+        ><input
+          id="mutationSeed"
+          aria-label="Mutation seed"
+          type="number"
+          min="0"
+          max="4294967295"
+          value="1847"
+        />
+      </div>
+      <div class="top-actions">
+        <button id="undo" disabled>↶</button
+        ><button id="redo" disabled>↷</button
+        ><button id="newProject">NEW</button
+        ><button id="openProject">OPEN</button
+        ><button id="saveProject">SAVE</button
+        ><button id="exportPng" class="primary">EXPORT PNG</button>
+      </div>
+    </header>
+    <main>
+      <aside class="panel left-panel">
+        <section>
+          <h2><span>01</span> SOURCE MATERIAL</h2>
+          <input
+            id="mediaInput"
+            type="file"
+            accept="image/png,image/jpeg,image/webp,video/*"
+            hidden
+          /><button id="importMedia" class="import">
+            <strong>＋ IMPORT IMAGE / VIDEO</strong
+            ><small>PNG · JPG · WEBP · MP4 · WEBM</small>
+          </button>
+          <div class="source-card">
+            <span id="sourceType">GENERATED</span>
+            <div>
+              <b id="sourceName">Procedural light field</b
+              ><small id="sourceMeta">Ready to explore</small>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>SOURCE TRANSFORM <em>SOURCE SPACE</em></h3>
+          <div id="sourceControls"></div>
+          <div class="button-row">
+            <button data-toggle="flipX">FLIP X</button
+            ><button data-toggle="flipY">FLIP Y</button
+            ><select id="edge">
+              <option value="clamp">CLAMP</option>
+              <option value="wrap">WRAP</option>
+              <option value="mirror" selected>MIRROR</option>
+              <option value="transparent">TRANSPARENT</option>
+              <option value="background">BACKGROUND</option>
+            </select>
+          </div>
+        </section>
+        <section id="videoSection" hidden>
+          <h3>INTERNAL VIDEO PLAYER <em>LIVE SOURCE</em></h3>
+          <div class="transport">
+            <button id="videoBack" title="Previous frame">−1F</button
+            ><button id="videoPlay" class="video-play">▶ PLAY</button
+            ><button id="videoForward" title="Next frame">+1F</button
+            ><button id="videoLoop" class="active">LOOP</button>
+          </div>
+          <input
+            id="videoTime"
+            class="video-scrub"
+            type="range"
+            min="0"
+            max="1"
+            step="0.0001"
+            value="0"
+          />
+          <div class="video-status">
+            <span id="videoState">READY</span
+            ><small id="videoStamp">00:00.000 / 00:00.000</small>
+          </div>
+        </section>
+        <section>
+          <h3>APPEARANCE <em>SOURCE SPACE</em></h3>
+          <div id="appearanceControls"></div>
+        </section>
+        <div class="hint">
+          <b>DIRECT SOURCE CONTROL</b><span>DRAG — move material</span
+          ><span>WHEEL — scale material</span
+          ><span>SHIFT + DRAG — rotate material</span>
+        </div>
+      </aside>
+      <section class="stage-column">
+        <nav class="view-tabs">
+          <button data-view="source">SOURCE</button
+          ><button data-view="split" class="active">SPLIT</button
+          ><button data-view="output">OUTPUT</button><span></span
+          ><label
+            ><input id="mechanism" type="checkbox" checked /> SHOW
+            MECHANISM</label
+          >
+        </nav>
+        <div id="workspace" class="workspace split">
+          <figure id="sourcePane">
+            <figcaption>
+              <b>SOURCE CONSTRUCTION</b
+              ><span id="sourceReadout">SOURCE 0, 0 · 1.00×</span>
+            </figcaption>
+            <canvas id="sourceCanvas"></canvas>
+            <div class="corner-label">SOURCE SPACE</div>
+          </figure>
+          <figure id="outputPane">
+            <figcaption>
+              <b>LIVE KALEIDOSCOPE</b
+              ><span id="opticsReadout">30° WEDGE · 12-FOLD</span>
+            </figcaption>
+            <canvas id="outputCanvas"></canvas>
+            <div class="corner-label">OUTPUT SPACE</div>
+          </figure>
+        </div>
+        <footer>
+          <span class="live-dot"></span><b>LIVE</b
+          ><span id="status"
+            >Move the source beneath the mirrors to discover a
+            composition.</span
+          ><button id="resetSource">RESET SOURCE</button
+          ><button id="fitView">FIT</button>
+        </footer>
+      </section>
+      <aside class="panel right-panel">
+        <section>
+          <h2><span>02</span> MIRROR CHAMBER</h2>
+          <div class="space-badge">OPTICAL / MIRROR SPACE</div>
+          <div class="preset-grid">
+            <button data-preset="tri">
+              3-MIRROR<br /><small>30° · 12</small></button
+            ><button data-preset="two">
+              2-MIRROR<br /><small>45° · 8</small></button
+            ><button data-preset="six">
+              6-FOLD<br /><small>60° · 6</small></button
+            ><button data-preset="narrow">
+              NARROW<br /><small>15° · 24</small>
+            </button>
+          </div>
+          <div id="opticsControls"></div>
+        </section>
+        <section id="labSection" hidden>
+          <h3>LAB — BROKEN SYMMETRY</h3>
+          <div id="labControls"></div>
+        </section>
+        <section id="movementSection">
+          <h3>AUTO MOVEMENT</h3>
+          <small>Move up to three controls independently. Stop holds the current position. Motion is included in recordings.</small>
+          <div id="movementSlots"></div>
+          <div class="button-row"><button id="movementStartAll">START ALL</button><button id="movementStopAll">STOP ALL</button></div>
+        </section>
+        <section>
+          <h2><span>03</span> OUTPUT TRANSFORM</h2>
+          <div class="space-badge output">COMPLETED IMAGE SPACE</div>
+          <div id="outputControls"></div>
+        </section>
+        <section id="outputLoopSection">
+          <h3>OUTPUT LOOP</h3>
+          <label for="loopPreset">LOOP LENGTH</label>
+          <div class="video-settings">
+            <select id="loopPreset" aria-label="Loop length preset"><option value="8">8 seconds</option><option value="10" selected>10 seconds</option><option value="15">15 seconds</option><option value="20">20 seconds</option><option value="30">30 seconds</option><option value="custom">Custom</option></select>
+            <label><span>SECONDS</span><input id="loopSeconds" type="number" min="2" max="60" step="0.1" value="10"></label>
+            <label><span>SEAM BLEND · SECONDS</span><input id="loopBlend" type="number" min="0.25" max="3" step="0.25" value="1"></label>
+            <label><span>FORMAT</span><select id="loopFormat"><option value="mp4">MP4</option><option value="webm">WebM</option></select></label>
+          </div>
+          <label class="auto-center-recording"><input id="loopAnimateSource" type="checkbox" checked> PLAY IMPORTED VIDEO</label>
+          <button id="createOutputLoop" class="video-button">↻ CREATE OUTPUT LOOP</button>
+          <button id="previewLastLoop" class="video-button" hidden>PREVIEW LAST LOOP</button>
+          <small id="loopStatus" role="status">Start any Auto Movement slots you want, then capture. Uses the canvas size and FPS below. A short blend smooths the join.</small>
+        </section>
+        <section>
+          <h3>NATIVE CANVAS / EXPORT</h3>
+          <select id="canvasPreset"><option value="1920,1080">16:9</option><option value="1080,1920">9:16 · VERTICAL</option><option value="1080,1080" selected>1:1</option><option value="1080,1350">4:5</option><option value="custom">CUSTOM</option></select>
+          <div class="export-size">
+            <input
+              id="exportW"
+              type="number"
+              min="256"
+              max="8192"
+              value="1080"
+            /><span>×</span
+            ><input
+              id="exportH"
+              type="number"
+              min="256"
+              max="8192"
+              value="1080"
+            />
+          </div>
+          <small>Preview, PNG, and recording share this native coordinate space.</small>
+          <div class="video-export">
+            <h3>LIVE OUTPUT RECORDING</h3>
+            <div class="export-size">
+              <input
+                id="videoW"
+                aria-label="Video width"
+                type="number"
+                min="256"
+                max="3840"
+                value="1080"
+              /><span>×</span
+              ><input
+                id="videoH"
+                aria-label="Video height"
+                type="number"
+                min="256"
+                max="3840"
+                value="1080"
+              />
+            </div>
+            <div class="video-settings">
+              <label
+                ><span>MAX SECONDS</span
+                ><input
+                  id="videoDuration"
+                  type="number"
+                  min="1"
+                  max="300"
+                  value="30" /></label
+              ><label
+                ><span>FPS</span
+                ><select id="videoFps">
+                  <option>24</option>
+                  <option selected>30</option>
+                  <option>60</option>
+                </select></label
+              ><label
+                ><span>FORMAT</span
+                ><select id="videoFormat">
+                  <option value="mp4" selected>MP4</option>
+                  <option value="webm">WEBM</option>
+                </select></label
+              >
+            </div>
+            <button id="centerRecording" class="center-recording">
+              ◎ CENTER FOR RECORDING</button
+            ><label class="auto-center-recording"
+              ><input id="autoCenterRecording" type="checkbox" checked />
+              AUTO-CENTER WHEN RECORDING STARTS</label
+            ><button id="exportVideo" class="video-button">
+              ● RECORD LIVE OUTPUT
+            </button>
+            <div id="videoProgress" class="video-progress"><i></i></div>
+            <small
+              >Centers only the completed output. Source and mirror geometry
+              remain unchanged.</small
+            >
+          </div>
+        </section>
+      </aside>
+    </main>
+    <div id="toast" role="status"></div>
+    <dialog id="loopPreviewDialog">
+      <h2>OUTPUT LOOP PREVIEW</h2>
+      <video id="loopPreviewVideo" controls loop playsinline></video>
+      <p id="loopPreviewInfo"></p>
+      <div class="button-row"><button id="saveOutputLoop" class="primary">SAVE LOOP</button><button id="closeLoopPreview">CLOSE</button></div>
+    </dialog>
+  </body>
+</html>

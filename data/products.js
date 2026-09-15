@@ -8,8 +8,8 @@ export const products = [
       "visual"
     ],
     "appUrl": "apps/moirefield/",
-    "shortDescription": "Layer lines, grids, rings and waves, then change their spacing and rotation to draw optical interference art.",
-    "longDescription": "MoiréField is a moiré pattern generator by Travers MacMaster. Layer lines, grids, rings and waves, then change their spacing and rotation to draw optical interference art.",
+    "shortDescription": "MoiréField is an interactive animated moiré pattern generator for creating optical interference, layered geometric patterns and evolving moiré effects directly in the browser.",
+    "longDescription": "MoiréField is an interactive animated moiré pattern generator for creating optical interference, layered geometric patterns and evolving moiré effects directly in the browser.",
     "image": "assets/products/moirefield/interface.png",
     "heroImage": "assets/products/moirefield/interface.png",
     "platform": "Windows + Web",
@@ -50,8 +50,8 @@ export const products = [
     "disciplines": [
       "visual"
     ],
-    "shortDescription": "Repeat geometric cross-sections through depth, then shape the path, distortion and palette to create tunnel animation and still artwork.",
-    "longDescription": "TunnelField is a generative tunnel visualizer by Travers MacMaster. Repeat geometric cross-sections through depth, then shape the path, distortion and palette to create tunnel animation and still artwork.",
+    "shortDescription": "TunnelField is an animated tunnel generator for creating evolving geometric tunnels, optical depth effects, psychedelic motion and experimental generative visuals.",
+    "longDescription": "TunnelField is an animated tunnel generator for creating evolving geometric tunnels, optical depth effects, psychedelic motion and experimental generative visuals.",
     "image": "assets/products/tunnelfield/interface.png",
     "heroImage": "assets/products/tunnelfield/interface.png",
     "platform": "Windows + Web",
@@ -59,7 +59,7 @@ export const products = [
     "vst3": false,
     "status": "STUDIO INSTRUMENT",
     "homePreview": true,
-    "headline": "generative tunnel visualizer",
+    "headline": "psychedelic tunnel generator",
     "exhibitNotes": "GEOMETRY / DEPTH / MOTION",
     "toolsUsedIn": [],
     "features": [
@@ -138,8 +138,8 @@ export const products = [
       "visual"
     ],
     "category": "Audio / video mosh instrument",
-    "shortDescription": "Combine video sources, transfer motion and shape audio corruption to create experimental glitch videos.",
-    "longDescription": "AuViMosh is an audio and video datamoshing tool by Travers MacMaster. Combine video sources, transfer motion and shape audio corruption to create experimental glitch videos.",
+    "shortDescription": "AuViMosh is a browser-based datamosh and glitch video editor for transforming video through motion, compression artifacts, visual analysis and experimental image processing.",
+    "longDescription": "AuViMosh is a browser-based datamosh and glitch video editor for transforming video through motion, compression artifacts, visual analysis and experimental image processing.",
     "image": "assets/products/avm/ui-2026-trim.png",
     "heroImage": "assets/products/avm/ui-2026-trim.png",
     "platform": "Web + Windows",
@@ -154,7 +154,7 @@ export const products = [
     "githubUrl": "https://github.com/",
     "patreonUrl": "https://www.patreon.com/",
     "featured": true,
-    "headline": "audio and video datamoshing tool",
+    "headline": "datamosh editor",
     "homePreview": true,
     "exhibitNotes": "DATAMOSH / AUDIO MOSH / VIDEO PROCESSING",
     "toolsUsedIn": [],
@@ -309,9 +309,9 @@ export const products = [
       "Adjust the mirror geometry and source position. Use Auto Movement to explore changing symmetry.",
       "Choose the output dimensions and save a PNG or record video. Seamless output-loop encoding is available in the Windows app."
     ],
-    "longDescription": "KaleidoField is a kaleidoscope image and video maker by Travers MacMaster. Reflect an image, video or generated light field through adjustable mirrors to create moving symmetry.",
-    "shortDescription": "Reflect an image, video or generated light field through adjustable mirrors to create moving symmetry.",
-    "headline": "kaleidoscope image and video maker",
+    "longDescription": "KaleidoField is an interactive video and image kaleidoscope generator for transforming visual media into animated radial patterns, symmetry and experimental kaleidoscopic art.",
+    "shortDescription": "KaleidoField is an interactive video and image kaleidoscope generator for transforming visual media into animated radial patterns, symmetry and experimental kaleidoscopic art.",
+    "headline": "kaleidoscope generator",
     "exhibitNotes": "KALEIDOSCOPE IMAGE AND VIDEO MAKER",
     "examples": [
       {
@@ -341,8 +341,8 @@ export const products = [
       "Draw passes, change the pen style and layer the resulting geometric paths.",
       "Set the canvas dimensions, export PNG or SVG, or record the drawing in motion."
     ],
-    "longDescription": "Guilloché is a guilloché pattern generator by Travers MacMaster. Combine rotating geometry and oscillators to draw intricate engraving patterns, then export PNG or SVG artwork.",
-    "shortDescription": "Combine rotating geometry and oscillators to draw intricate engraving patterns, then export PNG or SVG artwork.",
+    "longDescription": "Guilloché is an interactive guilloché pattern generator for creating intricate mathematical curves, geometric line art and layered ornamental patterns in the browser.",
+    "shortDescription": "Guilloché is an interactive guilloché pattern generator for creating intricate mathematical curves, geometric line art and layered ornamental patterns in the browser.",
     "headline": "guilloché pattern generator",
     "exhibitNotes": "GEOMETRIC ENGRAVING INSTRUMENT",
     "examples": [
@@ -373,9 +373,9 @@ export const products = [
       "Run the drawing and change phase, damping and pen settings to shape the curve.",
       "Commit drawings to layers, choose the canvas size and export the composition as SVG or PNG."
     ],
-    "longDescription": "Harmano is a harmonograph drawing simulator by Travers MacMaster. Tune damped oscillators to trace flowing curves, combine drawings in layers and export vector or raster artwork.",
-    "shortDescription": "Tune damped oscillators to trace flowing curves, combine drawings in layers and export vector or raster artwork.",
-    "headline": "harmonograph drawing simulator",
+    "longDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
+    "shortDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
+    "headline": "harmonograph generator",
     "exhibitNotes": "DIGITAL HARMONOGRAPH",
     "examples": [
       {
@@ -405,9 +405,9 @@ export const products = [
       "Explore motion and accumulation; use Auto Movement to vary controls over time.",
       "Set the canvas size, save a PNG or record the changing field as WebM in the browser."
     ],
-    "longDescription": "Interference Field is a rotational interference art generator by Travers MacMaster. Change overlapping geometry and rotation to explore beating patterns, accumulated trails and moving line art.",
-    "shortDescription": "Change overlapping geometry and rotation to explore beating patterns, accumulated trails and moving line art.",
-    "headline": "rotational interference art generator",
+    "longDescription": "Interference Field is an animated interference pattern generator for exploring overlapping waves, optical interference, geometric interactions and evolving generative patterns.",
+    "shortDescription": "Interference Field is an animated interference pattern generator for exploring overlapping waves, optical interference, geometric interactions and evolving generative patterns.",
+    "headline": "interference pattern generator",
     "exhibitNotes": "ROTATIONAL INTERFERENCE INSTRUMENT",
     "examples": [
       {
@@ -437,9 +437,9 @@ export const products = [
       "Paint with image brushes, create living video regions and use mosh or damage tools to reshape the artwork.",
       "Save the project or export a still. Motion export uses FFmpeg installed on the computer. A browser edition is not yet available."
     ],
-    "longDescription": "MoshPaint is glitch painting software by Travers MacMaster, developed as MoshPaint 2 Alpha. Paint with image and video pigment, distort strokes and build artwork with living video regions.",
-    "shortDescription": "Paint with image and video pigment, distort strokes and build artwork with living video regions.",
-    "headline": "glitch painting software",
+    "longDescription": "MoshPaint is a Windows glitch art editor and experimental painting tool for painting, distorting, transforming and animating images and video through unconventional digital processes.",
+    "shortDescription": "MoshPaint is a Windows glitch art editor and experimental painting tool for painting, distorting, transforming and animating images and video through unconventional digital processes.",
+    "headline": "glitch art editor",
     "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
     "examples": [
       {

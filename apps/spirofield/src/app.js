@@ -12,6 +12,7 @@ import {
 } from "./geometry.js";
 import { History, snapshotState } from "./history.js";
 import { createRecorder } from "./recorder.js";
+import { badgeReady, brandedSvg, drawBadge } from "./export-badge.js";
 import { abuseMechanicalPath, defaultMechanicalAbuse } from "./mechanical-abuse.js";
 import {
   autosave,
@@ -603,6 +604,7 @@ function renderExport(c, width, height, transparent = false, recording = false) 
   const visible = artworkLayers(),
     s = recording ? fitScale(width, height) : exportScale(width, height, visible);
   for (const l of visible) strokeLayer(l, ex, width, height, s);
+  drawBadge(ex, width, height, "SpiroField");
 }
 function svgMarkup(width, height, transparent) {
   const visible = artworkLayers(),
@@ -847,7 +849,7 @@ $("#exportPng").onclick = () => {
   $("#pngDialog").showModal();
 };
 $("#pngPreset").onchange = (e) => setExportSize("png", e.target.value);
-$("#confirmPng").onclick = (e) => {
+$("#confirmPng").onclick = async (e) => {
   e.preventDefault();
   const w = +$("#pngWidth").value,
     h = +$("#pngHeight").value;
@@ -855,6 +857,7 @@ $("#confirmPng").onclick = (e) => {
   const c = document.createElement("canvas");
   c.width = w;
   c.height = h;
+  await badgeReady();
   renderExport(c, w, h, $("#pngTransparent").checked);
   saveExport({
     data: c.toDataURL("image/png").split(",")[1],
@@ -870,13 +873,14 @@ $("#exportSvg").onclick = () => {
   $("#svgDialog").showModal();
 };
 $("#svgPreset").onchange = (e) => setExportSize("svg", e.target.value);
-$("#confirmSvg").onclick = (e) => {
+$("#confirmSvg").onclick = async (e) => {
   e.preventDefault();
   const w = +$("#svgWidth").value,
     h = +$("#svgHeight").value;
   if (w < 256 || h < 256 || w > 12000 || h > 12000) return;
+  const branded = await brandedSvg(svgMarkup(w, h, $("#svgTransparent").checked), w, h, "SpiroField");
   saveExport({
-    data: svgMarkup(w, h, $("#svgTransparent").checked),
+    data: branded,
     defaultName: `spirofield-${w}x${h}.svg`,
     filters: [{ name: "SVG", extensions: ["svg"] }],
     encoding: "utf8",
@@ -918,6 +922,7 @@ for (const input of $$('[data-lab]')) input.oninput = e => { setNested(state.mec
 $("#resetLab").onclick = () => { state.mechanicalAbuse = defaultMechanicalAbuse(); $("#labEnabled").checked = false; for (const input of $$('[data-lab]')) { const parts=input.dataset.lab.split('.'); input.value=state.mechanicalAbuse[parts[0]][parts[1]]; } rebuildLabPath(); };
 new ResizeObserver(resize).observe(canvas);
 async function boot() {
+  await badgeReady();
   let recovery = null;
   try {
     if (window.spiroDesktop) {

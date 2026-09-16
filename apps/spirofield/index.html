@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#1c1d1a" />
+    <meta name="description" content="A tactile digital spirograph studio" />
+    <title>SPIROFIELD</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/recorder.css" />
+  <meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/spirofield/"></head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="brand">
+          <span class="brand-mark">◎</span>
+          <div>
+            <h1>SPIROFIELD</h1>
+            <p>DIGITAL SPIROGRAPH · 0.2</p>
+          </div>
+        </div>
+        <div class="project-actions">
+          <button id="undo" class="quiet" title="Undo (Ctrl+Z)" disabled>
+            ↶ Undo</button
+          ><button id="redo" class="quiet" title="Redo (Ctrl+Y)" disabled>
+            ↷ Redo</button
+          ><span class="divider"></span
+          ><button id="newProject" class="quiet">New</button
+          ><button id="openProject" class="quiet">Open</button
+          ><button id="saveProject" class="quiet" title="Save (Ctrl+S)">
+            Save</button
+          ><span class="divider"></span><button id="exportSvg">SVG</button
+          ><button id="exportPng">PNG</button>
+        </div>
+      </header>
+      <div id="recoveryBar" class="recovery hidden" role="status">
+        <span>Recovered your autosaved session.</span
+        ><button id="discardRecovery">Dismiss</button>
+      </div>
+      <main>
+        <aside class="left panel">
+          <div class="segment">
+            <button data-workspace="classic" class="active">CLASSIC</button
+            ><button data-workspace="lab">LAB</button>
+          </div>
+          <section>
+            <div class="section-head">
+              <label>RING</label><strong id="ringReadout">96</strong>
+            </div>
+            <div id="rings" class="piece-grid"></div>
+            <div id="labRing" class="lab-input hidden">
+              <input
+                id="ringInput"
+                aria-label="Ring teeth"
+                type="number"
+                min="20"
+                max="500"
+                value="96"
+              /><span>TEETH</span>
+            </div>
+          </section>
+          <section>
+            <div class="section-head">
+              <label>WHEEL</label><strong id="wheelReadout">32</strong>
+            </div>
+            <div id="wheels" class="piece-grid wheel-grid"></div>
+            <div id="labWheel" class="lab-input hidden">
+              <input
+                id="wheelInput"
+                aria-label="Wheel teeth"
+                type="number"
+                min="3"
+                max="250"
+                value="32"
+              /><span>TEETH</span>
+            </div>
+          </section>
+          <section>
+            <label>ROLLING POSITION</label>
+            <div class="segment mode">
+              <button data-mode="inside" class="active">Inside Ring</button
+              ><button data-mode="outside">Outside Ring</button>
+            </div>
+          </section>
+          <section>
+            <div class="section-head">
+              <label>PEN HOLE</label><strong id="holeReadout">3</strong>
+            </div>
+            <div class="hole-nav">
+              <button id="prevHole" aria-label="Previous pen hole">←</button>
+              <div id="holes" class="holes"></div>
+              <button id="nextHole" aria-label="Next pen hole">→</button>
+            </div>
+          </section>
+          <p id="validation" class="validation" role="alert"></p>
+          <details class="lab-abuse">
+            <summary>MECHANICAL ABUSE</summary>
+            <label class="check"><input id="labEnabled" type="checkbox" /> ENGAGE LAB</label>
+            <label>GEAR SLIP <input data-lab="gearSlip.amount" type="range" min="0" max="20" step="0.2" value="0" /></label>
+            <label>SLIP FREQUENCY <input data-lab="gearSlip.frequency" type="range" min="0" max="1" step="0.01" value="0" /></label>
+            <label>BACKLASH <input data-lab="backlash.amount" type="range" min="0" max="12" step="0.1" value="0" /></label>
+            <label>WOBBLE <input data-lab="wobble.amount" type="range" min="0" max="12" step="0.1" value="0" /></label>
+            <label>PEN FLEX <input data-lab="penFlex.flex" type="range" min="0" max="8" step="0.1" value="0" /></label>
+            <label>INK BLEED <input data-lab="inkBleed.bleed" type="range" min="0" max="3" step="0.05" value="0" /></label>
+            <label>PEN LIFT <input data-lab="penLift.probability" type="range" min="0" max="0.8" step="0.01" value="0" /></label>
+            <label>BROKEN TOOTH <input data-lab="brokenTooth.amount" type="range" min="0" max="20" step="0.2" value="0" /></label>
+            <label>TOOTH PHASE <input data-lab="brokenTooth.phase" type="range" min="0" max="1" step="0.01" value="0.5" /></label>
+            <button id="resetLab" type="button">RESET LAB</button>
+          </details>
+          <section>
+            <label>CANVAS</label>
+            <div class="dimension-row">
+              <input
+                id="canvasWidth"
+                aria-label="Canvas width"
+                type="number"
+                min="256"
+                max="12000"
+                value="1600"
+              /><span>×</span
+              ><input
+                id="canvasHeight"
+                aria-label="Canvas height"
+                type="number"
+                min="256"
+                max="12000"
+                value="1200"
+              /><span>PX</span>
+            </div>
+            <div class="preset-row">
+              <button data-canvas="1200x1200">Square</button
+              ><button data-canvas="1600x1200">4:3</button
+              ><button data-canvas="1920x1080">HD</button>
+            </div>
+          </section>
+        </aside>
+        <section class="stage">
+          <canvas id="canvas" aria-label="Spirograph drawing canvas"></canvas>
+          <div class="canvas-top">
+            <label class="switch"
+              ><input
+                id="mechanismToggle"
+                type="checkbox"
+                checked
+              /><span></span>SHOW MECHANISM</label
+            ><button id="fitView" class="canvas-button">Fit view</button>
+          </div>
+          <div id="emptyHint" class="empty-hint">
+            <b>Choose a hole. Press Draw.</b
+            ><span
+              >Watch the wheel roll, or complete the pattern instantly.</span
+            >
+          </div>
+        </section>
+        <aside class="right panel">
+          <section>
+            <div class="section-head">
+              <label id="penLabel">PEN · NEW PATTERN</label
+              ><button id="deselectLayer" class="mini hidden">
+                Done editing
+              </button>
+            </div>
+            <div class="color-row">
+              <input
+                id="lineColor"
+                aria-label="Line color"
+                type="color"
+                value="#ff5d47"
+              /><span id="lineHex">#FF5D47</span>
+            </div>
+            <div class="field">
+              <div><label>WIDTH</label><output id="widthOut">2.0</output></div>
+              <input
+                id="lineWidth"
+                aria-label="Line width"
+                type="range"
+                min="0.5"
+                max="12"
+                step="0.5"
+                value="2"
+              />
+            </div>
+            <div class="field">
+              <div>
+                <label>OPACITY</label><output id="opacityOut">100%</output>
+              </div>
+              <input
+                id="opacity"
+                aria-label="Line opacity"
+                type="range"
+                min="10"
+                max="100"
+                value="100"
+              />
+            </div>
+            <div class="field">
+              <div>
+                <label>BACKGROUND COLOR</label
+                ><input
+                  id="bgColor"
+                  aria-label="Background color"
+                  type="color"
+                  value="#f2ead8"
+                />
+              </div>
+            </div>
+          </section>
+          <section class="pattern-info">
+            <label class="check"><input id="transparentBackground" type="checkbox" /> Transparent background</label>
+            <small class="transparency-help">Checkerboard is preview only. PNG/SVG export follows this setting; you can override it in the export dialog.</small>
+          </section>
+          <div id="recordingPanel"></div>
+          <section class="pattern-info">
+            <label>PATTERN INFO</label>
+            <dl>
+              <div>
+                <dt>Ring</dt>
+                <dd id="infoRing">96 teeth</dd>
+              </div>
+              <div>
+                <dt>Wheel</dt>
+                <dd id="infoWheel">32 teeth</dd>
+              </div>
+              <div>
+                <dt>Hole</dt>
+                <dd id="infoHole">3</dd>
+              </div>
+              <div>
+                <dt>Ratio</dt>
+                <dd id="infoRatio">3 : 1</dd>
+              </div>
+              <div>
+                <dt>Symmetry</dt>
+                <dd id="infoSymmetry">3-fold</dd>
+              </div>
+              <div>
+                <dt>Closed</dt>
+                <dd class="closed">● YES</dd>
+              </div>
+            </dl>
+          </section>
+          <section class="layers-section">
+            <div class="section-head">
+              <label>LAYERS</label><span id="layerCount">0</span>
+            </div>
+            <div id="layers" class="layers">
+              <p class="no-layers">Completed patterns stay here.</p>
+            </div>
+          </section>
+        </aside>
+      </main>
+      <footer>
+        <div class="transport">
+          <button id="reset" title="Reset progress">↶</button
+          ><button id="draw" class="primary" title="Draw (Space)">▶ DRAW</button
+          ><button id="pause" disabled>Ⅱ PAUSE</button
+          ><button id="complete" title="Complete pattern (Enter)">
+            COMPLETE PATTERN</button
+          ><button id="clear" class="danger">CLEAR</button>
+        </div>
+        <div class="speed">
+          <label>SPEED</label><span>Slow</span
+          ><input
+            id="speed"
+            aria-label="Drawing speed"
+            type="range"
+            min="1"
+            max="100"
+            value="36"
+          /><span>Instant</span>
+        </div>
+        <div class="status">
+          <i id="statusDot"></i><span id="statusText">READY</span
+          ><span id="progressText">0%</span>
+        </div>
+      </footer>
+      <dialog id="pngDialog">
+        <form method="dialog">
+          <h2>Export PNG</h2>
+          <label
+            >SIZE PRESET<select id="pngPreset">
+              <option value="canvas">Canvas size</option>
+              <option value="web">Web · 1920 × 1080</option>
+              <option value="square">Square · 2048 × 2048</option>
+              <option value="print">Print · 4800 × 3600</option>
+              <option value="custom">Custom</option>
+            </select></label
+          >
+          <div class="export-dimensions">
+            <input
+              id="pngWidth"
+              aria-label="PNG width"
+              type="number"
+              min="256"
+              max="12000"
+            /><span>×</span
+            ><input
+              id="pngHeight"
+              aria-label="PNG height"
+              type="number"
+              min="256"
+              max="12000"
+            />
+          </div>
+          <label class="check"
+            ><input id="pngTransparent" type="checkbox" /> Transparent
+            background</label
+          ><small
+            >Transparent export removes the canvas background while preserving
+            layer opacity.</small
+          >
+          <div>
+            <button value="cancel" class="quiet">Cancel</button
+            ><button id="confirmPng" value="default" class="primary">
+              Export PNG
+            </button>
+          </div>
+        </form>
+      </dialog>
+      <dialog id="svgDialog">
+        <form method="dialog">
+          <h2>Export SVG</h2>
+          <label
+            >CANVAS<select id="svgPreset">
+              <option value="canvas">Current canvas</option>
+              <option value="square">Square · 2048 × 2048</option>
+              <option value="custom">Custom</option>
+            </select></label
+          >
+          <div class="export-dimensions">
+            <input
+              id="svgWidth"
+              aria-label="SVG width"
+              type="number"
+              min="256"
+              max="12000"
+            /><span>×</span
+            ><input
+              id="svgHeight"
+              aria-label="SVG height"
+              type="number"
+              min="256"
+              max="12000"
+            />
+          </div>
+          <label class="check"
+            ><input id="svgTransparent" type="checkbox" /> Transparent
+            background</label
+          ><small>Paths remain true editable vectors.</small>
+          <div>
+            <button value="cancel" class="quiet">Cancel</button
+            ><button id="confirmSvg" value="default" class="primary">
+              Export SVG
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <script type="module" src="src/app.js"></script>
+    <script>
+      if (location.protocol.startsWith("http") && "serviceWorker" in navigator)
+        navigator.serviceWorker.register("./service-worker.js");
+    </script>
+  </body>
+</html>

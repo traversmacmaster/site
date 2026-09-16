@@ -4,7 +4,7 @@ Static, GitHub Pages-compatible site for Travers MacMaster's art, sound, experim
 
 The approved visual system uses warm ivory, black ink, fine rules, Cinzel headings, Source Sans 3 body/UI text, and IBM Plex Mono technical labels. Fonts and their open-source licenses are served locally from `assets/fonts/`. The harmonic SVG is an original mathematical plot; the social preview is generated artwork.
 
-The complete machine catalog lives in `data/products.js`. The homepage, searchable Machines collection, Audio, Lab, and machine details read this catalog. `catalog.js` shares card rendering; `site.js` handles the accessible search dialog and mobile navigation. All thirteen catalog machines have static, crawlable detail pages. AuViMosh and ReelVault retain their existing live application links. Embedded app source and interfaces are unchanged.
+The complete machine catalog lives in `data/products.js`. The homepage, searchable Machines collection, Audio, Lab, and machine details read this catalog. `catalog.js` shares card rendering; `site.js` handles the accessible search dialog and mobile navigation. All fourteen catalog machines have static, crawlable detail pages. Browser builds, including SpiroField, are staged beneath `apps/`; app source remains owned by each machine project.
 
 `data/content.js` retains the previous editorial model for future artwork and social links; it is not currently rendered. Do not expose its unfinished placeholder content. Legacy commerce fields remain in the product catalog but are not displayed.
 
@@ -30,6 +30,6 @@ MoiréField uses the original full product screenshot and a VP9 WebM conversion 
 
 ## Web launch / SEO preparation
 
-The eight launch machines have descriptive search intents and short usage instructions maintained in ../launch-content.json. Run node ../build-launch.mjs to regenerate static product pages, main-page metadata, crawlable catalog cards, sitemap.xml, robots.txt and the review report. Run node ../build-web.mjs to rebuild the seven available browser apps first. App shells and historical backups use noindex,follow; canonical editorial/product pages are indexable. Existing production hosting is unchanged. No pricing, reviews or licensing has been invented in structured data.
+The nine launch machines have descriptive search intents and short usage instructions maintained in ../launch-content.json. Run node ../build-launch.mjs to regenerate static product pages, main-page metadata, crawlable catalog cards, sitemap.xml, robots.txt and the review report. Run node ../build-web.mjs to rebuild the eight available browser apps first. App shells and historical backups use noindex,follow; canonical editorial/product pages are indexable. Existing production hosting is unchanged. No pricing, reviews or licensing has been invented in structured data.
 
 The shared Free export badge uses locally bundled IBM Plex Mono Medium. Export source changes are separate from previously packaged Windows EXEs. See ../WEB-LAUNCH-REVIEW.md for exact keyword/metadata choices, tested behavior and remaining release steps.

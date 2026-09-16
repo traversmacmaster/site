@@ -448,6 +448,38 @@ export const products = [
         "caption": "Exported artwork study"
       }
     ]
+  },
+  {
+    "slug": "spirofield",
+    "name": "SpiroField",
+    "category": "Digital spirograph drawing instrument",
+    "platform": "Windows + Web",
+    "appUrl": "apps/spirofield/",
+    "disciplines": [
+      "visual"
+    ],
+    "standalone": true,
+    "vst3": false,
+    "status": "BROWSER PREVIEW",
+    "image": "assets/products/spirofield/interface.png",
+    "heroImage": "assets/products/spirofield/interface.png",
+    "homePreview": true,
+    "features": [
+      "Choose a ring, rolling wheel, pen hole and inside or outside drawing mode.",
+      "Press Draw to watch the mechanism, or complete the curve instantly; layer additional patterns and use Lab controls for mechanical variation.",
+      "Set the canvas and export size, then save the composition as PNG or vector SVG."
+    ],
+    "longDescription": "SpiroField is an interactive digital spirograph for drawing layered hypotrochoid and epitrochoid curves with tactile ring, wheel and pen-hole controls.",
+    "shortDescription": "SpiroField is an interactive digital spirograph for drawing layered hypotrochoid and epitrochoid curves with tactile ring, wheel and pen-hole controls.",
+    "headline": "digital spirograph",
+    "exhibitNotes": "DIGITAL SPIROGRAPH DRAWING INSTRUMENT",
+    "examples": [
+      {
+        "src": "assets/products/spirofield/output-example.png",
+        "alt": "Artwork output from SpiroField",
+        "caption": "Exported artwork study"
+      }
+    ]
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

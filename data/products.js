@@ -1,6 +1,42 @@
 // Catalog source; launch descriptions are maintained in ../launch-content.json.
 export const products = [
   {
+    "name": "Video Mosaic",
+    "slug": "video-mosaic",
+    "category": "Moving video mosaic maker",
+    "disciplines": [
+      "visual"
+    ],
+    "appUrl": "apps/video-mosaic/",
+    "shortDescription": "Video Mosaic is a video mosaic maker that turns a photograph into a larger moving composition built from individually animated video clips and tiles.",
+    "longDescription": "Video Mosaic is experimental video art software for creating a larger visual composition from individually moving video clips, arranged as animated tiles inside a painted region of a photograph.",
+    "image": "assets/products/video-mosaic/interface.png",
+    "heroImage": "assets/products/video-mosaic/interface.png",
+    "platform": "Windows + Web",
+    "standalone": true,
+    "vst3": false,
+    "status": "BROWSER PREVIEW",
+    "homePreview": false,
+    "headline": "video mosaic maker",
+    "exhibitNotes": "MOVING VIDEO TILES / PAINTED MASK / ANIMATED MOSAIC",
+    "toolsUsedIn": [],
+    "features": [
+      "Paint the part of a photograph that becomes a moving mosaic",
+      "Build the mosaic from multiple imported video clips",
+      "Match video tiles by target color and luminance",
+      "Control tile size, loop length, seed and animated tile-size sweeps",
+      "Save projects and export PNG frames, MP4 or WebM recordings",
+      "Process imported media locally in the browser"
+    ],
+    "examples": [
+      {
+        "src": "assets/products/video-mosaic/moving-video-mosaic-frame.png",
+        "alt": "A portrait reconstructed as a mosaic made from many small moving video tiles",
+        "caption": "Moving video mosaic — exported frame"
+      }
+    ]
+  },
+  {
     "name": "MoiréField",
     "slug": "moirefield",
     "category": "Optical interference drawing instrument",

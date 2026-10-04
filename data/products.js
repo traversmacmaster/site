@@ -295,7 +295,8 @@ export const products = [
     "homePreview": false,
     "exhibitNotes": "ARCHIVE SEARCH / WATCH / COLLECT",
     "toolsUsedIn": [],
-    "features": []
+    "features": [],
+    "collection": "other"
   },
   {
     "name": "DrawTable",
@@ -516,6 +517,31 @@ export const products = [
         "caption": "Exported artwork study"
       }
     ]
+  },
+  {
+    "name": "DCLASS",
+    "slug": "dclass",
+    "collection": "other",
+    "category": "Document research system",
+    "disciplines": [
+      "research"
+    ],
+    "shortDescription": "Search public documents and government publications while keeping every record connected to its source.",
+    "longDescription": "DCLASS combines public DocumentCloud documents and GovInfo publications in one research interface. Search live public records with source provenance and independent pagination.",
+    "image": "assets/products/dclass/logo.png",
+    "heroImage": "assets/products/dclass/logo.png",
+    "platform": "Web",
+    "status": "LIVE",
+    "appUrl": "apps/dclass/",
+    "homePreview": false,
+    "features": [
+      "DocumentCloud public search",
+      "GovInfo publications",
+      "Source provenance",
+      "Independent pagination"
+    ],
+    "standalone": false,
+    "vst3": false
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

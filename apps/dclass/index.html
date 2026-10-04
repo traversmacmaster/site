@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DClass — public records research. Follow the record. Keep the source.">
+  <meta name="color-scheme" content="dark"><title>DClass · Public records research</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e100e'/%3E%3Ctext x='5' y='24' fill='%23b6c78d' font-family='monospace' font-size='25'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead"><a class="wordmark" href="./" aria-label="DClass home"><img class="header-logo" src="./assets/dclass-logo.png" alt="DCLASS" width="1768" height="887"></a><div class="mast-meta">PUBLIC RECORDS RESEARCH<span>OPEN SOURCE INTELLIGENCE / V0.2</span></div><span class="version">PUBLIC ACCESS</span></header>
+  <main>
+    <section class="intro" aria-labelledby="headline"><div class="intro-copy"><div class="eyebrow"><span class="signal"></span> THE PUBLIC RECORD, CONNECTED</div><h1 id="headline">Follow the record.<br><span>Keep the source.</span></h1><p>Search the paper trail. Explore public records and the requests<br class="desktop"> that bring them into the light.</p></div><img class="hero-logo" src="./assets/dclass-logo.png" alt="DCLASS — Document Research System" width="1768" height="887" fetchpriority="high"></section>
+    <section class="workspace" aria-label="Research workspace">
+      <aside class="sidebar"><div class="section-label">01 / SOURCES</div><h2>Source network</h2><p class="aside-note">One search. A growing archive.</p>
+        <div class="providers"><div class="provider active"><span class="provider-name">DocumentCloud</span><span class="badge live">PUBLIC</span><small>Public primary-source documents</small></div><div class="provider"><span class="provider-name">GovInfo</span><span class="badge" id="govinfo-state">CONFIG REQUIRED</span><small>U.S. government publications</small></div><div class="provider"><span class="provider-name">National Archives</span><span class="badge">PLANNED</span><small>Provider not implemented</small></div></div><div class="source-note"><span>↗</span><p>Every record keeps its origin.<br>Always verify at the source.</p></div>
+        <p class="live-note">LIVE marks the enabled adapter. Source availability is checked when you search.</p>
+      </aside>
+      <div class="research"><div class="section-label">02 / DISCOVERY</div><form id="search-form"><label for="query">Search the public record</label><div class="source-picker"><label for="source">SEARCH SOURCE</label><select id="source"><option value="combined">DocumentCloud + GovInfo</option><option value="documentcloud">DocumentCloud</option><option value="govinfo">GovInfo</option><option value="nara">National Archives · planned</option></select></div><div class="search-row"><span class="search-icon" aria-hidden="true">⌕</span><input id="query" name="q" type="search" maxlength="200" placeholder="A project, an agency, a question…" required autocomplete="off"><button id="search-button" type="submit">SEARCH <span aria-hidden="true">↗</span></button></div></form><div class="suggestions"><span>START WITH</span><button data-query="MKULTRA">MKULTRA</button><button data-query="PROJECT BLUE BOOK">PROJECT BLUE BOOK</button><button data-query="STARGATE">STARGATE</button><button data-query="UFO">UFO</button></div>
+        <div class="results-toolbar"><h2 id="results-heading">Research index</h2><span id="result-count">AWAITING QUERY</span></div><div id="notice" role="status" aria-live="polite"></div><div id="results" aria-busy="false"><div class="empty-state"><div class="archive-mark" aria-hidden="true"><span></span><span></span><span></span></div><h3>Start with a question.</h3><p>Search a subject to trace its public record.<br>Results will appear here, with links to their original sources.</p><div class="empty-foot">PUBLIC RECORDS · ORIGINAL SOURCES · OPEN INQUIRY</div></div></div><button id="load-more" class="secondary" hidden>LOAD MORE RECORDS ↓</button>
+      </div>
+    </section>
+    <section class="method"><span class="section-label">THE METHOD</span><p>Find the record.<span>→</span>Read the context.<span>→</span>Return to the source.</p><span class="method-note">Records are evidence. Context is essential.</span></section>
+  </main>
+  <footer><span>DCLASS_ / AN OPEN RECORD</span><span><a id="foia-link" href="https://www.muckrock.com/" target="_blank" rel="noopener noreferrer">File a FOIA with MuckRock ↗</a></span></footer>
+  <dialog id="detail" aria-label="Record details"><div class="dialog-top"><span class="section-label">RECORD / DETAIL</span><button id="close-detail" aria-label="Close record details">✕</button></div><div id="detail-content"></div></dialog>
+</body>
+</html>
+
+

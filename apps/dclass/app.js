@@ -3,7 +3,7 @@ const $ = selector => document.querySelector(selector);
 const form = $('#search-form'), input = $('#query'), results = $('#results'), notice = $('#notice'), more = $('#load-more'), dialog = $('#detail');
 let controller, records = [], currentQuery = '', nextPage = null, nextCursor = null, nextPositions = null, generation = 0;
 const source = $('#source');
-const providerNames = { combined: 'DocumentCloud + GovInfo', documentcloud: 'DocumentCloud', govinfo: 'GovInfo', nara: 'National Archives' };
+const providerNames = { combined: 'All research sources', documentcloud: 'DocumentCloud', govinfo: 'GovInfo', cia: 'CIA · Internet Archive sample', fbi: 'FBI Vault · sample', nara: 'National Archives' };
 const element = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text != null) el.textContent = text; return el; };
 const date = value => { if (!value) return 'Date unavailable'; if (!/^\d{4}-\d{2}-\d{2}(?:T|$)/.test(value)) return String(value); const d = new Date(value); return Number.isNaN(d.getTime()) ? String(value) : d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' }); };
 const display = value => value == null || value === '' ? 'Not provided' : String(value);
@@ -48,7 +48,8 @@ async function search(query, page = 1, append = false, cursor = null) {
     const ids = new Set(records.map(r => r.source + ':' + r.id)); const fresh = data.results.filter(r => { const key = r.source + ':' + r.id; if (ids.has(key)) return false; ids.add(key); return true; }); records.push(...fresh); fresh.forEach(r => results.append(card(r)));
     nextPage = data.next_page; nextCursor = data.next_cursor; nextPositions = data.next_positions; more.hidden = !nextPage && !nextCursor && !nextPositions; $('#result-count').textContent = provider === 'combined' ? `${records.length} RECORDS LOADED` : `${records.length} OF ${data.count.toLocaleString()}${data.count_is_lower_bound ? '+' : ''} RECORDS`;
     notice.textContent = data.count === 0 ? 'No public documents matched this search. Try a broader term or a different spelling.' : `${providerNames[provider]} · ${records.length} record${records.length === 1 ? '' : 's'} loaded`;
-    if (provider === 'combined') { notice.textContent = Object.entries(data.providers).map(([name, status]) => providerNames[name] + ': ' + (status.state === 'live' ? status.count + ' matches' : status.state.replaceAll('_', ' '))).join(' · '); if (data.partial) notice.className = 'error'; }
+    if (data.coverage?.state === 'sample') notice.textContent += ` · Limited ${data.coverage.records}-record sample; not the full corpus.`;
+    if (provider === 'combined') { notice.textContent = Object.entries(data.providers).map(([name, status]) => providerNames[name] + ': ' + (status.state === 'live' ? status.count + ' matches' + (status.coverage?.state === 'sample' ? ` (${status.coverage.records}-record sample)` : '') : status.state.replaceAll('_', ' '))).join(' · '); if (data.partial) notice.className = 'error'; }
     if (data.count === 0 && records.length === 0 && !data.partial) results.append(element('div', 'empty-state', 'No matching records.'));
   } catch (error) {
     if (error.name === 'AbortError') return;

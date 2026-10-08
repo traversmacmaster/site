@@ -138,8 +138,8 @@ export const products = [
     "category": "Temporal instrument",
     "shortDescription": "Six heads. Six seconds. Play the immediate past.",
     "longDescription": "TimeField continuously captures the previous six seconds of incoming audio and turns that recent history into a playable six-head temporal instrument.",
-    "image": "assets/products/timefield/ui-2026.png",
-    "heroImage": "assets/products/timefield/ui-2026.png",
+    "image": "assets/products/timefield/interface-2026-10.png",
+    "heroImage": "assets/products/timefield/interface-2026-10.png",
     "platform": "Windows",
     "standalone": true,
     "vst3": true,
@@ -164,6 +164,32 @@ export const products = [
       "Guarded feedback",
       "MIDI performance",
       "Standalone + VST3"
+    ]
+  },
+  {
+    "name": "STRETCH",
+    "slug": "stretch",
+    "disciplines": [
+      "audio"
+    ],
+    "category": "Live time bender",
+    "shortDescription": "Bend live audio with stretch, pitch, freeze and reverse controls.",
+    "longDescription": "STRETCH is a live time-bending audio instrument with stretch, pitch, window, feedback, mix and output controls. Tempo lock, freeze, reverse and an LFO section shape its temporal playback.",
+    "image": "assets/products/stretch/interface.png",
+    "heroImage": "assets/products/stretch/interface.png",
+    "platform": "Windows",
+    "status": "IN DEVELOPMENT",
+    "homePreview": false,
+    "headline": "LIVE TIME BENDER.",
+    "exhibitNotes": "STRETCH / PITCH / FREEZE / REVERSE",
+    "toolsUsedIn": [],
+    "features": [
+      "Stretch, pitch and window controls",
+      "Feedback, mix and output controls",
+      "Tempo lock",
+      "Freeze and hold freeze",
+      "Reverse playback",
+      "LFO target, waveform, sync, speed and depth controls"
     ]
   },
   {

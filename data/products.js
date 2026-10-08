@@ -164,7 +164,8 @@ export const products = [
       "Guarded feedback",
       "MIDI performance",
       "Standalone + VST3"
-    ]
+    ],
+    "whatsNew": "Updated TimeField v0.6.0 interface screenshot showing the waveform timeline, six playback heads, Record Fields and MIDI controls."
   },
   {
     "name": "STRETCH",
@@ -190,7 +191,8 @@ export const products = [
       "Freeze and hold freeze",
       "Reverse playback",
       "LFO target, waveform, sync, speed and depth controls"
-    ]
+    ],
+    "whatsNew": "New product page and interface preview for STRETCH, a live time bender with stretch, pitch, freeze, reverse and LFO controls."
   },
   {
     "name": "AuViMosh",

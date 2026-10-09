@@ -7,6 +7,6 @@ export const downloads = [
     url: '../uploads/private-beta/TSync_Deadbeat_WaveH-Beta.zip',
     checksumUrl: '../uploads/private-beta/TSync_Deadbeat_WaveH-Beta.zip.sha256',
   },
-  { slug: 'timefield', url: null },
-  { slug: 'stretch', url: null },
+  { slug: 'timefield', name: 'TimeField 0.9.0', label: 'Download Windows VST3 ↓', url: '../uploads/private-beta/TimeField-0.9.0-Windows-VST3-Beta.zip', checksumUrl: '../uploads/private-beta/TimeField-0.9.0-Windows-VST3-Beta.zip.sha256' },
+  { slug: 'stretch', name: 'STRETCH 0.3.0', label: 'Download Windows VST3 ↓', url: '../uploads/private-beta/Stretch-0.3.0-Windows-VST3-Beta.zip', checksumUrl: '../uploads/private-beta/Stretch-0.3.0-Windows-VST3-Beta.zip.sha256' },
 ];

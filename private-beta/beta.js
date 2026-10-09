@@ -8,7 +8,7 @@ for (const build of downloads) {
   const link = document.createElement('a');
   link.className = 'button primary';
   link.href = url.href;
-  link.textContent = 'Download for Windows ↓';
+  link.textContent = build.label || 'Download for Windows ↓';
   link.setAttribute('aria-label', `Download ${build.name || (build.slug === 'timefield' ? 'TimeField' : 'STRETCH')} for Windows`);
   if (url.origin === window.location.origin) link.setAttribute('download', '');
   slot.replaceChildren(link);

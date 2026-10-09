@@ -9,7 +9,17 @@ for (const build of downloads) {
   link.className = 'button primary';
   link.href = url.href;
   link.textContent = 'Download for Windows ↓';
-  link.setAttribute('aria-label', `Download ${build.slug === 'timefield' ? 'TimeField' : 'STRETCH'} for Windows`);
+  link.setAttribute('aria-label', `Download ${build.name || (build.slug === 'timefield' ? 'TimeField' : 'STRETCH')} for Windows`);
   if (url.origin === window.location.origin) link.setAttribute('download', '');
   slot.replaceChildren(link);
+  if (build.checksumUrl) {
+    const checksumUrl = new URL(build.checksumUrl, window.location.href);
+    if (checksumUrl.protocol !== 'https:' && !(checksumUrl.origin === window.location.origin && checksumUrl.protocol === 'http:')) continue;
+    const checksum = document.createElement('a');
+    checksum.className = 'text-link';
+    checksum.href = checksumUrl.href;
+    checksum.textContent = 'Download SHA-256 checksum ↓';
+    if (checksumUrl.origin === window.location.origin) checksum.setAttribute('download', '');
+    slot.append(checksum);
+  }
 }

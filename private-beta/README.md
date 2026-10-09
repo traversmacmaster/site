@@ -7,3 +7,7 @@ To enable downloads, edit `downloads.js` and replace each `null` with a quoted H
 For private files, use a download service that enforces access permissions. Files committed to this public site are publicly accessible.
 
 The page uses the main site's header, footer, locally hosted fonts and shared stylesheet, with responsive page-specific layout in `beta.css`.
+
+## T-SYNC bundle
+
+`uploads/private-beta/TSync_Deadbeat_WaveH-Beta.zip` and its adjacent `.zip.sha256` file are linked together on the page. Share both files. The ZIP contains T-SYNC, DEADBEAT, WAVE HORROR, quick-start instructions, unsigned-beta notes and individual file checksums. Both links also work without JavaScript.

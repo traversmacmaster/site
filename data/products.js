@@ -136,17 +136,17 @@ export const products = [
       "audio"
     ],
     "category": "Temporal instrument",
-    "shortDescription": "Six heads. Six seconds. Play the immediate past.",
-    "longDescription": "TimeField continuously captures the previous six seconds of incoming audio and turns that recent history into a playable six-head temporal instrument.",
-    "image": "assets/products/timefield/interface-2026-10.png",
-    "heroImage": "assets/products/timefield/interface-2026-10.png",
-    "platform": "Windows",
-    "standalone": true,
+    "shortDescription": "Record a four-bar field. Reshape it with six playback heads.",
+    "longDescription": "TimeField records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
+    "image": "assets/products/timefield/0.15.1/TimeField-PLAY.png",
+    "heroImage": "assets/products/timefield/0.15.1/TimeField-PLAY.png",
+    "platform": "Windows x64 · VST3",
+    "standalone": false,
     "vst3": true,
     "pricingType": "PREMIUM",
     "publicPrice": null,
     "membershipAvailability": true,
-    "status": "BETA",
+    "status": "0.15.1 · BETA",
     "purchaseUrl": "#purchase-coming-soon",
     "githubUrl": "https://github.com/",
     "patreonUrl": "https://www.patreon.com/",
@@ -156,16 +156,35 @@ export const products = [
     "exhibitNotes": "REALTIME RECORDING / SIX HEADS / TEMPORAL PLAYBACK",
     "toolsUsedIn": [],
     "features": [
-      "Six temporal heads",
-      "Six-second rolling field",
-      "Freeze + six Record Fields",
-      "6×16 trigger sequencer",
-      "Stretch, Reverse + Drift",
-      "Guarded feedback",
-      "MIDI performance",
-      "Standalone + VST3"
+      "Six heads with Repeat, Ping-pong, Scan and Hold playback",
+      "A and B recordings with equal-power blending",
+      "Manual recording or bar-aligned takes of 1, 2 or 4 bars",
+      "Sequences of 1, 2 or 4 bars at 1/16 or 1/32 resolution",
+      "Two LFOs per head across all six heads",
+      "Per-head Stutter and Head FX",
+      "Master saturation, bitcrush, delay and reverb",
+      "Four Scenes with Immediate, Beat or Bar recall",
+      "Windows x64 VST3 audio effect; MIDI optional"
     ],
-    "whatsNew": "Updated TimeField v0.6.0 interface screenshot showing the waveform timeline, six playback heads, Record Fields and MIDI controls."
+    "whatsNew": "TimeField 0.15.1 introduces PLAY, MODULATION and MIX / FX workspaces, retaining six playback heads and twelve LFOs, with optimized audio processing.",
+    "version": "0.15.1",
+    "screenshots": [
+      {
+        "src": "assets/products/timefield/0.15.1/TimeField-PLAY.png",
+        "caption": "PLAY",
+        "alt": "TimeField 0.15.1 PLAY workspace"
+      },
+      {
+        "src": "assets/products/timefield/0.15.1/TimeField-MODULATION.png",
+        "caption": "MODULATION",
+        "alt": "TimeField 0.15.1 MODULATION workspace"
+      },
+      {
+        "src": "assets/products/timefield/0.15.1/TimeField-MIX-FX.png",
+        "caption": "MIX / FX",
+        "alt": "TimeField 0.15.1 MIX / FX workspace"
+      }
+    ]
   },
   {
     "name": "STRETCH",

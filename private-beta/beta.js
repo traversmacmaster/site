@@ -1,4 +1,4 @@
-import { downloads } from './downloads.js';
+import { downloads } from './downloads.js?v=timefield-0.15.1';
 
 for (const build of downloads) {
   const slot = document.querySelector(`[data-download="${build.slug}"]`);

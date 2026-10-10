@@ -28,11 +28,17 @@ export const products = [
       "Save projects and export PNG frames, MP4 or WebM recordings",
       "Process imported media locally in the browser"
     ],
-    "examples": [
+    "examples": [],
+    "videos": [
       {
-        "src": "assets/products/video-mosaic/moving-video-mosaic-frame.png",
-        "alt": "A portrait reconstructed as a mosaic made from many small moving video tiles",
-        "caption": "Moving video mosaic — exported frame"
+        "src": "assets/products/video-mosaic/Somebody_12-15.webm",
+        "poster": "assets/products/video-mosaic/somebody-poster.png",
+        "label": "Somebody — video mosaic"
+      },
+      {
+        "src": "assets/products/video-mosaic/eye_square.webm",
+        "poster": "assets/products/video-mosaic/eye-poster.png",
+        "label": "Eye — video mosaic"
       }
     ]
   },
@@ -402,6 +408,13 @@ export const products = [
         "src": "assets/products/kaleidofield/output-example.png",
         "alt": "Artwork output from KaleidoField",
         "caption": "Exported artwork study"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/products/kaleidofield/KaleidoField_8-13_square.webm",
+        "poster": "assets/products/kaleidofield/kaleidofield-square-poster.png",
+        "label": "KaleidoField — square motion study"
       }
     ]
   },

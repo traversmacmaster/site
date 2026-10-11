@@ -1,4 +1,4 @@
-import { products } from './data/products.js';
+import { products } from './data/products.js?v=bottomfeeder-2026-10-11';
 import { card } from './catalog.js';
 const audio=document.querySelector('#audio-grid');
 if(audio)audio.innerHTML=products.filter(p=>p.disciplines?.includes('audio')).map((p,i)=>card(p,i)).join('');

@@ -17,7 +17,7 @@
 
 ## TOOLS
 
-- [ ] Detail-page copy and demo media for HEXIT:B, HEXIT:A, ReelVault, and DrawTable
+- [ ] Detail-page copy and demo media for BOTTOMFEEDER, ReelVault, and DrawTable
 - [ ] Made-with artwork for RECkd and AuViMosh
 
 ## ABOUT

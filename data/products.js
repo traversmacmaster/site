@@ -266,60 +266,51 @@ export const products = [
     ]
   },
   {
-    "name": "HEXIT:B",
-    "slug": "hexd",
+    "name": "BOTTOMFEEDER",
+    "slug": "bottomfeeder",
     "disciplines": [
       "audio"
     ],
-    "category": "Sample Based Drum Machine",
-    "shortDescription": "A compact six-voice sample based drum machine.",
-    "longDescription": "A focused sample based drum machine built for direct performance.",
-    "image": "assets/products/hexd/ui-2026.png",
-    "heroImage": "assets/products/hexd/ui-2026.png",
+    "category": "Phase distortion wavefold drums",
+    "shortDescription": "Eight drum voices. Phase distortion, wavefolding and master glitch effects.",
+    "longDescription": "BOTTOMFEEDER is a phase-distortion and wavefold drum instrument with eight voices, synthesis controls, an effects and LFO rack, and a master glitch chain.",
+    "image": "assets/products/bottomfeeder/synth.png",
+    "heroImage": "assets/products/bottomfeeder/synth.png",
     "platform": "Windows",
-    "standalone": true,
-    "vst3": true,
-    "pricingType": "FREE",
-    "publicPrice": null,
-    "membershipAvailability": false,
-    "status": "ACTIVE",
-    "purchaseUrl": "#",
-    "githubUrl": "https://github.com/",
-    "patreonUrl": "https://www.patreon.com/",
-    "featured": true,
+    "status": "IN DEVELOPMENT",
     "homePreview": true,
-    "exhibitNotes": "SIX VOICES / SAMPLE PLAYBACK / DIRECT PERFORMANCE",
-    "toolsUsedIn": [],
-    "headline": "SAMPLE BASED. PERFORMANCE READY.",
-    "features": []
-  },
-  {
-    "name": "HEXIT:A",
-    "slug": "and",
-    "disciplines": [
-      "audio"
+    "exhibitNotes": "PHASE DISTORTION / WAVEFOLD / DRUMS",
+    "features": [
+      "Eight individually editable drum voices",
+      "Pitch, envelopes, phase distortion and wavefold controls",
+      "Per-voice and master effects with LFO modulation",
+      "Master Glitch Echo, Repeater and Tape Stop",
+      "A PHASE and B FOLD modulation sequences",
+      "Save, load and factory kit controls"
     ],
-    "category": "Analog Drum Machine",
-    "shortDescription": "A six-voice analog drum machine.",
-    "longDescription": "A native six-voice analog drum machine built for direct performance.",
-    "image": "assets/products/and/ui-2026.png",
-    "heroImage": "assets/products/and/ui-2026.png",
-    "platform": "Windows",
-    "standalone": true,
-    "vst3": true,
-    "pricingType": "MEMBER",
-    "publicPrice": null,
-    "membershipAvailability": true,
-    "status": "COMING SOON",
-    "purchaseUrl": "#",
-    "githubUrl": "https://github.com/",
-    "patreonUrl": "https://www.patreon.com/",
-    "featured": true,
-    "homePreview": false,
-    "exhibitNotes": "SIX VOICES / ANALOG SYNTHESIS / DIRECT PERFORMANCE",
-    "toolsUsedIn": [],
-    "headline": "ANALOG. NERVE. DRUM.",
-    "features": []
+    "whatsNew": "Meet BOTTOMFEEDER: eight voices of phase-distortion and wavefold drums, with FX + LFO and MASTER GLITCH workspaces.",
+    "screenshots": [
+      {
+        "src": "assets/products/bottomfeeder/synth.png",
+        "caption": "SYNTH",
+        "alt": "BOTTOMFEEDER SYNTH interface"
+      },
+      {
+        "src": "assets/products/bottomfeeder/fx-lfo.png",
+        "caption": "FX + LFO",
+        "alt": "BOTTOMFEEDER FX + LFO interface"
+      },
+      {
+        "src": "assets/products/bottomfeeder/voice-fx.png",
+        "caption": "Voice editor + FX",
+        "alt": "BOTTOMFEEDER Voice editor + FX interface"
+      },
+      {
+        "src": "assets/products/bottomfeeder/master-glitch.png",
+        "caption": "MASTER GLITCH",
+        "alt": "BOTTOMFEEDER MASTER GLITCH interface"
+      }
+    ]
   },
   {
     "name": "StreamArch",

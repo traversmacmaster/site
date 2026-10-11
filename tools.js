@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=bottomfeeder-2026-10-11';
+import { products } from './data/products.js?v=hexit-2026-10-11';
 import { card } from './catalog.js';
 let filter='all';
 const query=document.querySelector('#catalog-query');

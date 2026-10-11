@@ -313,6 +313,60 @@ export const products = [
     ]
   },
   {
+    "name": "HEXIT",
+    "slug": "hexit",
+    "version": "0.1.0",
+    "disciplines": [
+      "audio"
+    ],
+    "category": "Sample switching rhythm instrument",
+    "shortDescription": "Sample. Switch. Sequence. Six voices with sample and FX sequencing.",
+    "longDescription": "HEXIT is a six-voice sample instrument with sample switching, per-voice sample and effect sequences, a shared six-slot FX bank, and master effects with LFO modulation.",
+    "image": "assets/products/hexit/voices.png",
+    "heroImage": "assets/products/hexit/voices.png",
+    "platform": "Windows",
+    "status": "IN DEVELOPMENT",
+    "homePreview": true,
+    "headline": "SAMPLE / SWITCH / SEQUENCE",
+    "features": [
+      "Six sample voices: Kick, Hihat, Snare, Hand, Mallet and Metallic",
+      "Per-voice sample selection, pitch, envelopes, filter, pan and sample boundaries",
+      "Independent sample and FX slot sequences",
+      "Six shared FX slots with per-hit settings",
+      "Compressor, bitcrusher, wavefolder, ring modulation, filter, comb filter and delay views",
+      "Two master effects with independent LFO controls",
+      "Preset and FX bank save/load controls"
+    ],
+    "whatsNew": "The current HEXIT interface brings together six sample voices, sample and FX sequencing, a shared FX bank, and master effects.",
+    "screenshots": [
+      {
+        "src": "assets/products/hexit/voices.png",
+        "caption": "Voices + sample sequence",
+        "alt": "HEXIT Voices + sample sequence interface"
+      },
+      {
+        "src": "assets/products/hexit/fx-sequence.png",
+        "caption": "FX sequence",
+        "alt": "HEXIT FX sequence interface"
+      },
+      {
+        "src": "assets/products/hexit/fx-bank.png",
+        "caption": "Shared FX bank",
+        "alt": "HEXIT Shared FX bank interface"
+      },
+      {
+        "src": "assets/products/hexit/master.png",
+        "caption": "Master FX + LFO",
+        "alt": "HEXIT Master FX + LFO interface"
+      },
+      {
+        "src": "assets/products/hexit/compressor.png",
+        "caption": "Compressor",
+        "alt": "HEXIT Compressor interface"
+      }
+    ]
+  },
+  {
     "name": "StreamArch",
     "slug": "streamarch",
     "disciplines": [

@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=bottomfeeder-2026-10-11';
+import { products } from './data/products.js?v=hexit-2026-10-11';
 import { esc } from './catalog.js';
 const base=new URL('./',import.meta.url);
 document.querySelector('#year').textContent=new Date().getFullYear();

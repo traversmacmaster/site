@@ -1,4 +1,4 @@
-import { getProduct } from './data/products.js?v=bottomfeeder-2026-10-11';
+import { getProduct } from './data/products.js?v=hexit-2026-10-11';
 import { esc } from './catalog.js';
 import { examples } from './examples.js';
 const p=getProduct(document.body.dataset.product);

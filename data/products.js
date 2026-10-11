@@ -288,8 +288,8 @@ export const products = [
     "category": "Audio / video mosh instrument",
     "shortDescription": "AuViMosh is a browser-based datamosh and glitch video editor for transforming video through motion, compression artifacts, visual analysis and experimental image processing.",
     "longDescription": "AuViMosh is a browser-based datamosh and glitch video editor for transforming video through motion, compression artifacts, visual analysis and experimental image processing.",
-    "image": "assets/products/avm/ui-2026-trim.png",
-    "heroImage": "assets/products/avm/ui-2026-trim.png",
+    "image": "assets/products/avm/2026-10-11/source-inputs.png",
+    "heroImage": "assets/products/avm/2026-10-11/source-inputs.png",
     "platform": "Web + Windows",
     "standalone": true,
     "vst3": false,
@@ -321,6 +321,18 @@ export const products = [
         "src": "assets/products/avm/output-example.png",
         "alt": "Artwork output from AuViMosh",
         "caption": "Datamoshed video — frame study"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "assets/products/avm/2026-10-11/source-inputs.png",
+        "caption": "Source inputs / Base, motion and inject",
+        "alt": "AuViMosh desktop interface showing base image and motion source inputs"
+      },
+      {
+        "src": "assets/products/avm/2026-10-11/preview-controls.png",
+        "caption": "Mosh preview / Audio, masking and output controls",
+        "alt": "AuViMosh desktop mosh preview with audio, masking and output controls"
       }
     ]
   },

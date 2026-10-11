@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=moshpaint-screens-2026-10-11';
+import { products } from './data/products.js?v=auvimosh-screens-2026-10-11';
 import { card, esc } from './catalog.js';
 document.querySelector('#tool-preview').innerHTML=products.filter(p=>p.homePreview).map((p,i)=>card(p,i,'./')).join('');
 const updates=[['bottomfeeder','New instrument'],['timefield','New beta release'],['tunnelfield','New examples'],['moirefield','New canvas study']];

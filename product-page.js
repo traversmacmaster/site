@@ -1,4 +1,4 @@
-import { getProduct } from './data/products.js?v=auvimosh-screens-2026-10-11';
+import { getProduct } from './data/products.js?v=recursive-symbol-2026-10-11';
 import { esc } from './catalog.js';
 import { examples } from './examples.js';
 const p=getProduct(document.body.dataset.product);

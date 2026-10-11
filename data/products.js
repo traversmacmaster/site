@@ -730,6 +730,32 @@ export const products = [
     ],
     "standalone": false,
     "vst3": false
+  },
+  {
+    "name": "Recursive Symbol Machine",
+    "slug": "recursive-symbol-machine",
+    "disciplines": [
+      "visual"
+    ],
+    "category": "Recursive visual instrument",
+    "shortDescription": "One symbol becomes a nested, radial, spiral or branching composition.",
+    "longDescription": "Recursive Symbol Machine is a standalone GPU visual instrument that turns one symbol into nested, radial, spiral, branching, tunnel, orbit, grid or cascading compositions. Shape recursion, transforms, motion and color, then save a PNG or record the result.",
+    "image": "assets/products/recursive-symbol-machine/interface.png",
+    "heroImage": "assets/products/recursive-symbol-machine/interface.png",
+    "platform": "Windows",
+    "standalone": true,
+    "vst3": false,
+    "status": "STUDIO INSTRUMENT",
+    "homePreview": true,
+    "features": [
+      "Load a symbol or use built-in shapes",
+      "Nested, radial, spiral, branch, tunnel, orbit, grid and cascade structures",
+      "Recursion depth, copies and scale falloff controls",
+      "Direct position, scale, rotation and mirror controls",
+      "Animation, modulation and color controls",
+      "Save and load presets",
+      "PNG export and canvas or window recording"
+    ]
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

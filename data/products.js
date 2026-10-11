@@ -190,7 +190,8 @@ export const products = [
         "caption": "MIX / FX",
         "alt": "RECkd 0.15.1 MIX / FX workspace"
       }
-    ]
+    ],
+    "listingDescription": "Record a four-bar audio field and reshape it with six playback heads."
   },
   {
     "name": "STRETCH",
@@ -234,7 +235,8 @@ export const products = [
         "caption": "Envelope modulation",
         "alt": "STRETCH Envelope modulation interface"
       }
-    ]
+    ],
+    "listingDescription": "Bend live audio with stretch, pitch, freeze, reverse and modulation."
   },
   {
     "name": "Grain Alchemy",
@@ -276,7 +278,8 @@ export const products = [
         "alt": "Grain Alchemy Synth controls interface"
       }
     ],
-    "whatsNew": "Grain Alchemy brings together a visual matter field, playable keyboard, synth controls and master effects."
+    "whatsNew": "Grain Alchemy brings together a visual matter field, playable keyboard, synth controls and master effects.",
+    "listingDescription": "Matter made musical: a visual field, playable keyboard and synth controls."
   },
   {
     "name": "AuViMosh",
@@ -334,7 +337,8 @@ export const products = [
         "caption": "Mosh preview / Audio, masking and output controls",
         "alt": "AuViMosh desktop mosh preview with audio, masking and output controls"
       }
-    ]
+    ],
+    "listingDescription": "Transfer motion between sources and shape image damage with audio/video controls."
   },
   {
     "name": "BOTTOMFEEDER",
@@ -381,7 +385,8 @@ export const products = [
         "caption": "MASTER GLITCH",
         "alt": "BOTTOMFEEDER MASTER GLITCH interface"
       }
-    ]
+    ],
+    "listingDescription": "Eight voices of phase-distortion and wavefold drums."
   },
   {
     "name": "HEXIT",
@@ -435,7 +440,8 @@ export const products = [
         "caption": "Compressor",
         "alt": "HEXIT Compressor interface"
       }
-    ]
+    ],
+    "listingDescription": "Six sample voices with sample switching and FX sequencing."
   },
   {
     "name": "StreamArch",
@@ -672,7 +678,8 @@ export const products = [
         "caption": "MoshPaint / Landscape canvas",
         "alt": "MoshPaint interface showing a layered landscape glitch composition"
       }
-    ]
+    ],
+    "listingDescription": "Paint, distort and animate images and video as living pigment."
   },
   {
     "slug": "spirofield",

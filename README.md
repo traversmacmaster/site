@@ -38,3 +38,6 @@ The shared Free export badge uses locally bundled IBM Plex Mono Medium. Export s
 
 Use the supplied current product screenshots for the redesign. The main layout places audio instruments on the left and visual instruments on the right. On narrow screens, stack audio before visual.
 
+
+Machine listing examples are maintained in data/products.js: examples for images, videos/video for clips, and audioExamples for audio ({src,label,type}). Screenshot galleries use screenshots and are separate from example artwork. The homepage uses machine-listings.js; native details controls rotate > downward when open.
+

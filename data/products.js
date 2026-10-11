@@ -246,7 +246,7 @@ export const products = [
       "audio"
     ],
     "category": "Interactive synthesis instrument",
-    "shortDescription": "Matter made musical. Explore energy, resonance, gravity and sound.",
+    "shortDescription": "Shape a visual matter field with energy, resonance and gravity controls.",
     "longDescription": "Grain Alchemy is an interactive audio instrument with a visual matter field, a playable keyboard, synthesis controls and master delay and reverb. Shape the field with Matter, Energy, Resonance, Gravity and brush controls.",
     "image": "assets/products/grain-alchemy/2026-10-11/main.png",
     "heroImage": "assets/products/grain-alchemy/2026-10-11/main.png",
@@ -279,7 +279,7 @@ export const products = [
       }
     ],
     "whatsNew": "Grain Alchemy brings together a visual matter field, playable keyboard, synth controls and master effects.",
-    "listingDescription": "Matter made musical: a visual field, playable keyboard and synth controls."
+    "listingDescription": "A visual matter field, playable keyboard and synth controls."
   },
   {
     "name": "AuViMosh",
@@ -396,7 +396,7 @@ export const products = [
       "audio"
     ],
     "category": "Sample switching rhythm instrument",
-    "shortDescription": "Sample. Switch. Sequence. Six voices with sample and FX sequencing.",
+    "shortDescription": "Six sample voices with sample switching and FX sequencing.",
     "longDescription": "HEXIT is a six-voice sample instrument with sample switching, per-voice sample and effect sequences, a shared six-slot FX bank, and master effects with LFO modulation.",
     "image": "assets/products/hexit/voices.png",
     "heroImage": "assets/products/hexit/voices.png",

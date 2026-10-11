@@ -44,3 +44,5 @@ Machine listing examples are maintained in data/products.js: examples for images
 
 The Artwork subheader link opens the personal showcase modal. Edit data/artwork.js to add, remove, title or reorder video/image works. The modal supports video/webm and video/mp4, pauses clips on close, and uses the shared site.js and stylesheet.
 
+
+Site copy should be plain and descriptive. Avoid slogans, catchphrases, manifesto language and promotional metaphors. Describe what each tool does.

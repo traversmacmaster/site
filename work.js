@@ -1,5 +1,5 @@
-import { products } from './data/products.js?v=works-examples-2026-10-10';
-import { examples } from './examples.js?v=works-examples-2026-10-10';
+import { products } from './data/products.js?v=reckd-2026-10-11';
+import { examples } from './examples.js?v=reckd-2026-10-11';
 
 const withoutToolLabels=p=>{
   const clean=label=>label.startsWith(p.name+' — ')?label.slice(p.name.length+3):label;

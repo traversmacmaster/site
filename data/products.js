@@ -136,16 +136,16 @@ export const products = [
     "appUrl": "apps/tunnelfield/"
   },
   {
-    "name": "TimeField",
+    "name": "RECkd",
     "slug": "timefield",
     "disciplines": [
       "audio"
     ],
     "category": "Temporal instrument",
     "shortDescription": "Record a four-bar field. Reshape it with six playback heads.",
-    "longDescription": "TimeField records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
-    "image": "assets/products/timefield/0.15.1/TimeField-PLAY.png",
-    "heroImage": "assets/products/timefield/0.15.1/TimeField-PLAY.png",
+    "longDescription": "RECkd records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
+    "image": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
+    "heroImage": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
     "platform": "Windows x64 · VST3",
     "standalone": false,
     "vst3": true,
@@ -172,23 +172,23 @@ export const products = [
       "Four Scenes with Immediate, Beat or Bar recall",
       "Windows x64 VST3 audio effect; MIDI optional"
     ],
-    "whatsNew": "TimeField 0.15.1 introduces PLAY, MODULATION and MIX / FX workspaces, retaining six playback heads and twelve LFOs, with optimized audio processing.",
+    "whatsNew": "RECkd 0.15.1 introduces PLAY, MODULATION and MIX / FX workspaces, retaining six playback heads and twelve LFOs, with optimized audio processing.",
     "version": "0.15.1",
     "screenshots": [
       {
-        "src": "assets/products/timefield/0.15.1/TimeField-PLAY.png",
+        "src": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
         "caption": "PLAY",
-        "alt": "TimeField 0.15.1 PLAY workspace"
+        "alt": "RECkd 0.15.1 PLAY workspace"
       },
       {
-        "src": "assets/products/timefield/0.15.1/TimeField-MODULATION.png",
+        "src": "assets/products/reckd/0.15.1/RECkd-MODULATION.png",
         "caption": "MODULATION",
-        "alt": "TimeField 0.15.1 MODULATION workspace"
+        "alt": "RECkd 0.15.1 MODULATION workspace"
       },
       {
-        "src": "assets/products/timefield/0.15.1/TimeField-MIX-FX.png",
+        "src": "assets/products/reckd/0.15.1/RECkd-MIX-FX.png",
         "caption": "MIX / FX",
-        "alt": "TimeField 0.15.1 MIX / FX workspace"
+        "alt": "RECkd 0.15.1 MIX / FX workspace"
       }
     ]
   },

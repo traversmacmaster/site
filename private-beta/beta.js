@@ -1,4 +1,4 @@
-import { downloads } from './downloads.js?v=timefield-0.15.1';
+import { downloads } from './downloads.js?v=reckd-2026-10-11';
 
 for (const build of downloads) {
   const slot = document.querySelector(`[data-download="${build.slug}"]`);
@@ -9,7 +9,7 @@ for (const build of downloads) {
   link.className = 'button primary';
   link.href = url.href;
   link.textContent = build.label || 'Download for Windows ↓';
-  link.setAttribute('aria-label', `Download ${build.name || (build.slug === 'timefield' ? 'TimeField' : 'STRETCH')} for Windows`);
+  link.setAttribute('aria-label', `Download ${build.name || (build.slug === 'timefield' ? 'RECkd' : 'STRETCH')} for Windows`);
   if (url.origin === window.location.origin) link.setAttribute('download', '');
   slot.replaceChildren(link);
   if (build.checksumUrl) {

@@ -34,3 +34,10 @@ if(artworkTrigger){
  showcase.addEventListener('click',e=>{if(e.target===showcase){const r=showcase.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)showcase.close();}});
  showcase.addEventListener('close',()=>{showcase.querySelectorAll('video').forEach(v=>v.pause());artworkTrigger.focus();});
 }
+
+const topMenu=document.querySelector('.top-menu');
+if(topMenu){
+ document.addEventListener('click',e=>{if(!e.target.closest('.top-menu'))topMenu.open=false;});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&topMenu.open){topMenu.open=false;topMenu.querySelector('summary').focus();}});
+ topMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{topMenu.open=false;}));
+}

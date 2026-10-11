@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=hexit-2026-10-11';
+import { products } from './data/products.js?v=grain-stretch-2026-10-11';
 import { examples } from './examples.js?v=reckd-2026-10-11';
 
 const withoutToolLabels=p=>{

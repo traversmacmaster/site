@@ -201,8 +201,8 @@ export const products = [
     "category": "Live time bender",
     "shortDescription": "Bend live audio with stretch, pitch, freeze and reverse controls.",
     "longDescription": "STRETCH is a live time-bending audio instrument with stretch, pitch, window, feedback, mix and output controls. Tempo lock, freeze, reverse and an LFO section shape its temporal playback.",
-    "image": "assets/products/stretch/interface.png",
-    "heroImage": "assets/products/stretch/interface.png",
+    "image": "assets/products/stretch/2026-10-11/main.png",
+    "heroImage": "assets/products/stretch/2026-10-11/main.png",
     "platform": "Windows",
     "status": "IN DEVELOPMENT",
     "homePreview": false,
@@ -212,12 +212,71 @@ export const products = [
     "features": [
       "Stretch, pitch and window controls",
       "Feedback, mix and output controls",
-      "Tempo lock",
-      "Freeze and hold freeze",
-      "Reverse playback",
-      "LFO target, waveform, sync, speed and depth controls"
+      "Tempo lock, freeze, hold freeze and reverse",
+      "Freeze length and feedback tone controls",
+      "Two LFOs with target, waveform, sync, speed and depth controls",
+      "Envelope modulation with attack, hold, release, sensitivity and amount"
     ],
-    "whatsNew": "New product page and interface preview for STRETCH, a live time bender with stretch, pitch, freeze, reverse and LFO controls."
+    "whatsNew": "Updated STRETCH screenshots show the main controls, LFO modulation and envelope modulation views.",
+    "screenshots": [
+      {
+        "src": "assets/products/stretch/2026-10-11/main.png",
+        "caption": "Main controls",
+        "alt": "STRETCH Main controls interface"
+      },
+      {
+        "src": "assets/products/stretch/2026-10-11/lfo.png",
+        "caption": "LFO modulation",
+        "alt": "STRETCH LFO modulation interface"
+      },
+      {
+        "src": "assets/products/stretch/2026-10-11/envelope.png",
+        "caption": "Envelope modulation",
+        "alt": "STRETCH Envelope modulation interface"
+      }
+    ]
+  },
+  {
+    "name": "Grain Alchemy",
+    "slug": "grain-alchemy",
+    "version": "1.1.0",
+    "disciplines": [
+      "audio"
+    ],
+    "category": "Interactive synthesis instrument",
+    "shortDescription": "Matter made musical. Explore energy, resonance, gravity and sound.",
+    "longDescription": "Grain Alchemy is an interactive audio instrument with a visual matter field, a playable keyboard, synthesis controls and master delay and reverb. Shape the field with Matter, Energy, Resonance, Gravity and brush controls.",
+    "image": "assets/products/grain-alchemy/2026-10-11/main.png",
+    "heroImage": "assets/products/grain-alchemy/2026-10-11/main.png",
+    "platform": "Windows",
+    "status": "IN DEVELOPMENT",
+    "homePreview": true,
+    "features": [
+      "Visual matter field and playable keyboard",
+      "Matter, Energy, Resonance and Gravity controls",
+      "Brush size, brush energy and excitation controls",
+      "Amplitude envelope and filter controls",
+      "Tempo-synced delay and reverb controls",
+      "Alchemize, undo, redo and reset"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/products/grain-alchemy/2026-10-11/main.png",
+        "caption": "Matter + keyboard",
+        "alt": "Grain Alchemy Matter + keyboard interface"
+      },
+      {
+        "src": "assets/products/grain-alchemy/2026-10-11/master-fx.png",
+        "caption": "Master FX",
+        "alt": "Grain Alchemy Master FX interface"
+      },
+      {
+        "src": "assets/products/grain-alchemy/2026-10-11/synth.png",
+        "caption": "Synth controls",
+        "alt": "Grain Alchemy Synth controls interface"
+      }
+    ],
+    "whatsNew": "Grain Alchemy brings together a visual matter field, playable keyboard, synth controls and master effects."
   },
   {
     "name": "AuViMosh",

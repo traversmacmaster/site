@@ -1,4 +1,9 @@
 .machine-columns { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 48px; }
+.more-experiments-link { margin-top: 28px; }
+.secondary-machine-list { max-width: 950px; padding-bottom: 48px; }
+.secondary-machine-list .machine-listing { grid-template-columns: 130px minmax(0,1fr); padding: 22px 0; }
+.secondary-machine-list .listing-image img { width: 130px; height: 100px; }
+.secondary-machine-list .listing-copy h3 { font-size: 20px; margin-bottom: 8px; }
 .machine-column { min-width: 0; }
 .machine-column > h2 { padding: 20px 0; border-bottom: 1px solid var(--line); }
 .machine-listing { display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 18px 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }

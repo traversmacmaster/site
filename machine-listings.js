@@ -25,6 +25,7 @@ export function secondaryListings(products, base = '../') {
 export function machineListings(products, base = './') {
   const audioSlugs = ['timefield', 'stretch', 'bottomfeeder', 'hexit', 'grain-alchemy'];
   const audio = audioSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
-  const visual = products.filter(p => p.collection !== 'other' && p.disciplines.includes('visual') && primaryMachineSlugs.includes(p.slug));
+  const visualSlugs = ['moshpaint', 'avm', '3field', 'recursive-symbol-machine', 'moirefield', 'kaleidofield'];
+  const visual = visualSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
   return `<div class="machine-columns"><section class="machine-column" aria-labelledby="audio-list-title"><h2 id="audio-list-title">Audio</h2>${audio.map(p => listing(p, base)).join('')}</section><section class="machine-column" aria-labelledby="visual-list-title"><h2 id="visual-list-title">Visual</h2>${visual.map(p => listing(p, base)).join('')}</section></div>`;
 }

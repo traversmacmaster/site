@@ -756,6 +756,30 @@ export const products = [
       "Save and load presets",
       "PNG export and canvas or window recording"
     ]
+  },
+  {
+    "name": "3FIELD",
+    "slug": "3field",
+    "disciplines": [
+      "visual"
+    ],
+    "category": "Spatial field laboratory",
+    "shortDescription": "Layer visual fields across planes, cylinders and spheres.",
+    "longDescription": "3FIELD is a spatial visual instrument for layering fields on planes, cylinders and spheres. Arrange pattern layers, shape transforms and movement, explore the scene with the camera, and export images or video.",
+    "image": "assets/products/3field/interface.png",
+    "heroImage": "assets/products/3field/interface.png",
+    "platform": "Windows",
+    "status": "IN DEVELOPMENT",
+    "homePreview": true,
+    "features": [
+      "Plane, cylinder and sphere domains",
+      "Layered fields and shared hosts",
+      "Pattern position, rotation, scale, opacity and blending",
+      "Layer motion and camera controls",
+      "Record and replay manual movement takes",
+      "Save and load projects",
+      "PNG and video export"
+    ]
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=recursive-symbol-2026-10-11';
+import { products } from './data/products.js?v=3field-2026-10-11';
 import { card } from './catalog.js';
 let filter='all';
 const query=document.querySelector('#catalog-query');

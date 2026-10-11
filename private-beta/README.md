@@ -1,13 +1,13 @@
 # Private Beta Downloads
 
-Share `/private-beta/` directly with friends. The page is excluded from the public navigation and sitemap and uses `noindex,nofollow`. This is an unlisted static page, not access control; anyone with its URL can open it.
+Share `/private-beta/` for the compact listings, or share a device page directly:
 
-To enable downloads, edit `downloads.js` and replace each `null` with a quoted HTTPS URL or a path relative to this directory, such as `../uploads/timefield-beta.zip`. Use the actual uploaded file path. Pending builds have no download button.
+- `/private-beta/timefield/` — TimeField 0.15.1 Windows x64 VST3.
+- `/private-beta/stretch/` — STRETCH 0.3.0 Windows VST3.
+- `/private-beta/t-sync/` — T-SYNC, DEADBEAT and WAVE HORROR standalone pack.
 
-For private files, use a download service that enforces access permissions. Files committed to this public site are publicly accessible.
+The index has one screenshot per row. Each device page has direct ZIP and checksum links, a brief explanation, installation guidance and full-size screenshot links. TimeField includes three workspace screenshots; T-SYNC includes all three apps; STRETCH uses its available interface screenshot.
 
-The page uses the main site's header, footer, locally hosted fonts and shared stylesheet, with responsive page-specific layout in `beta.css`.
+Pages are static HTML, with shared site navigation and responsive layout in `beta.css`. Download links work without JavaScript. When updating a build, update its device page and the index version, alongside the download registry in `downloads.js`.
 
-## T-SYNC bundle
-
-`uploads/private-beta/TSync_Deadbeat_WaveH-Beta.zip` and its adjacent `.zip.sha256` file are linked together on the page. Share both files. The ZIP contains T-SYNC, DEADBEAT, WAVE HORROR, quick-start instructions, unsigned-beta notes and individual file checksums. Both links also work without JavaScript.
+All four pages use `noindex,nofollow` and are excluded from public navigation and the sitemap. This is an unlisted static section, not access control.

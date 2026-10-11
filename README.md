@@ -33,3 +33,8 @@ MoiréField uses the original full product screenshot and a VP9 WebM conversion 
 The nine launch machines have descriptive search intents and short usage instructions maintained in ../launch-content.json. Run node ../build-launch.mjs to regenerate static product pages, main-page metadata, crawlable catalog cards, sitemap.xml, robots.txt and the review report. Run node ../build-web.mjs to rebuild the eight available browser apps first. App shells and historical backups use noindex,follow; canonical editorial/product pages are indexable. Existing production hosting is unchanged. No pricing, reviews or licensing has been invented in structured data.
 
 The shared Free export badge uses locally bundled IBM Plex Mono Medium. Export source changes are separate from previously packaged Windows EXEs. See ../WEB-LAUNCH-REVIEW.md for exact keyword/metadata choices, tested behavior and remaining release steps.
+
+## Redesign direction
+
+Use the supplied current product screenshots for the redesign. The main layout places audio instruments on the left and visual instruments on the right. On narrow screens, stack audio before visual.
+

@@ -630,8 +630,8 @@ export const products = [
     "standalone": true,
     "vst3": false,
     "status": "ALPHA · WINDOWS",
-    "image": "assets/products/moshpaint/interface.png",
-    "heroImage": "assets/products/moshpaint/interface.png",
+    "image": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
+    "heroImage": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
     "homePreview": true,
     "features": [
       "Open the Windows preview and import an image or video into a pigment well.",
@@ -647,6 +647,18 @@ export const products = [
         "src": "assets/products/moshpaint/output-example.png",
         "alt": "Artwork output from MoshPaint",
         "caption": "Exported artwork study"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "assets/products/moshpaint/2026-10-11/portrait-interface.png",
+        "caption": "MoshPaint / Portrait canvas",
+        "alt": "MoshPaint interface showing a red and black portrait composition"
+      },
+      {
+        "src": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
+        "caption": "MoshPaint / Landscape canvas",
+        "alt": "MoshPaint interface showing a layered landscape glitch composition"
       }
     ]
   },

@@ -41,3 +41,6 @@ Use the supplied current product screenshots for the redesign. The main layout p
 
 Machine listing examples are maintained in data/products.js: examples for images, videos/video for clips, and audioExamples for audio ({src,label,type}). Screenshot galleries use screenshots and are separate from example artwork. The homepage uses machine-listings.js; native details controls rotate > downward when open.
 
+
+The Artwork subheader link opens the personal showcase modal. Edit data/artwork.js to add, remove, title or reorder video/image works. The modal supports video/webm and video/mp4, pauses clips on close, and uses the shared site.js and stylesheet.
+

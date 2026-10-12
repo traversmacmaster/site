@@ -354,7 +354,14 @@ export const products = [
       }
     ],
     "listingDescription": "Transfer motion between sources and shape image damage with audio/video controls.",
-    "softwareGroup": "visual-media-tool"
+    "softwareGroup": "visual-media-tool",
+    "videos": [
+      {
+        "src": "assets/products/avm/pedestrian.webm",
+        "poster": "assets/products/avm/pedestrian-poster.png",
+        "label": "Pedestrian — AuViMosh example"
+      }
+    ]
   },
   {
     "name": "BOTTOMFEEDER",

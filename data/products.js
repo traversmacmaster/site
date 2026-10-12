@@ -139,14 +139,14 @@ export const products = [
     "softwareGroup": "generative-visual-system"
   },
   {
-    "name": "RECkd",
+    "name": "TimeField",
     "slug": "timefield",
     "disciplines": [
       "audio"
     ],
     "category": "Temporal instrument",
     "shortDescription": "Record a four-bar field. Reshape it with six playback heads.",
-    "longDescription": "RECkd records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
+    "longDescription": "TimeField records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
     "image": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
     "heroImage": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
     "platform": "Windows · VST3",
@@ -175,23 +175,23 @@ export const products = [
       "Four Scenes with Immediate, Beat or Bar recall",
       "Windows x64 VST3 audio effect; MIDI optional"
     ],
-    "whatsNew": "RECkd 0.15.1 introduces PLAY, MODULATION and MIX / FX workspaces, retaining six playback heads and twelve LFOs, with optimized audio processing.",
+    "whatsNew": "TimeField 0.15.1 introduces PLAY, MODULATION and MIX / FX workspaces, retaining six playback heads and twelve LFOs, with optimized audio processing.",
     "version": "0.15.1",
     "screenshots": [
       {
         "src": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
         "caption": "PLAY",
-        "alt": "RECkd 0.15.1 PLAY workspace"
+        "alt": "TimeField 0.15.1 PLAY workspace"
       },
       {
         "src": "assets/products/reckd/0.15.1/RECkd-MODULATION.png",
         "caption": "MODULATION",
-        "alt": "RECkd 0.15.1 MODULATION workspace"
+        "alt": "TimeField 0.15.1 MODULATION workspace"
       },
       {
         "src": "assets/products/reckd/0.15.1/RECkd-MIX-FX.png",
         "caption": "MIX / FX",
-        "alt": "RECkd 0.15.1 MIX / FX workspace"
+        "alt": "TimeField 0.15.1 MIX / FX workspace"
       }
     ],
     "listingDescription": "Record a four-bar audio field and reshape it with six playback heads.",

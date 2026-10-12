@@ -1,5 +1,5 @@
 import { artwork } from './data/artwork.js?v=showcase-2026-10-11';
-import { products } from './data/products.js?v=3field-2026-10-11';
+import { products } from './data/products.js?v=timefield-name-2026-10-12';
 import { esc } from './catalog.js';
 const base=new URL('./',import.meta.url);
 document.querySelector('#year').textContent=new Date().getFullYear();
@@ -10,7 +10,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.conta
 document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu()});
 nav.querySelectorAll('a').forEach(a=>{if(a.pathname===location.pathname)a.setAttribute('aria-current','page')});
 const dialog=document.createElement('dialog');dialog.className='search-dialog';dialog.setAttribute('aria-labelledby','search-title');
-dialog.innerHTML='<header><h2 id="search-title">Find a machine</h2><button type="button" aria-label="Close search">Close ×</button></header><label for="site-search">Search by name, category, or feature</label><input type="search" id="site-search" placeholder="Try audio, motion, or RECkd"><p class="technical" id="search-count" aria-live="polite"></p><ul class="search-results"></ul>';
+dialog.innerHTML='<header><h2 id="search-title">Find a machine</h2><button type="button" aria-label="Close search">Close ×</button></header><label for="site-search">Search by name, category, or feature</label><input type="search" id="site-search" placeholder="Try audio, motion, or TimeField"><p class="technical" id="search-count" aria-live="polite"></p><ul class="search-results"></ul>';
 document.body.append(dialog);
 const input=dialog.querySelector('input');
 function search(){const term=input.value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();const found=products.filter(p=>`${p.name} ${p.category} ${p.longDescription} ${p.features.join(' ')}`.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().includes(term));dialog.querySelector('#search-count').textContent=found.length?`${found.length} machines`:'No machines found. Try another term.';dialog.querySelector('ul').innerHTML=found.map(p=>`<li><a href="${new URL(`products/${p.slug}/`,base).href}">${esc(p.name)}<small>${esc(p.category)}</small></a></li>`).join('')}

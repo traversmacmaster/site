@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=3field-2026-10-11';
+import { products } from './data/products.js?v=timefield-name-2026-10-12';
 import { examples } from './examples.js?v=reckd-2026-10-11';
 
 const withoutToolLabels=p=>{

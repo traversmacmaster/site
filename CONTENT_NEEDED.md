@@ -18,7 +18,7 @@
 ## TOOLS
 
 - [ ] Detail-page copy and demo media for BOTTOMFEEDER, ReelVault, and DrawTable
-- [ ] Made-with artwork for RECkd and AuViMosh
+- [ ] Made-with artwork for TimeField and AuViMosh
 
 ## ABOUT
 

@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=timefield-name-2026-10-12';
+import { products } from './data/products.js?v=timefield-screens-2026-10-12';
 import { machineListings, primaryMachineSlugs } from './machine-listings.js?v=tools-split-2026-10-12';
 let filter='all';
 const query=document.querySelector('#catalog-query');

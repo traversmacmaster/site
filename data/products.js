@@ -147,8 +147,8 @@ export const products = [
     "category": "Temporal instrument",
     "shortDescription": "Record a four-bar field. Reshape it with six playback heads.",
     "longDescription": "TimeField records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
-    "image": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
-    "heroImage": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
+    "image": "assets/products/timefield/2026-10-12/play.png",
+    "heroImage": "assets/products/timefield/2026-10-12/play.png",
     "platform": "Windows · VST3",
     "standalone": false,
     "vst3": true,
@@ -179,19 +179,24 @@ export const products = [
     "version": "0.15.1",
     "screenshots": [
       {
-        "src": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
+        "src": "assets/products/timefield/2026-10-12/play.png",
         "caption": "PLAY",
-        "alt": "TimeField 0.15.1 PLAY workspace"
+        "alt": "TimeField PLAY workspace"
       },
       {
-        "src": "assets/products/reckd/0.15.1/RECkd-MODULATION.png",
+        "src": "assets/products/timefield/2026-10-12/play-details.png",
+        "caption": "PLAY / Details",
+        "alt": "TimeField PLAY / Details workspace"
+      },
+      {
+        "src": "assets/products/timefield/2026-10-12/modulation.png",
         "caption": "MODULATION",
-        "alt": "TimeField 0.15.1 MODULATION workspace"
+        "alt": "TimeField MODULATION workspace"
       },
       {
-        "src": "assets/products/reckd/0.15.1/RECkd-MIX-FX.png",
+        "src": "assets/products/timefield/2026-10-12/mix-fx.png",
         "caption": "MIX / FX",
-        "alt": "TimeField 0.15.1 MIX / FX workspace"
+        "alt": "TimeField MIX / FX workspace"
       }
     ],
     "listingDescription": "Record a four-bar audio field and reshape it with six playback heads.",

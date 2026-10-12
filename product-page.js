@@ -1,4 +1,4 @@
-import { getProduct } from './data/products.js?v=timefield-name-2026-10-12';
+import { getProduct } from './data/products.js?v=timefield-screens-2026-10-12';
 import { esc } from './catalog.js';
 import { examples } from './examples.js';
 const p=getProduct(document.body.dataset.product);

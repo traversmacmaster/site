@@ -40,7 +40,8 @@ export const products = [
         "poster": "assets/products/video-mosaic/eye-poster.png",
         "label": "Eye — video mosaic"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "name": "MoiréField",
@@ -83,7 +84,8 @@ export const products = [
         "alt": "Artwork output from MoiréField",
         "caption": "Exported artwork study"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "name": "TunnelField",
@@ -133,7 +135,8 @@ export const products = [
       "poster": "assets/products/tunnelfield/interface.png",
       "label": "TunnelField — recorded live window demonstration"
     },
-    "appUrl": "apps/tunnelfield/"
+    "appUrl": "apps/tunnelfield/",
+    "softwareGroup": "generative-visual-system"
   },
   {
     "name": "RECkd",
@@ -146,7 +149,7 @@ export const products = [
     "longDescription": "RECkd records incoming audio into a four-bar field and reshapes it through six playback heads, a field loop and effects. The PLAY, MODULATION and MIX / FX workspaces organize recording, sequencing, modulation and mixing.",
     "image": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
     "heroImage": "assets/products/reckd/0.15.1/RECkd-PLAY.png",
-    "platform": "Windows x64 · VST3",
+    "platform": "Windows · VST3",
     "standalone": false,
     "vst3": true,
     "pricingType": "PREMIUM",
@@ -191,7 +194,9 @@ export const products = [
         "alt": "RECkd 0.15.1 MIX / FX workspace"
       }
     ],
-    "listingDescription": "Record a four-bar audio field and reshape it with six playback heads."
+    "listingDescription": "Record a four-bar audio field and reshape it with six playback heads.",
+    "vst": true,
+    "softwareGroup": "audio-plugin"
   },
   {
     "name": "STRETCH",
@@ -204,7 +209,7 @@ export const products = [
     "longDescription": "STRETCH is a live time-bending audio instrument with stretch, pitch, window, feedback, mix and output controls. Tempo lock, freeze, reverse and an LFO section shape its temporal playback.",
     "image": "assets/products/stretch/2026-10-11/main.png",
     "heroImage": "assets/products/stretch/2026-10-11/main.png",
-    "platform": "Windows",
+    "platform": "Windows · VST3",
     "status": "IN DEVELOPMENT",
     "homePreview": false,
     "headline": "LIVE TIME BENDER.",
@@ -236,7 +241,10 @@ export const products = [
         "alt": "STRETCH Envelope modulation interface"
       }
     ],
-    "listingDescription": "Bend live audio with stretch, pitch, freeze, reverse and modulation."
+    "listingDescription": "Bend live audio with stretch, pitch, freeze, reverse and modulation.",
+    "vst": true,
+    "vst3": true,
+    "softwareGroup": "audio-plugin"
   },
   {
     "name": "Grain Alchemy",
@@ -250,7 +258,7 @@ export const products = [
     "longDescription": "Grain Alchemy is an interactive audio instrument with a visual matter field, a playable keyboard, synthesis controls and master delay and reverb. Shape the field with Matter, Energy, Resonance, Gravity and brush controls.",
     "image": "assets/products/grain-alchemy/2026-10-11/main.png",
     "heroImage": "assets/products/grain-alchemy/2026-10-11/main.png",
-    "platform": "Windows",
+    "platform": "Windows · VST",
     "status": "IN DEVELOPMENT",
     "homePreview": true,
     "features": [
@@ -279,7 +287,9 @@ export const products = [
       }
     ],
     "whatsNew": "Grain Alchemy brings together a visual matter field, playable keyboard, synth controls and master effects.",
-    "listingDescription": "A visual matter field, playable keyboard and synth controls."
+    "listingDescription": "A visual matter field, playable keyboard and synth controls.",
+    "vst": true,
+    "softwareGroup": "audio-plugin"
   },
   {
     "name": "AuViMosh",
@@ -338,7 +348,8 @@ export const products = [
         "alt": "AuViMosh desktop mosh preview with audio, masking and output controls"
       }
     ],
-    "listingDescription": "Transfer motion between sources and shape image damage with audio/video controls."
+    "listingDescription": "Transfer motion between sources and shape image damage with audio/video controls.",
+    "softwareGroup": "visual-media-tool"
   },
   {
     "name": "BOTTOMFEEDER",
@@ -351,7 +362,7 @@ export const products = [
     "longDescription": "BOTTOMFEEDER is a phase-distortion and wavefold drum instrument with eight voices, synthesis controls, an effects and LFO rack, and a master glitch chain.",
     "image": "assets/products/bottomfeeder/synth.png",
     "heroImage": "assets/products/bottomfeeder/synth.png",
-    "platform": "Windows",
+    "platform": "Windows · VST",
     "status": "IN DEVELOPMENT",
     "homePreview": true,
     "exhibitNotes": "PHASE DISTORTION / WAVEFOLD / DRUMS",
@@ -386,7 +397,9 @@ export const products = [
         "alt": "BOTTOMFEEDER MASTER GLITCH interface"
       }
     ],
-    "listingDescription": "Eight voices of phase-distortion and wavefold drums."
+    "listingDescription": "Eight voices of phase-distortion and wavefold drums.",
+    "vst": true,
+    "softwareGroup": "audio-plugin"
   },
   {
     "name": "HEXIT",
@@ -400,7 +413,7 @@ export const products = [
     "longDescription": "HEXIT is a six-voice sample instrument with sample switching, per-voice sample and effect sequences, a shared six-slot FX bank, and master effects with LFO modulation.",
     "image": "assets/products/hexit/voices.png",
     "heroImage": "assets/products/hexit/voices.png",
-    "platform": "Windows",
+    "platform": "Windows · VST",
     "status": "IN DEVELOPMENT",
     "homePreview": true,
     "headline": "SAMPLE / SWITCH / SEQUENCE",
@@ -441,7 +454,9 @@ export const products = [
         "alt": "HEXIT Compressor interface"
       }
     ],
-    "listingDescription": "Six sample voices with sample switching and FX sequencing."
+    "listingDescription": "Six sample voices with sample switching and FX sequencing.",
+    "vst": true,
+    "softwareGroup": "audio-plugin"
   },
   {
     "name": "StreamArch",
@@ -471,7 +486,8 @@ export const products = [
     "exhibitNotes": "ARCHIVE SEARCH / WATCH / COLLECT",
     "toolsUsedIn": [],
     "features": [],
-    "collection": "other"
+    "collection": "other",
+    "softwareGroup": "web-application"
   },
   {
     "name": "DrawTable",
@@ -484,9 +500,8 @@ export const products = [
     "longDescription": "A hands-on wavetable instrument for drawing frames, shaping motion and generating morphs.",
     "image": "assets/products/drawtable/card.png",
     "heroImage": "assets/products/drawtable/hero.png",
-    "platform": "Windows",
+    "platform": "Windows · VST",
     "standalone": true,
-    "vst3": false,
     "pricingType": "FREE",
     "publicPrice": null,
     "membershipAvailability": false,
@@ -499,7 +514,9 @@ export const products = [
     "homePreview": false,
     "exhibitNotes": "DRAWN WAVETABLES / FRAME MORPHING / SOUND",
     "toolsUsedIn": [],
-    "features": []
+    "features": [],
+    "vst": true,
+    "softwareGroup": "audio-plugin"
   },
   {
     "slug": "kaleidofield",
@@ -538,7 +555,8 @@ export const products = [
         "poster": "assets/products/kaleidofield/kaleidofield-square-poster.png",
         "label": "KaleidoField — square motion study"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "slug": "guillochefield",
@@ -570,7 +588,8 @@ export const products = [
         "alt": "Artwork output from Guilloché",
         "caption": "Exported artwork study"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "slug": "harmano",
@@ -602,7 +621,8 @@ export const products = [
         "alt": "Artwork output from Harmano",
         "caption": "Exported artwork study"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "slug": "interferencefield",
@@ -634,7 +654,8 @@ export const products = [
         "alt": "Artwork output from Interference Field",
         "caption": "Exported artwork study"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "slug": "moshpaint",
@@ -679,7 +700,8 @@ export const products = [
         "alt": "MoshPaint interface showing a layered landscape glitch composition"
       }
     ],
-    "listingDescription": "Paint, distort and animate images and video as living pigment."
+    "listingDescription": "Paint, distort and animate images and video as living pigment.",
+    "softwareGroup": "visual-media-tool"
   },
   {
     "slug": "spirofield",
@@ -711,7 +733,8 @@ export const products = [
         "alt": "Artwork output from SpiroField",
         "caption": "Exported artwork study"
       }
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "name": "DCLASS",
@@ -736,7 +759,8 @@ export const products = [
       "Independent pagination"
     ],
     "standalone": false,
-    "vst3": false
+    "vst3": false,
+    "softwareGroup": "web-application"
   },
   {
     "name": "Recursive Symbol Machine",
@@ -762,7 +786,8 @@ export const products = [
       "Animation, modulation and color controls",
       "Save and load presets",
       "PNG export and canvas or window recording"
-    ]
+    ],
+    "softwareGroup": "generative-visual-system"
   },
   {
     "name": "3FIELD",
@@ -770,9 +795,9 @@ export const products = [
     "disciplines": [
       "visual"
     ],
-    "category": "Spatial field laboratory",
-    "shortDescription": "Layer visual fields across planes, cylinders and spheres.",
-    "longDescription": "3FIELD is a spatial visual instrument for layering fields on planes, cylinders and spheres. Arrange pattern layers, shape transforms and movement, explore the scene with the camera, and export images or video.",
+    "category": "3D host for 2D visual systems",
+    "shortDescription": "Host selected 2D visual systems on 3D planes, cylinders and spheres.",
+    "longDescription": "3FIELD is a 3D host for selected 2D generative visual systems. Layer fields on planes, cylinders and spheres, adjust transforms and movement, explore the scene with the camera, and export images or video.",
     "image": "assets/products/3field/interface.png",
     "heroImage": "assets/products/3field/interface.png",
     "platform": "Windows",
@@ -786,7 +811,8 @@ export const products = [
       "Record and replay manual movement takes",
       "Save and load projects",
       "PNG and video export"
-    ]
+    ],
+    "softwareGroup": "visual-host"
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

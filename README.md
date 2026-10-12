@@ -46,3 +46,9 @@ The Artwork subheader link opens the personal showcase modal. Edit data/artwork.
 
 
 Site copy should be plain and descriptive. Avoid slogans, catchphrases, manifesto language and promotional metaphors. Describe what each tool does.
+
+## Software classifications
+
+Audio plugins: Grain Alchemy, BOTTOMFEEDER, HEXIT, DrawTable, RECkd/TimeField and STRETCH are VSTs. Some have standalone counterparts; do not infer standalone availability for every plugin. DEADBEAT and WAVE HORROR are also VSTs with working standalones; the supplied T-SYNC pack contains their standalones. T-SYNC connects those standalone applications.
+
+StreamArch and DCLASS are separate web applications with distinct purposes (film archive browsing and document research). MoshPaint and AuViMosh are visual media tools. The remaining visual machines are generative mathematical visual systems. 3FIELD hosts selected 2D systems in 3D. RECkd is currently displayed; the user plans to return the name to TimeField later.

@@ -16,7 +16,7 @@ function listing(p, base) {
   return `<article class="machine-listing"><a class="listing-image" href="${base}products/${p.slug}/"><img src="${base}${esc(p.image)}" alt="${esc(p.name)} interface" loading="lazy"></a><div class="listing-copy"><h3><a href="${base}products/${p.slug}/">${esc(p.name)}</a></h3><p>${esc(p.listingDescription || p.shortDescription)}</p></div><details class="listing-examples"><summary><span class="listing-chevron" aria-hidden="true">&gt;</span><span>Examples</span></summary><div class="listing-media">${media(p, base)}</div></details></article>`;
 }
 
-export const primaryMachineSlugs = ['timefield', 'stretch', 'bottomfeeder', 'hexit', 'grain-alchemy', 'drawtable', 'avm', 'moshpaint', 'recursive-symbol-machine', '3field', 'moirefield', 'kaleidofield'];
+export const primaryMachineSlugs = ['timefield', 'stretch', 'bottomfeeder', 'hexit', 'grain-alchemy', 'drawtable', 'avm', 'moshpaint', 'recursive-symbol-machine', '3field', 'moirefield', 'kaleidofield', 'guillochefield', 'spirofield', 'interferencefield', 'harmano', 'tunnelfield'];
 
 export function secondaryListings(products, base = '../') {
   return products.filter(p => p.collection !== 'other' && !primaryMachineSlugs.includes(p.slug)).map(p => listing(p, base)).join('');
@@ -25,7 +25,7 @@ export function secondaryListings(products, base = '../') {
 export function machineListings(products, base = './') {
   const audioSlugs = ['timefield', 'stretch', 'hexit', 'grain-alchemy', 'drawtable', 'bottomfeeder'];
   const audio = audioSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
-  const visualSlugs = ['moshpaint', 'avm', 'moirefield', '3field', 'recursive-symbol-machine', 'kaleidofield'];
+  const visualSlugs = ['moshpaint', 'avm', 'moirefield', '3field', 'recursive-symbol-machine', 'kaleidofield', 'guillochefield', 'spirofield', 'interferencefield', 'harmano', 'tunnelfield'];
   const visual = visualSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
   return `<div class="machine-columns"><section class="machine-column" aria-labelledby="audio-list-title"><h2 id="audio-list-title">Audio</h2>${audio.map(p => listing(p, base)).join('')}</section><section class="machine-column" aria-labelledby="visual-list-title"><h2 id="visual-list-title">Visual</h2>${visual.map(p => listing(p, base)).join('')}</section></div>`;
 }

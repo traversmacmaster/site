@@ -712,6 +712,11 @@ export const products = [
         "src": "assets/products/moshpaint/ginger.webm",
         "poster": "assets/products/moshpaint/ginger-poster.png",
         "label": "Ginger — MoshPaint example"
+      },
+      {
+        "src": "assets/products/moshpaint/circuit-memory.webm",
+        "poster": "assets/products/moshpaint/circuit-memory-poster.png",
+        "label": "Circuit Memory — MoshPaint example"
       }
     ]
   },

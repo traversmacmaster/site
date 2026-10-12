@@ -360,6 +360,11 @@ export const products = [
         "src": "assets/products/avm/pedestrian.webm",
         "poster": "assets/products/avm/pedestrian-poster.png",
         "label": "Pedestrian — AuViMosh example"
+      },
+      {
+        "src": "assets/products/avm/jellyglitch.webm",
+        "poster": "assets/products/avm/jellyglitch-poster.png",
+        "label": "Jellyglitch — AuViMosh example"
       }
     ]
   },

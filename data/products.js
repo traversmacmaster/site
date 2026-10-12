@@ -796,8 +796,8 @@ export const products = [
       "visual"
     ],
     "category": "3D host for 2D visual systems",
-    "shortDescription": "Host selected 2D visual systems on 3D planes, cylinders and spheres.",
-    "longDescription": "3FIELD is a 3D host for selected 2D generative visual systems. Layer fields on planes, cylinders and spheres, adjust transforms and movement, explore the scene with the camera, and export images or video.",
+    "shortDescription": "A 3D host for KaleidoField, MoiréField, SpiroField and Suminagashi.",
+    "longDescription": "3FIELD is a 3D host for KaleidoField, MoiréField, SpiroField and Suminagashi. Layer these 2D visual systems on planes, cylinders and spheres, adjust transforms and movement, explore the scene with the camera, and export images or video.",
     "image": "assets/products/3field/interface.png",
     "heroImage": "assets/products/3field/interface.png",
     "platform": "Windows",
@@ -812,7 +812,8 @@ export const products = [
       "Save and load projects",
       "PNG and video export"
     ],
-    "softwareGroup": "visual-host"
+    "softwareGroup": "visual-host",
+    "listingDescription": "A 3D host for KaleidoField, MoiréField, SpiroField and Suminagashi."
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

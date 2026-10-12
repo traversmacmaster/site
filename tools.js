@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=tools-inventory-2026-10-12';
+import { products } from './data/products.js?v=ginger-example-2026-10-12';
 import { machineListings, primaryMachineSlugs } from './machine-listings.js?v=tools-split-2026-10-12';
 let filter='all';
 const query=document.querySelector('#catalog-query');

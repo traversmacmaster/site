@@ -701,7 +701,14 @@ export const products = [
       }
     ],
     "listingDescription": "Paint, distort and animate images and video as living pigment.",
-    "softwareGroup": "visual-media-tool"
+    "softwareGroup": "visual-media-tool",
+    "videos": [
+      {
+        "src": "assets/products/moshpaint/ginger.webm",
+        "poster": "assets/products/moshpaint/ginger-poster.png",
+        "label": "Ginger — MoshPaint example"
+      }
+    ]
   },
   {
     "slug": "spirofield",

@@ -7,9 +7,13 @@ function media(p, base) {
   const images = p.examples || [];
   const audio = p.audioExamples || [];
   if (!videos.length && !images.length && !audio.length) return '<p class="listing-empty">Examples coming soon.</p>';
-  return videos.map(v => `<figure><video controls loop playsinline preload="none"${v.poster ? ` poster="${base}${esc(v.poster)}"` : ''} aria-label="${esc(v.label)}"><source src="${base}${esc(v.src)}" type="${esc(v.type || 'video/webm')}"></video><figcaption>${esc(v.label)}</figcaption></figure>`).join('') +
+  const markup = videos.map(v => `<figure><video controls loop playsinline preload="none"${v.poster ? ` poster="${base}${esc(v.poster)}"` : ''} aria-label="${esc(v.label)}"><source src="${base}${esc(v.src)}" type="${esc(v.type || 'video/webm')}"></video><figcaption>${esc(v.label)}</figcaption></figure>`).join('') +
     audio.map(a => `<figure><audio controls preload="none" aria-label="${esc(a.label)}"><source src="${base}${esc(a.src)}"${a.type ? ` type="${esc(a.type)}"` : ''}></audio><figcaption>${esc(a.label)}</figcaption></figure>`).join('') +
     images.map(i => `<figure><a href="${base}${esc(i.src)}"><img src="${base}${esc(i.src)}" alt="${esc(i.alt)}" loading="lazy"></a><figcaption>${esc(i.caption || '')}</figcaption></figure>`).join('');
+  let index = 0;
+  const slides = markup.replace(/<figure>/g, () => '<figure class="example-slide"' + (index++ ? ' hidden' : '') + '>');
+  const disabled = index < 2 ? ' disabled' : '';
+  return '<div class="example-carousel" data-index="0"><div class="example-slides">' + slides + '</div><div class="example-controls"><button type="button" class="example-step" data-step="-1" aria-label="Previous example"' + disabled + '>&lt;</button><span class="example-count" aria-live="polite">1 / ' + index + '</span><button type="button" class="example-step" data-step="1" aria-label="Next example"' + disabled + '>&gt;</button></div></div>';
 }
 
 function listing(p, base) {

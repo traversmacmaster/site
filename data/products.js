@@ -571,6 +571,11 @@ export const products = [
         "src": "assets/products/kaleidofield/KaleidoField_8-13_square.webm",
         "poster": "assets/products/kaleidofield/kaleidofield-square-poster.png",
         "label": "KaleidoField — square motion study"
+      },
+      {
+        "src": "assets/products/kaleidofield/output-landscape.webm",
+        "poster": "assets/products/kaleidofield/output-landscape-poster.png",
+        "label": "KaleidoField — landscape motion study"
       }
     ],
     "softwareGroup": "generative-visual-system"

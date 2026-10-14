@@ -1,0 +1,52 @@
+{
+  "app": "AuViMosh",
+  "version": "1.0.0",
+  "target": "GitHub Pages / browser",
+  "files": [
+    {
+      "path": "assets/IBM-Plex-Mono-Medium-DyRt3UMW.ttf",
+      "bytes": 129916,
+      "sha256": "4fc14a73ca53ba9d32fd759ae1ca1a3133326035d0dd337862b3ee1633cc156e"
+    },
+    {
+      "path": "assets/Rajdhani-SemiBold-DszwRPli.ttf",
+      "bytes": 390340,
+      "sha256": "94bbd25a18ca665999feb05a537de9fd2b860dcfb78bbe9ca00270825bf235da"
+    },
+    {
+      "path": "assets/auvimosh-logo-DU4EpICo.png",
+      "bytes": 1087096,
+      "sha256": "bad7a785c650c81ed61c884a7743228ffe85728dab980cd99d20e6b313481d80"
+    },
+    {
+      "path": "assets/index-Cm26dE7y.css",
+      "bytes": 35882,
+      "sha256": "6b43783f118121c98e3dae9f053d00d0afbe635b5002368997e8fe5347e2ab40"
+    },
+    {
+      "path": "assets/index-DLdSu_ff.js",
+      "bytes": 102331,
+      "sha256": "4f29956e415835c8a06685191921d7d90f1551d8ec6784e5d22d1298191f7bbf"
+    },
+    {
+      "path": "assets/worker-BAOIWoxA.js",
+      "bytes": 2526,
+      "sha256": "242931933b757920171cbdfd4ad7a082cfaa6537a0110e707d80d1555eaa0890"
+    },
+    {
+      "path": "ffmpeg/ffmpeg-core.js",
+      "bytes": 111804,
+      "sha256": "67a48f11645f85439f3fde4f2119042c16b374b910206b7a7a24f342e28dcae3"
+    },
+    {
+      "path": "ffmpeg/ffmpeg-core.wasm",
+      "bytes": 32232419,
+      "sha256": "9f57947a5bd530d8f00c5b3f2cb2a3492faa7e5d823315342d6a8656d0a6b7b7"
+    },
+    {
+      "path": "index.html",
+      "bytes": 559,
+      "sha256": "ff386375ffa53b64d289ff6a6776c00a804c30e401164d03a22071a307799879"
+    }
+  ]
+}

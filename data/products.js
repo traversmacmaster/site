@@ -683,24 +683,26 @@ export const products = [
     "slug": "moshpaint",
     "name": "MoshPaint",
     "category": "Glitch painting instrument",
-    "platform": "Windows",
-    "appUrl": "",
+    "platform": "Windows + Web",
+    "appUrl": "apps/moshpaint/",
     "disciplines": [
       "visual"
     ],
     "standalone": true,
     "vst3": false,
-    "status": "ALPHA · WINDOWS",
+    "status": "ALPHA · WEB + WINDOWS",
     "image": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
     "heroImage": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
     "homePreview": true,
     "features": [
-      "Open the Windows preview and import an image or video into a pigment well.",
-      "Paint with image brushes, create living video regions and use mosh or damage tools to reshape the artwork.",
-      "Save the project or export a still. Motion export uses FFmpeg installed on the computer. A browser edition is not yet available."
+      "Import images, videos or camera clips into source wells; original media stays unchanged.",
+      "Paint with living video brushes, fields and shapes, or place pigment on depth and form surfaces.",
+      "Select dry paint or living pigment with Color mask. Color Solidify consolidates similar shades for cleaner selections.",
+      "Fill selected masks with video or integrated Moirefield patterns; create Moire pigment directly in source wells.",
+      "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."
     ],
-    "longDescription": "MoshPaint is a Windows glitch art editor and experimental painting tool for painting, distorting, transforming and animating images and video through unconventional digital processes.",
-    "shortDescription": "MoshPaint is a Windows glitch art editor and experimental painting tool for painting, distorting, transforming and animating images and video through unconventional digital processes.",
+    "longDescription": "MoshPaint is a browser and Windows glitch painting tool for painting, distorting and animating images and video. Use moving pigment, color masks and Moirefield fills to build layered artwork.",
+    "shortDescription": "Paint with images, moving video and camera clips. Clean color masks, add animated Moirefield fills and export stills or video.",
     "headline": "glitch art editor",
     "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
     "examples": [
@@ -722,7 +724,7 @@ export const products = [
         "alt": "MoshPaint interface showing a layered landscape glitch composition"
       }
     ],
-    "listingDescription": "Paint, distort and animate images and video as living pigment.",
+    "listingDescription": "Paint images and moving video in your browser, with color masks and animated Moirefield fills.",
     "softwareGroup": "visual-media-tool",
     "videos": [
       {

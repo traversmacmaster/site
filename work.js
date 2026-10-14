@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=timefield-screens-2026-10-12';
+import { products } from './data/products.js?v=moshpaint-web-2026-10-14';
 import { examples } from './examples.js?v=reckd-2026-10-11';
 
 const withoutToolLabels=p=>{

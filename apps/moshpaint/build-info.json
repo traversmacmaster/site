@@ -1,0 +1,152 @@
+{
+  "app": "MoshPaint",
+  "version": "2.0.0-alpha.7",
+  "browserRelease": "living pigment, Color Solidify, camera, Moirefield, depth/forms and timestamped exports",
+  "files": [
+    {
+      "path": "IBM-Plex-Mono-Medium.ttf",
+      "bytes": 129916,
+      "sha256": "4fc14a73ca53ba9d32fd759ae1ca1a3133326035d0dd337862b3ee1633cc156e"
+    },
+    {
+      "path": "IBM-Plex-Mono-OFL.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "path": "app.mjs",
+      "bytes": 110300,
+      "sha256": "4e47e8e45823db4b3807a14759b11325598323e7f2f34e335545b0673431083d"
+    },
+    {
+      "path": "browser-platform.mjs",
+      "bytes": 6581,
+      "sha256": "515f7a33a73879283946123b1c9f936f753eec9d6e071de80de8e645508b7796"
+    },
+    {
+      "path": "browser-project.mjs",
+      "bytes": 2985,
+      "sha256": "5cd2983b496c6d6cecee0e357c5ef6a841750e429e607cb0f8d651a3b09e1cd5"
+    },
+    {
+      "path": "camera.mjs",
+      "bytes": 6190,
+      "sha256": "f9e693c539397ccb0ee7a8276ffdc40cc34a2bb86cf00459a397f8efec378f47"
+    },
+    {
+      "path": "color-solidify.mjs",
+      "bytes": 10872,
+      "sha256": "b8b196aaa443fd6e3ec33662a25a0a1db9055ef07fae320784c9e9dd3d674814"
+    },
+    {
+      "path": "core.mjs",
+      "bytes": 14306,
+      "sha256": "43e746ab10eb84add54a3803250a94bc239a9c6f3bf9469df64db62a03c67948"
+    },
+    {
+      "path": "engine.mjs",
+      "bytes": 11890,
+      "sha256": "01debcc8e0462b8bf253a77308d26a7b0cdb36f6b932a8bb5bea782e74e01e26"
+    },
+    {
+      "path": "export-badge.js",
+      "bytes": 3931,
+      "sha256": "b70e489195d5521c29a213265e8a448e1c892249b4bf478179cbab295734b011"
+    },
+    {
+      "path": "fills/moire-engine.mjs",
+      "bytes": 7316,
+      "sha256": "32aaafc2e63621aec75853858a8d9bcbb12cd1600b645a63067a175c14f4d309"
+    },
+    {
+      "path": "fills/moire-project.mjs",
+      "bytes": 2248,
+      "sha256": "e8ea0a830e733c1da8c38196b1d1e883289f086529d4fbf809ec0dbc05ce53e0"
+    },
+    {
+      "path": "fills/procedural.mjs",
+      "bytes": 3652,
+      "sha256": "ebe4fc7946645fc1a610b6378fd2eea8acee7700344dd572e52bf8e3486438ee"
+    },
+    {
+      "path": "forms.mjs",
+      "bytes": 14163,
+      "sha256": "0e6821e579e284234cd9ed9685e986c80ddceef679f122f1907a811555d1fe93"
+    },
+    {
+      "path": "index.html",
+      "bytes": 16338,
+      "sha256": "61e75546939bc31af60fa2d1d3f613340a27c8fda2c031deb1203e25bd3d0724"
+    },
+    {
+      "path": "layout.mjs",
+      "bytes": 1268,
+      "sha256": "48e50e59793e70dbae8a8131e949c71d589eb815c57bc777d36dede2d2331d2b"
+    },
+    {
+      "path": "living-depth.mjs",
+      "bytes": 3355,
+      "sha256": "f170bad309b444939e0614546b8f5d13e222d28ef3d31d650daf44016b275bab"
+    },
+    {
+      "path": "living.mjs",
+      "bytes": 26559,
+      "sha256": "c8a598aba077270f502f1bdc3b4b1446ca384c95fce0f455e4ee1a9abc98e2fc"
+    },
+    {
+      "path": "media-limits.mjs",
+      "bytes": 1389,
+      "sha256": "1d34dbf082cd9078ae862c19ce8df5a7179c09b782b859fa019a8fa7ebddeb22"
+    },
+    {
+      "path": "motion-plan.mjs",
+      "bytes": 2422,
+      "sha256": "01045f7d6af1003663efd549450ef623501d2611c990390e1720403e792ccfdc"
+    },
+    {
+      "path": "motion-render.mjs",
+      "bytes": 1624,
+      "sha256": "f8885f8174891731d25298ec37083d9eea98f5d1c285e5d2dcb1b9283c731dbb"
+    },
+    {
+      "path": "processors.mjs",
+      "bytes": 3581,
+      "sha256": "5a73955c1878bf61c52e34497f923ed2477b4aed5b1b5d5d44c68cda91e14490"
+    },
+    {
+      "path": "project-assets.mjs",
+      "bytes": 1962,
+      "sha256": "ab9881653be7dde771da125212ce4cf64dd93e6d88ececd60a287db2415db33f"
+    },
+    {
+      "path": "selection.mjs",
+      "bytes": 1901,
+      "sha256": "49cd69e927e19cdf594fb9ccb93997049fb4cd129d363817cb32036c0eec8a77"
+    },
+    {
+      "path": "shortcuts.mjs",
+      "bytes": 1428,
+      "sha256": "a602a4f21c3c1cdc52f0337710d9a01a3422422b87bab3cbefe8922c5b251e21"
+    },
+    {
+      "path": "sources.mjs",
+      "bytes": 8345,
+      "sha256": "b9917f6dfe5ca7ef0fb2c4e3e51a2af8bac081a5b142474c933a84d0ab0a93ef"
+    },
+    {
+      "path": "style.css",
+      "bytes": 23934,
+      "sha256": "995f8fbb0fcd8dae21fb3cb75c247f506288f49b7090cb659d1ecfed2926f678"
+    },
+    {
+      "path": "webm-frames.mjs",
+      "bytes": 4765,
+      "sha256": "7e53bb7a262b9c4077d1153d4106f60ed5cfb2b079ecd6a9f938261bf95065a3"
+    },
+    {
+      "path": "wet.mjs",
+      "bytes": 9130,
+      "sha256": "1093d95b383dfc4d4556d08d0519ad369456725cafc4716cf5c05b1648026d6d"
+    }
+  ]
+}

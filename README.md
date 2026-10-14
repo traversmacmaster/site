@@ -4,7 +4,7 @@ Static, GitHub Pages-compatible site for Travers MacMaster's art, sound, experim
 
 The approved visual system uses warm ivory, black ink, fine rules, Cinzel headings, Source Sans 3 body/UI text, and IBM Plex Mono technical labels. Fonts and their open-source licenses are served locally from `assets/fonts/`. The harmonic SVG is an original mathematical plot; the social preview is generated artwork.
 
-The complete machine catalog lives in `data/products.js`. The homepage, searchable Machines collection, Audio, Lab, and machine details read this catalog. `catalog.js` shares card rendering; `site.js` handles the accessible search dialog and mobile navigation. All fourteen catalog machines have static, crawlable detail pages. Browser builds, including SpiroField, are staged beneath `apps/`; app source remains owned by each machine project.
+The complete machine catalog lives in `data/products.js`. The homepage, searchable Machines collection, Audio, Lab, and machine details read this catalog. `catalog.js` shares card rendering; `site.js` handles the accessible search dialog and mobile navigation. All fourteen catalog machines have static, crawlable detail pages. Browser builds, including SpiroField and MoshPaint, are staged beneath `apps/`; app source remains owned by each machine project.
 
 `data/content.js` retains the previous editorial model for future artwork and social links; it is not currently rendered. Do not expose its unfinished placeholder content. Legacy commerce fields remain in the product catalog but are not displayed.
 
@@ -54,3 +54,19 @@ Audio plugins: Grain Alchemy, BOTTOMFEEDER, HEXIT, DrawTable, TimeField and STRE
 StreamArch and DCLASS are separate web applications with distinct purposes (film archive browsing and document research). MoshPaint and AuViMosh are visual media tools. The remaining visual machines are generative mathematical visual systems. 3FIELD hosts selected 2D systems in 3D. The permanent product name is TimeField.
 
 Visual listing order: MoshPaint, AuViMosh, MoiréField, 3FIELD, then the remaining visual tools. 3FIELD hosts KaleidoField, MoiréField, SpiroField and Suminagashi. Suminagashi has no separate 2D product listing yet.
+
+
+## MoshPaint browser alpha
+
+The current browser application is staged at `apps/moshpaint/`, with its public entry point linked from `products/moshpaint/` and its Web availability in `data/products.js`. It includes living video painting, camera clip pigment, integrated Moirefield fills/source wells, Color Solidify controls for dry and living masks, depth/form tools, responsive tool drawers, and timestamped WebM export in supported browsers. Save projects as `.moshpaint` downloads; browser recovery is local to that browser/origin. Camera access requires permission and HTTPS or localhost.
+
+From this directory, run `node scripts/sync-moshpaint.mjs` to refresh the app from the adjacent `MoshPaint-2.0/src` project. A different project root can be supplied as the first argument. The sync includes only browser runtime files, adds app noindex/product canonical metadata, and writes version/file hashes to `apps/moshpaint/build-info.json`. It does not build Windows installers or publish the site. Update the product copy/catalog when adding user-facing features.
+
+The October 2026 stage was checked under the nested `/apps/moshpaint/` route: product launch link and structured data, mask controls, video playback, project downloads, phone viewport sizing, and a 15-frame / 60-FPS / 0.25-second WebM export. All staged file hashes matched, and the check found no missing resources or JavaScript page errors.
+
+
+## AuViMosh browser build
+
+The latest AuViMosh web source is staged at `apps/auvimosh/`. Run `node scripts/sync-auvimosh.mjs` from this directory to stage the FFmpeg browser core, compile TypeScript, build the Pages edition, and copy it into the site. An optional first argument selects a different `datamosh-instrument` project root. The script preserves app noindex/product canonical metadata and the font license, and records current runtime file hashes in `apps/auvimosh/build-info.json`. Old hashed bundles remain available for visitors with a cached app shell; the current shell references the latest build.
+
+The current staged AuViMosh build was checked under `/apps/auvimosh/`: both source slots loaded video, the local FFmpeg worker generated a preview, and MP4 export preserved audio at 160 × 120 / 24 FPS. Runtime hashes matched the build manifest, with no missing resources or JavaScript page errors.

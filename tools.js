@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=kfield-example-2026-10-13';
+import { products } from './data/products.js?v=moshpaint-web-2026-10-14';
 import { machineListings, primaryMachineSlugs } from './machine-listings.js?v=example-carousel-2026-10-12';
 let filter='all';
 const query=document.querySelector('#catalog-query');

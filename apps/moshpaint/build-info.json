@@ -15,8 +15,8 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 110300,
-      "sha256": "4e47e8e45823db4b3807a14759b11325598323e7f2f34e335545b0673431083d"
+      "bytes": 114500,
+      "sha256": "b795fdfff32a8a40910108da4dd95b51a61c8bfe53b3de2ab4ed4a032e312cc1"
     },
     {
       "path": "browser-platform.mjs",
@@ -40,8 +40,8 @@
     },
     {
       "path": "core.mjs",
-      "bytes": 14306,
-      "sha256": "43e746ab10eb84add54a3803250a94bc239a9c6f3bf9469df64db62a03c67948"
+      "bytes": 14663,
+      "sha256": "7be07d99e6d1f653fa884397e421d54667e70ffa8e4169f519f6da25a94dc345"
     },
     {
       "path": "engine.mjs",
@@ -70,8 +70,8 @@
     },
     {
       "path": "forms.mjs",
-      "bytes": 14163,
-      "sha256": "0e6821e579e284234cd9ed9685e986c80ddceef679f122f1907a811555d1fe93"
+      "bytes": 15556,
+      "sha256": "871d5fcbc8df4982da1983f030d2b9176d0881757cc51509e91b741ac1fe5ce2"
     },
     {
       "path": "index.html",
@@ -90,8 +90,8 @@
     },
     {
       "path": "living.mjs",
-      "bytes": 26559,
-      "sha256": "c8a598aba077270f502f1bdc3b4b1446ca384c95fce0f455e4ee1a9abc98e2fc"
+      "bytes": 26889,
+      "sha256": "c3ded8ff43395885bc7326b25ee8248c6f5110eff9957365ce13f283ed681ad9"
     },
     {
       "path": "media-limits.mjs",

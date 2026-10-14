@@ -24,9 +24,9 @@
       "sha256": "6b43783f118121c98e3dae9f053d00d0afbe635b5002368997e8fe5347e2ab40"
     },
     {
-      "path": "assets/index-DLdSu_ff.js",
-      "bytes": 102331,
-      "sha256": "4f29956e415835c8a06685191921d7d90f1551d8ec6784e5d22d1298191f7bbf"
+      "path": "assets/index-DchYXPmH.js",
+      "bytes": 104543,
+      "sha256": "189946dffa2a82fa2577452b190defecee87bf4283a33eef0f2a538efad0771f"
     },
     {
       "path": "assets/worker-BAOIWoxA.js",
@@ -46,7 +46,7 @@
     {
       "path": "index.html",
       "bytes": 559,
-      "sha256": "ff386375ffa53b64d289ff6a6776c00a804c30e401164d03a22071a307799879"
+      "sha256": "eb92edf43b8a7a7e0af1fe392758f7e44618a29f09651893d0877af5278c44d2"
     }
   ]
 }

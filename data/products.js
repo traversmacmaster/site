@@ -697,6 +697,7 @@ export const products = [
     "features": [
       "Import images, videos or camera clips into source wells; original media stays unchanged.",
       "Paint with living video brushes, fields and shapes, or place pigment on depth and form surfaces.",
+      "Place the current 3D view on the flat canvas as a transparent snapshot, then drag or resize it.",
       "Select dry paint or living pigment with Color mask. Color Solidify consolidates similar shades for cleaner selections.",
       "Fill selected masks with video or integrated Moirefield patterns; create Moire pigment directly in source wells.",
       "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."

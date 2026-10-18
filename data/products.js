@@ -203,7 +203,7 @@ export const products = [
     "vst": true,
     "softwareGroup": "audio-plugin",
     "downloadVersion": "1.0",
-    "downloadUrl": "downloads/#timefield"
+    "downloadUrl": "uploads/vst/TimeField-1.0-Windows-x64-VST3.zip"
   },
   {
     "name": "STRETCH",
@@ -253,7 +253,7 @@ export const products = [
     "vst3": true,
     "softwareGroup": "audio-plugin",
     "downloadVersion": "1.0",
-    "downloadUrl": "downloads/#stretch"
+    "downloadUrl": "uploads/vst/Stretch-1.0-Windows-x64-VST3.zip"
   },
   {
     "name": "Grain Alchemy",
@@ -841,6 +841,46 @@ export const products = [
     ],
     "softwareGroup": "visual-host",
     "listingDescription": "A 3D host for KaleidoField, MoiréField, SpiroField and Suminagashi."
+  },
+  {
+    "name": "BASEMENT",
+    "slug": "basement",
+    "disciplines": [
+      "audio"
+    ],
+    "category": "Four-layer bass synthesizer",
+    "shortDescription": "Four bass oscillator layers with filtering, drive and disperser processing.",
+    "longDescription": "BASEMENT is a MIDI-played bass synthesizer with four oscillator layers. Choose phase distortion, FM, resonator or subtractive synthesis, balance the layers in the mixer, and shape the result with master filtering, Parallel Drive and Disperser.",
+    "image": "assets/products/basement/oscillators.png",
+    "heroImage": "assets/products/basement/oscillators.png",
+    "platform": "Windows x64 · VST3",
+    "vst": true,
+    "vst3": true,
+    "standalone": true,
+    "status": "AVAILABLE",
+    "homePreview": false,
+    "downloadVersion": "1.0",
+    "downloadUrl": "uploads/vst/BASEMENT-1.0-Windows-x64-VST3.zip",
+    "softwareGroup": "audio-plugin",
+    "features": [
+      "Four oscillator layers with selectable synthesis engines",
+      "Keyboard layers, independent slots and legacy-pair modes",
+      "Per-layer pitch, envelopes, level, mute and solo",
+      "Bank LFOs and master LFO routing",
+      "Master filter, Parallel Drive and Disperser"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/products/basement/oscillators.png",
+        "caption": "Oscillator layers",
+        "alt": "BASEMENT oscillator and mixer controls"
+      },
+      {
+        "src": "assets/products/basement/master-fx.png",
+        "caption": "Master FX",
+        "alt": "BASEMENT master filter, drive, disperser and modulation"
+      }
+    ]
   }
 ];
 export const getProduct = slug => products.find(p=>p.slug===slug);

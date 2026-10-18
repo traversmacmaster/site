@@ -1,4 +1,4 @@
-import { getProduct } from './data/products.js?v=moshpaint-web-2026-10-14';
+import { getProduct } from './data/products.js?v=vst-downloads-2026-10-18';
 import { esc } from './catalog.js';
 import { examples } from './examples.js';
 const p=getProduct(document.body.dataset.product);

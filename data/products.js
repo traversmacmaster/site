@@ -201,7 +201,9 @@ export const products = [
     ],
     "listingDescription": "Record a four-bar audio field and reshape it with six playback heads.",
     "vst": true,
-    "softwareGroup": "audio-plugin"
+    "softwareGroup": "audio-plugin",
+    "downloadVersion": "1.0",
+    "downloadUrl": "downloads/#timefield"
   },
   {
     "name": "STRETCH",
@@ -249,7 +251,9 @@ export const products = [
     "listingDescription": "Bend live audio with stretch, pitch, freeze, reverse and modulation.",
     "vst": true,
     "vst3": true,
-    "softwareGroup": "audio-plugin"
+    "softwareGroup": "audio-plugin",
+    "downloadVersion": "1.0",
+    "downloadUrl": "downloads/#stretch"
   },
   {
     "name": "Grain Alchemy",
@@ -608,39 +612,6 @@ export const products = [
       {
         "src": "assets/products/guillochefield/output-example.png",
         "alt": "Artwork output from Guilloché",
-        "caption": "Exported artwork study"
-      }
-    ],
-    "softwareGroup": "generative-visual-system"
-  },
-  {
-    "slug": "harmano",
-    "name": "Harmano",
-    "category": "Digital harmonograph",
-    "platform": "Windows + Web",
-    "appUrl": "apps/harmano/",
-    "disciplines": [
-      "visual"
-    ],
-    "standalone": true,
-    "vst3": false,
-    "status": "BROWSER PREVIEW",
-    "image": "assets/products/harmano/interface.png",
-    "heroImage": "assets/products/harmano/interface.png",
-    "homePreview": true,
-    "features": [
-      "Choose a frequency relationship or adjust the oscillators directly.",
-      "Run the drawing and change phase, damping and pen settings to shape the curve.",
-      "Commit drawings to layers, choose the canvas size and export the composition as SVG or PNG."
-    ],
-    "longDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
-    "shortDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
-    "headline": "harmonograph generator",
-    "exhibitNotes": "DIGITAL HARMONOGRAPH",
-    "examples": [
-      {
-        "src": "assets/products/harmano/output-example.png",
-        "alt": "Artwork output from Harmano",
         "caption": "Exported artwork study"
       }
     ],

@@ -1,6 +1,6 @@
 import './example-carousel.js?v=example-carousel-2026-10-12';
 import { artwork } from './data/artwork.js?v=showcase-2026-10-11';
-import { products } from './data/products.js?v=moshpaint-web-2026-10-14';
+import { products } from './data/products.js?v=vst-downloads-2026-10-18';
 import { esc } from './catalog.js';
 const base=new URL('./',import.meta.url);
 document.querySelector('#year').textContent=new Date().getFullYear();

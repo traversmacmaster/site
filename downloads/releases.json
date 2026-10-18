@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "stretch",
+    "name": "STRETCH",
+    "version": "1.0",
+    "internalBuildVersion": "0.3.0",
+    "file": "Stretch-1.0-Windows-x64-VST3.zip",
+    "bytes": 2884305,
+    "sha256": "8bd10458102f44871d46bebf6a50c146117c6af537cab74676ace32fda86d486"
+  },
+  {
+    "slug": "timefield",
+    "name": "TimeField",
+    "version": "1.0",
+    "internalBuildVersion": "0.15.1",
+    "file": "TimeField-1.0-Windows-x64-VST3.zip",
+    "bytes": 3186889,
+    "sha256": "bc2f1db2b741aa1721afe1eff535f64a8dfdd631d0e3bfa24a51ce40fffe341e"
+  },
+  {
+    "slug": "basement",
+    "name": "BASEMENT",
+    "version": "1.0",
+    "internalBuildVersion": "0.9.0",
+    "file": "BASEMENT-1.0-Windows-x64-VST3.zip",
+    "bytes": 4072418,
+    "sha256": "ee7cb03cd999e520cfba5df8035b965a7657b8162366a3df9e7df59a21640dd7"
+  }
+]

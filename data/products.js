@@ -771,31 +771,50 @@ export const products = [
     "softwareGroup": "web-application"
   },
   {
-    "name": "Recursive Symbol Machine",
+    "name": "Recursive",
     "slug": "recursive-symbol-machine",
     "disciplines": [
       "visual"
     ],
     "category": "Recursive visual instrument",
-    "shortDescription": "One symbol becomes a nested, radial, spiral or branching composition.",
-    "longDescription": "Recursive Symbol Machine is a standalone GPU visual instrument that turns one symbol into nested, radial, spiral, branching, tunnel, orbit, grid or cascading compositions. Shape recursion, transforms, motion and color, then save a PNG or record the result.",
-    "image": "assets/products/recursive-symbol-machine/interface.png",
-    "heroImage": "assets/products/recursive-symbol-machine/interface.png",
+    "shortDescription": "Build recursive symbol compositions with masks, video fills and 3D depth layers.",
+    "longDescription": "Recursive is a standalone GPU visual instrument for building nested, radial, spiral, branching, tunnel, orbit, grid and cascading compositions from a symbol. Cut symbols or the whole composition with procedural masks, fill them with looping video, and separate generations into 3D depth layers with camera controls. Shape motion, color and feedback, then export a PNG or record the result.",
+    "image": "assets/products/recursive-symbol-machine/2026-10-17/interface.png",
+    "heroImage": "assets/products/recursive-symbol-machine/2026-10-17/interface.png",
     "platform": "Windows",
     "standalone": true,
     "vst3": false,
     "status": "STUDIO INSTRUMENT",
     "homePreview": true,
     "features": [
-      "Load a symbol or use built-in shapes",
-      "Nested, radial, spiral, branch, tunnel, orbit, grid and cascade structures",
-      "Recursion depth, copies and scale falloff controls",
-      "Direct position, scale, rotation and mirror controls",
-      "Animation, modulation and color controls",
-      "Save and load presets",
-      "PNG export and canvas or window recording"
+      "Load an image or choose from eight built-in symbols",
+      "Eight recursive layouts with depth, copies and scale falloff controls",
+      "Circle, box, wedge and stripe masks with feathering and inversion",
+      "Apply masks to individual symbols or the whole composition; contain or leave feedback trails",
+      "Loop video inside symbol silhouettes or mask apertures, per symbol or across the output",
+      "3D depth layers with camera yaw, pitch, perspective and orbit",
+      "Animation, modulation, color grading and feedback controls",
+      "Save and load presets; relink local video clips when reopening",
+      "PNG export and canvas or window recording; video fills play silently"
     ],
-    "softwareGroup": "generative-visual-system"
+    "softwareGroup": "generative-visual-system",
+    "examples": [
+      {
+        "src": "assets/products/recursive-symbol-machine/2026-10-17/iris-stack.png",
+        "alt": "Tilted layers of eye symbols receding into depth",
+        "caption": "Iris Stack — symbols arranged in depth layers"
+      },
+      {
+        "src": "assets/products/recursive-symbol-machine/2026-10-17/portal-window.png",
+        "alt": "Spiral symbols revealed through a circular composition mask",
+        "caption": "Portal Window — a circular mask over the composition"
+      },
+      {
+        "src": "assets/products/recursive-symbol-machine/2026-10-17/signal-slices.png",
+        "alt": "Striped square outlines tilted and layered in space",
+        "caption": "Signal Slices — striped symbol masks in depth layers"
+      }
+    ]
   },
   {
     "name": "3FIELD",

@@ -71,4 +71,6 @@ The latest AuViMosh web source is staged at `apps/auvimosh/`. Run `node scripts/
 
 The current staged AuViMosh build was checked under `/apps/auvimosh/`: both source slots loaded video, the local FFmpeg worker generated a preview, and MP4 export preserved audio at 160 × 120 / 24 FPS. Runtime hashes matched the build manifest, with no missing resources or JavaScript page errors.
 
+Recursive is the current name of the Windows instrument previously called Recursive Symbol Machine. The existing `/products/recursive-symbol-machine/` URL and catalog slug remain in use. Its catalog, static listings, and product page include procedural masks, looping video fills, and 3D depth layers. Current interface and artwork captures are in `assets/products/recursive-symbol-machine/2026-10-17/`. App source remains in the adjacent `RecursiveSymbolMachine` project; the renamed portable build is `dist/Recursive 1.0.0.exe` there. These local site edits do not publish a deployment.
+
 MoshPaint also includes **Place view on canvas**: a transparent still snapshot of the current 3D object, placed above the flat canvas for dragging/resizing with Select. Existing artwork and moving pigment remain underneath. Placements are included in saved projects and exports.

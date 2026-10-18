@@ -1,0 +1,5 @@
+.news-ticker { display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 13px; line-height: 1.6; }
+.news-ticker time { flex-shrink: 0; color: var(--muted); font: 11px/1.6 var(--mono); }
+.news-ticker p { margin: 0; }
+.news-ticker a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 700px) { .news-ticker { flex-direction: column; gap: 4px; } }

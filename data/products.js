@@ -376,56 +376,6 @@ export const products = [
     ]
   },
   {
-    "name": "BOTTOMFEEDER",
-    "slug": "bottomfeeder",
-    "disciplines": [
-      "audio"
-    ],
-    "category": "Phase distortion wavefold drums",
-    "shortDescription": "Eight drum voices. Phase distortion, wavefolding and master glitch effects.",
-    "longDescription": "BOTTOMFEEDER is a phase-distortion and wavefold drum instrument with eight voices, synthesis controls, an effects and LFO rack, and a master glitch chain.",
-    "image": "assets/products/bottomfeeder/synth.png",
-    "heroImage": "assets/products/bottomfeeder/synth.png",
-    "platform": "Windows · VST",
-    "status": "IN DEVELOPMENT",
-    "homePreview": true,
-    "exhibitNotes": "PHASE DISTORTION / WAVEFOLD / DRUMS",
-    "features": [
-      "Eight individually editable drum voices",
-      "Pitch, envelopes, phase distortion and wavefold controls",
-      "Per-voice and master effects with LFO modulation",
-      "Master Glitch Echo, Repeater and Tape Stop",
-      "A PHASE and B FOLD modulation sequences",
-      "Save, load and factory kit controls"
-    ],
-    "whatsNew": "Meet BOTTOMFEEDER: eight voices of phase-distortion and wavefold drums, with FX + LFO and MASTER GLITCH workspaces.",
-    "screenshots": [
-      {
-        "src": "assets/products/bottomfeeder/synth.png",
-        "caption": "SYNTH",
-        "alt": "BOTTOMFEEDER SYNTH interface"
-      },
-      {
-        "src": "assets/products/bottomfeeder/fx-lfo.png",
-        "caption": "FX + LFO",
-        "alt": "BOTTOMFEEDER FX + LFO interface"
-      },
-      {
-        "src": "assets/products/bottomfeeder/voice-fx.png",
-        "caption": "Voice editor + FX",
-        "alt": "BOTTOMFEEDER Voice editor + FX interface"
-      },
-      {
-        "src": "assets/products/bottomfeeder/master-glitch.png",
-        "caption": "MASTER GLITCH",
-        "alt": "BOTTOMFEEDER MASTER GLITCH interface"
-      }
-    ],
-    "listingDescription": "Eight voices of phase-distortion and wavefold drums.",
-    "vst": true,
-    "softwareGroup": "audio-plugin"
-  },
-  {
     "name": "HEXIT",
     "slug": "hexit",
     "version": "0.1.0",

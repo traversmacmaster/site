@@ -35,22 +35,31 @@ export async function createBrushProcessingSession(settings,sourceId,seedValue){
   }catch(error){engine.dispose?.();allocator.dispose();throw error;}
 }
 
+export async function processBrushFrame(session,canvas,timeSeconds){
+  if(!session||session.disposed)throw Error('Brush processing session is unavailable.');
+  const width=canvas.width,height=canvas.height,context=canvas.getContext('2d',{willReadFrequently:true}),image=context.getImageData(0,0,width,height),original=image.data;
+  const metadata={width,height,format:'linear-srgb-premultiplied-rgba',origin:'top-left',sourceId:session.sourceId,epoch:session.epoch,sequence:session.sequence,timestampSeconds:timeSeconds};
+  const input=frameFromSrgb8(session.allocator,original,metadata);let output;
+  try{
+    output=await session.engine.process({input:input.value,parameters:session.parameters,timeSeconds,deltaSeconds:Math.max(0,timeSeconds-session.lastTime),seed:session.seed,discontinuity:session.sequence===0?'source':'none',signal:new AbortController().signal});
+    const pixels=frameToSrgb8(output.value),strength=session.config.strength;
+    if(strength<1)for(let i=0;i<pixels.length;i++)pixels[i]=Math.round(original[i]+(pixels[i]-original[i])*strength);
+    image.data.set(pixels);context.putImageData(image,0,0);
+    session.sequence++;session.lastTime=timeSeconds;
+    return canvas;
+  }finally{output?.release();input.release();}
+}
+
 export async function processBrushSource(session,dataUrl,sources,timeSeconds){
   if(!session||session.disposed)throw Error('Brush processing session is unavailable.');
   const image=await sources.frame(dataUrl),width=image.naturalWidth,height=image.naturalHeight;
   const canvas=surface(width,height),context=canvas.getContext('2d',{willReadFrequently:true});
   context.drawImage(image,0,0,width,height);
-  const metadata={width,height,format:'linear-srgb-premultiplied-rgba',origin:'top-left',sourceId:session.sourceId,epoch:session.epoch,sequence:session.sequence,timestampSeconds:timeSeconds};
-  const input=frameFromSrgb8(session.allocator,context.getImageData(0,0,width,height).data,metadata);let output;
   try{
-    output=await session.engine.process({input:input.value,parameters:session.parameters,timeSeconds,deltaSeconds:Math.max(0,timeSeconds-session.lastTime),seed:session.seed,discontinuity:session.sequence===0?'source':'none',signal:new AbortController().signal});
-    const pixels=frameToSrgb8(output.value),original=context.getImageData(0,0,width,height).data,strength=session.config.strength;
-    if(strength<1)for(let i=0;i<pixels.length;i++)pixels[i]=Math.round(original[i]+(pixels[i]-original[i])*strength);
-    context.putImageData(new ImageData(pixels,width,height),0,0);
+    await processBrushFrame(session,canvas,timeSeconds);
     const encoded=await new Promise((resolve,reject)=>canvas.toBlob(blob=>{if(!blob){reject(Error('Could not encode the processed brush frame.'));return;}const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(Error('Could not read the processed brush frame.'));reader.readAsDataURL(blob);},'image/png'));
-    session.sequence++;session.lastTime=timeSeconds;
     return encoded;
-  }finally{output?.release();input.release();canvas.width=canvas.height=1;}
+  }finally{canvas.width=canvas.height=1;}
 }
 
 export function disposeBrushProcessingSession(session){

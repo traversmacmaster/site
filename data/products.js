@@ -671,15 +671,16 @@ export const products = [
     "features": [
       "Import images, videos or camera clips into source wells; original media stays unchanged.",
       "Paint with living video brushes, fields and shapes, or place pigment on depth and form surfaces.",
-      "Process image and video brush samples with Temporal Sculptor, Frequency Weaver, Recursive Feedback, Chromatic Physics or Motion Ecology; strokes replay with their captured processed frames.",
+      "Process image and video source-brush samples or moving frames inside Living Brush marks with Temporal Sculptor, Frequency Weaver, Recursive Feedback, Chromatic Physics or Motion Ecology.",
+      "Living Brush keeps the processed image or video moving inside its mask during playback and video export.",
       "Use Color Territories as a shared color mask for routing supported effects through selected regions.",
       "Place the current 3D view on the flat canvas as a transparent snapshot, then drag or resize it.",
       "Select dry paint or living pigment with Color mask. Color Solidify consolidates similar shades for cleaner selections.",
       "Fill selected masks with video or integrated Moirefield patterns; create Moire pigment directly in source wells.",
       "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."
     ],
-    "longDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, moving pigment and Moirefield fills.",
-    "shortDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, moving pigment and Moirefield fills.",
+    "longDescription": "MoshPaint is a browser and Windows image and video painting tool. Five modular processing engines transform image and video brush samples or moving frames inside Living Brush marks, with shared color masks and Moirefield fills.",
+    "shortDescription": "Paint with images and video, process source brushes or moving Living Brush frames with five engines, route effects through color masks, and export stills or video.",
     "headline": "glitch art editor",
     "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
     "examples": [

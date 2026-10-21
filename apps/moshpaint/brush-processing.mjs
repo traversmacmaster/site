@@ -9,9 +9,9 @@ import {surface} from './processors.mjs';
 export const BRUSH_PROCESSORS=Object.freeze({
   'temporal-sculptor':{name:'Temporal Sculptor',create:createTemporalSculptor,modes:['chrono-shatter','fossil-bloom','datamosh-fossilization','temporal-molting'],defaultMode:'chrono-shatter'},
   'frequency-weaver':{name:'Frequency Weaver',create:createFrequencyWeaver,modes:['spectral-separation','moire-displacement','contour-loom','ripple-interference','crosshatch-scanlines','radial-lens-waves','halftone-phase-drift','chromatic-slit-scan','lissajous-interference','moire-singularity','spectral-exorcism'],defaultMode:'moire-displacement'},
-  'recursive-feedback':{name:'Recursive Feedback',create:createRecursiveFeedback,modes:['feedback-architecture','recursive-portals','fractured-reality','fractal-collapse','kaleidoscope-tunnel','tesseract-recursion','recursive-black-ice'],defaultMode:'feedback-architecture'},
+  'recursive-feedback':{name:'Recursive Feedback',create:createRecursiveFeedback,modes:['feedback-architecture','recursive-portals','fractured-reality','fractal-collapse','kaleidoscope-tunnel','tesseract-recursion','recursive-black-ice'],defaultMode:'recursive-portals'},
   'chromatic-physics':{name:'Chromatic Physics',create:createChromaticPhysics,modes:['gravity-sorting','pigment-infection','chromatic-liquefaction','pigment-supernova','gravity-color-split','chromatic-tectonics','pigment-vortexes'],defaultMode:'chromatic-liquefaction'},
-  'motion-ecology':{name:'Motion Ecology',create:createMotionEcology,modes:['particle-rotoscope','motion-parasites','edge-swarm','parasite-bloom','edge-weather','luminance-parasitoids'],defaultMode:'edge-swarm'},
+  'motion-ecology':{name:'Motion Ecology',create:createMotionEcology,modes:['particle-rotoscope','motion-parasites','edge-swarm','parasite-bloom','edge-weather','luminance-parasitoids'],defaultMode:'edge-weather'},
 });
 export const DEFAULT_BRUSH_PROCESSING=Object.freeze({engine:'off',mode:'',strength:1});
 

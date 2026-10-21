@@ -15,8 +15,8 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 133059,
-      "sha256": "e9d4879027c66a79b260a3fdbd7541467a5b8cba78f04ac6dd4b5747fe3048f3"
+      "bytes": 133534,
+      "sha256": "dc1819813b47d87b76ec3bf0a1892606b9b53063f24590129895b5d88a2064c6"
     },
     {
       "path": "browser-platform.mjs",
@@ -30,8 +30,8 @@
     },
     {
       "path": "brush-processing.mjs",
-      "bytes": 5238,
-      "sha256": "222d5d431bd67411eeb9c5c21ad9361a7f82c97037050d0ecab376e6ca09df25"
+      "bytes": 5236,
+      "sha256": "99fbdc5c66322b144bbdf929e859affe90c997a9129980d39267fee606aaea51"
     },
     {
       "path": "camera.mjs",
@@ -90,8 +90,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 17403,
-      "sha256": "d5ea31ed668999a911c257a4b8c1a98001d258cafecbba2c2b5dad3df92356e7"
+      "bytes": 17430,
+      "sha256": "0d62a3dc11a24c166a0bd61a948d4d583bc68e23fa93620d1b33c35f6299793e"
     },
     {
       "path": "layout.mjs",

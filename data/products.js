@@ -671,6 +671,7 @@ export const products = [
     "features": [
       "Import images, videos or camera clips into source wells; original media stays unchanged.",
       "Paint with living video brushes, fields and shapes, or place pigment on depth and form surfaces.",
+      "Create linked Zoom Loop canvases from clicked areas, edit each crop in full view, and keep pixel changes registered across every linked view.",
       "Process image and video source-brush samples or moving frames inside Living Brush marks with Temporal Sculptor, Frequency Weaver, Recursive Feedback, Chromatic Physics or Motion Ecology.",
       "Living Brush keeps the processed image or video moving inside its mask during playback and video export.",
       "Use Color Territories as a shared color mask for routing supported effects through selected regions.",
@@ -679,8 +680,8 @@ export const products = [
       "Fill selected masks with video or integrated Moirefield patterns; create Moire pigment directly in source wells.",
       "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."
     ],
-    "longDescription": "MoshPaint is a browser and Windows image and video painting tool. Five modular processing engines transform image and video brush samples or moving frames inside Living Brush marks, with shared color masks and Moirefield fills.",
-    "shortDescription": "Paint with images and video, process source brushes or moving Living Brush frames with five engines, route effects through color masks, and export stills or video.",
+    "longDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, Moirefield fills and linked Zoom Loop canvases. Create nested crops, edit each one in a full-canvas view, and keep the pixel changes aligned across the linked views.",
+    "shortDescription": "Create nested crops, edit each one in a full-canvas view, and keep the pixel changes aligned across the linked views.",
     "headline": "glitch art editor",
     "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
     "examples": [
@@ -702,7 +703,7 @@ export const products = [
         "alt": "MoshPaint interface showing a layered landscape glitch composition"
       }
     ],
-    "listingDescription": "Paint images and moving video in your browser. Apply five live brush engines, use shared color masks and export your results.",
+    "listingDescription": "Paint images and video with five live engines, shared color masks, Moirefield fills and linked Zoom Loop canvases you can edit in full view.",
     "softwareGroup": "visual-media-tool",
     "videos": [
       {

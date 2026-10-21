@@ -27,5 +27,5 @@ async function list(directory,prefix=''){
 const names=await list(destination),files=[];
 for(const name of names){if(name==='build-info.json')continue;const bytes=await fs.readFile(path.join(destination,name));files.push({path:name,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});}
 const {version}=JSON.parse(await fs.readFile(path.join(project,'package.json'),'utf8'));
-await fs.writeFile(path.join(destination,'build-info.json'),JSON.stringify({app:'MoshPaint',version,browserRelease:'five modular engines for source brushes and moving Living Brush frames, with Color Territories, Moirefield, depth/forms and timestamped exports',files},null,2)+'\n');
+await fs.writeFile(path.join(destination,'build-info.json'),JSON.stringify({app:'MoshPaint',version,browserRelease:'five modular engines, shared color masks, Moirefield, depth/forms, timestamped exports and linked Zoom Loop canvases with full-view editing',files},null,2)+'\n');
 console.log(`Staged ${files.length} MoshPaint browser files in ${destination}`);

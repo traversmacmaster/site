@@ -681,7 +681,7 @@ export const products = [
       "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."
     ],
     "longDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, Moirefield fills and linked Zoom Loop canvases. Create nested crops, edit each one in a full-canvas view, and keep the pixel changes aligned across the linked views.",
-    "shortDescription": "Create nested crops, edit each one in a full-canvas view, and keep the pixel changes aligned across the linked views.",
+    "shortDescription": "Paint images and video with five engines, route effects through shared color masks, and create linked Zoom Loop canvases for full-view editing.",
     "headline": "glitch art editor",
     "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
     "examples": [

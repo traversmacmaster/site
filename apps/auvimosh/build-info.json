@@ -19,14 +19,14 @@
       "sha256": "bad7a785c650c81ed61c884a7743228ffe85728dab980cd99d20e6b313481d80"
     },
     {
-      "path": "assets/index-Cm26dE7y.css",
-      "bytes": 35882,
-      "sha256": "6b43783f118121c98e3dae9f053d00d0afbe635b5002368997e8fe5347e2ab40"
+      "path": "assets/index-BDJbaSNH.js",
+      "bytes": 107719,
+      "sha256": "d938c0136c4f6e7c79bb99c91baf3f9a1457332e0df0554a7394c3542f7d5634"
     },
     {
-      "path": "assets/index-DchYXPmH.js",
-      "bytes": 104543,
-      "sha256": "189946dffa2a82fa2577452b190defecee87bf4283a33eef0f2a538efad0771f"
+      "path": "assets/index-DLxpAOxl.css",
+      "bytes": 36754,
+      "sha256": "2155a001820928db2e37e763e6fc198a5bea3864f87b4075381eef0e2240a2b9"
     },
     {
       "path": "assets/worker-BAOIWoxA.js",
@@ -46,7 +46,7 @@
     {
       "path": "index.html",
       "bytes": 559,
-      "sha256": "eb92edf43b8a7a7e0af1fe392758f7e44618a29f09651893d0877af5278c44d2"
+      "sha256": "df05ea0f8547fc9bda232a29ca318cf454e5f390e9fbf7983ac9b2f1f699a4b0"
     }
   ]
 }

@@ -1,5 +1,5 @@
-import { products } from './data/products.js?v=basement-order-2026-10-21';
-import { machineListings, primaryMachineSlugs } from './machine-listings.js?v=basement-order-2026-10-21';
+import { products } from './data/products.js?v=featured-three-2026-10-21';
+import { machineListings, primaryMachineSlugs } from './machine-listings.js?v=featured-three-2026-10-21';
 let filter='all';
 const query=document.querySelector('#catalog-query');
 function render(){const term=query.value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();const shown=products.filter(p=>p.collection!=='other'&&p.slug!=='video-mosaic'&&primaryMachineSlugs.includes(p.slug)&&(filter==='all'||p.disciplines?.includes(filter)||filter==='web'&&p.appUrl||filter==='vst'&&(p.vst||p.vst3)||filter==='windows'&&p.platform.includes('Windows'))&&`${p.name} ${p.category} ${p.longDescription} ${p.features.join(' ')}`.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().includes(term));const target=document.querySelector('#machine-listings');target.innerHTML=shown.length?machineListings(shown,'../'):'';target.querySelectorAll('.machine-column').forEach(column=>{if(!column.querySelector('.machine-listing'))column.remove();});const columns=target.querySelector('.machine-columns');if(columns&&columns.children.length===1)columns.style.gridTemplateColumns='minmax(0,1fr)';document.querySelector('#catalog-count').textContent=shown.length?`${shown.length} machine${shown.length===1?'':'s'} in view`:'No machines match. Try another search or filter.';}

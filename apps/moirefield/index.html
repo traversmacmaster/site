@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>MOIRÉFIELD</title>
-    <script type="module" crossorigin src="./assets/index-uc02ru56.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CPdMq3dw.css">
+    <script type="module" crossorigin src="./assets/index-RKi7BMHv.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BT-t7vc6.css">
   <meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/moirefield/"></head>
   <body>
     <header>
@@ -14,6 +14,11 @@
         <div>
           <b>MOIRÉFIELD</b><small>INTERFERENCE DRAWING INSTRUMENT</small>
         </div>
+      </div>
+      <div class="media-input">
+        <label class="media-import">＋ INPUT IMAGE / VIDEO<input id="mediaFile" type="file" accept="image/*,video/*" hidden /></label>
+        <button id="removeMedia" type="button" disabled>REMOVE</button>
+        <small id="mediaStatus">NO MEDIA</small>
       </div>
       <div class="mode">
         <button data-mode="classic" class="active">CLASSIC</button
@@ -134,6 +139,18 @@
         </footer>
       </section>
       <aside class="panel right">
+        <section id="inputMaskPanel">
+          <h3>INPUT + COLOR MASK <em>MOSHPAINT TERRITORIES</em></h3>
+          <label class="engine-label">IMAGE FIT<select id="mediaFit"><option value="cover" selected>COVER</option><option value="contain">CONTAIN</option></select></label>
+          <div class="mask-grid"><label>HUE START °<input id="maskHueStart" type="range" min="0" max="360" value="0" /></label><label>HUE END °<input id="maskHueEnd" type="range" min="0" max="360" value="360" /></label></div>
+          <label class="engine-label">HUE TOLERANCE <output id="maskToleranceValue">0°</output><input id="maskTolerance" type="range" min="0" max="60" value="0" /></label>
+          <div class="mask-grid"><label>SAT MIN<input id="maskSatMin" type="range" min="0" max="1" step=".01" value="0" /></label><label>SAT MAX<input id="maskSatMax" type="range" min="0" max="1" step=".01" value="1" /></label></div>
+          <div class="mask-grid"><label>LUMA MIN<input id="maskLumMin" type="range" min="0" max="1" step=".01" value="0" /></label><label>LUMA MAX<input id="maskLumMax" type="range" min="0" max="1" step=".01" value="1" /></label></div>
+          <div class="mask-grid"><label>EDGE SOFTNESS<input id="maskSoftness" type="range" min="0" max="1" step=".01" value="0" /></label><label>FEATHER · PX<input id="maskFeather" type="range" min="0" max="16" value="0" /></label></div>
+          <div class="mask-actions"><label><input id="maskInvert" type="checkbox" /> INVERT</label><label><input id="maskEnabled" type="checkbox" disabled /> APPLY MASK TO ENGINE</label></div>
+          <div class="mask-actions"><button id="pickMaskColor" type="button" disabled>PICK COLOR</button><label><input id="maskPreview" type="checkbox" disabled /> PREVIEW MASK</label></div>
+          <small id="maskStatus">Import an image or video to enable its shared Color Territories mask.</small>
+        </section>
         <section>
           <h2><i>02</i> RELATIONSHIP</h2>
           <div id="inspector"></div>
@@ -171,6 +188,19 @@
             MOTION</label
           >
           <div id="motionControls"></div>
+        </section>
+        <section id="enginePanel">
+          <h3>PROCESSING ENGINES <em>OUTPUT SPACE</em></h3>
+          <label class="engine-toggle"><input id="engineEnabled" type="checkbox" /> ENABLE ENGINE EFFECT</label>
+          <button id="engineReturn" type="button" title="Disable the processing effect and return to the selected Moiré artwork">RETURN TO MOIRÉ OUTPUT</button>
+          <label class="engine-label">ENGINE<select id="engineSelect"></select></label>
+          <label class="engine-label">EFFECT<select id="engineMode"></select></label>
+          <div id="engineDescription" class="engine-description">Choose an engine effect to process the live interference output.</div>
+          <label class="engine-label">WORKING SIZE<select id="engineResolution"><option value="256">256 px · FAST</option><option value="384" selected>384 px · BALANCED</option><option value="512">512 px · DETAIL</option><option value="768">768 px · SLOW</option></select></label>
+          <label class="engine-label smoothing-control" title="Blends successive processed frames to reduce shimmer. Higher values leave longer motion trails.">OUTPUT SMOOTHING <output id="engineSmoothingValue">20%</output><input id="engineSmoothing" type="range" min="0" max="0.8" step="0.05" value="0.2" /></label>
+          <div id="engineParameters"></div>
+          <button id="engineCapture" hidden>CAPTURE TEMPORAL SOURCE</button>
+          <small id="engineStatus" class="engine-status">Effect processing is off.</small>
         </section>
         <section id="lab" hidden>
           <h3>LAB — LAYER WARP <em>WARP SPACE</em></h3>
@@ -267,6 +297,9 @@
                 </select></label
               >
             </div>
+            <button id="renderVideo" class="video-button" type="button">RENDER FULL VIDEO · HD</button>
+            <button id="cancelFullRender" class="video-button" type="button" disabled>CANCEL RENDER</button>
+            <small>Offline render uses the exact duration and frame rate above. Includes the selected processing effect. WebM in browser; MP4 is available in the desktop app.</small>
             <button id="exportVideo" class="video-button">
               ● START LIVE RECORDING
             </button>
@@ -280,5 +313,6 @@
       </aside>
     </main>
     <div id="toast"></div>
+    <video id="inputVideo" muted playsinline loop hidden></video>
   </body>
 </html>

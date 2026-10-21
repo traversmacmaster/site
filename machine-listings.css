@@ -28,3 +28,12 @@
 @media(max-width: 1000px) { .machine-columns { gap: 28px; } .machine-listing { grid-template-columns: 130px minmax(0,1fr); gap: 16px; } .listing-image img { width: 130px; height: 115px; } }
 @media(max-width: 700px) { .machine-columns { grid-template-columns: 1fr; gap: 36px; } .machine-listing { grid-template-columns: 110px minmax(0,1fr); } .listing-image img { width: 110px; height: 110px; } }
 @media(prefers-reduced-motion: reduce) { .listing-chevron { transition: none; } }
+.featured-machine-columns .machine-listing { grid-template-columns: minmax(0,1fr); gap: 16px; padding: 32px 0; }
+.featured-machine-columns .listing-image img { width: 100%; height: 310px; object-fit: contain; object-position: left center; }
+.featured-machine-columns .listing-copy h3 { font-size: 28px; }
+.featured-machine-columns .listing-copy p { font-size: 16px; }
+.upcoming-machines { padding: 28px 0; }
+.upcoming-machines h3 { font: 500 14px/1.5 var(--sans); color: var(--muted); margin-bottom: 16px; }
+.upcoming-machines ul { margin: 0; padding: 0; list-style: none; }
+.upcoming-machines li { margin: 10px 0; font-size: 15px; }
+@media(max-width:700px) { .featured-machine-columns .listing-image img { height: auto; max-height: 360px; } }

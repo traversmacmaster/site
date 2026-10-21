@@ -53,8 +53,8 @@ export const products = [
     "appUrl": "apps/moirefield/",
     "shortDescription": "MoiréField is an interactive animated moiré pattern generator for creating optical interference, layered geometric patterns and evolving moiré effects directly in the browser.",
     "longDescription": "MoiréField is an interactive animated moiré pattern generator for creating optical interference, layered geometric patterns and evolving moiré effects directly in the browser.",
-    "image": "assets/products/moirefield/interface.png",
-    "heroImage": "assets/products/moirefield/interface.png",
+    "image": "assets/products/moirefield/2026-10-21/interface.png",
+    "heroImage": "assets/products/moirefield/2026-10-21/interface.png",
     "platform": "Windows + Web",
     "standalone": true,
     "vst3": false,
@@ -71,7 +71,9 @@ export const products = [
       "Save and restore projects in the browser or Windows app",
       "Portrait 9:16 and high-resolution still export",
       "Three independent Auto Movement controls",
-      "Live canvas and window recording · browser WebM; Windows WebM / MP4"
+      "Live canvas and window recording · browser WebM; Windows WebM / MP4",
+      "Five processing engines with selectable modes and live output smoothing",
+      "Image/video input and masked output processing"
     ],
     "video": {
       "src": "assets/products/moirefield/live-example.webm",
@@ -85,7 +87,8 @@ export const products = [
         "caption": "Exported artwork study"
       }
     ],
-    "softwareGroup": "generative-visual-system"
+    "softwareGroup": "generative-visual-system",
+    "listingDescription": "Layer mathematical patterns, import images or video, and apply five processing engines."
   },
   {
     "name": "TunnelField",
@@ -836,38 +839,6 @@ export const products = [
         "src": "assets/products/basement/master-fx.png",
         "caption": "Master FX",
         "alt": "BASEMENT master filter, drive, disperser and modulation"
-      }
-    ]
-  },
-  {
-    "slug": "harmano",
-    "name": "Harmano",
-    "category": "Digital harmonograph",
-    "platform": "Windows + Web",
-    "appUrl": "apps/harmano/",
-    "disciplines": [
-      "visual"
-    ],
-    "standalone": true,
-    "vst3": false,
-    "status": "BROWSER PREVIEW",
-    "image": "assets/products/harmano/interface.png",
-    "heroImage": "assets/products/harmano/interface.png",
-    "homePreview": true,
-    "features": [
-      "Choose a frequency relationship or adjust the oscillators directly.",
-      "Run the drawing and change phase, damping and pen settings to shape the curve.",
-      "Commit drawings to layers, choose the canvas size and export the composition as SVG or PNG."
-    ],
-    "longDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
-    "shortDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
-    "headline": "harmonograph generator",
-    "exhibitNotes": "DIGITAL HARMONOGRAPH",
-    "examples": [
-      {
-        "src": "assets/products/harmano/output-example.png",
-        "alt": "Artwork output from Harmano",
-        "caption": "Exported artwork study"
       }
     ]
   }

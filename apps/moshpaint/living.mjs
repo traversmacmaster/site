@@ -4,6 +4,8 @@ import {drawPlane,depthShade} from './living-depth.mjs';
 import {surface} from './processors.mjs';
 import {sourceDuration} from './sources.mjs';
 import {rng} from './core.mjs';
+import {GhostPlates} from './temporal-ghosts.mjs';
+import {fossilStrength} from './packages/temporal-sculptor/index.mjs';
 
 const wetModes=new Set(['legacy','down','up','left','right','angle','radial-in','radial-out','gesture']);
 export function livingWetShape(amount,physics={},seed=1){
@@ -94,7 +96,7 @@ export function livingStrokeMask(points,size,shape='round',seed=1,bounds=null,fi
 }
 
 export class LivingRenderer{
-  constructor(canvas,sources){this.generation=0;this.videoBatch=0;this.canvas=canvas;this.detectionCanvas=surface(canvas.width,canvas.height);this.detectionScratches=new Map();this.ctx=canvas.getContext('2d');this.base=canvas.previousElementSibling;this.sources=sources;this.masks=new Map();this.images=new Map();this.videos=new Map();this.offlineVideoGroups=new Map();this.videoGroupKeys=new WeakMap();this.mediaFrames=new Map();this.frameSignals=new Map();this.scratches=new Map();this.deforms=new Map();this.depthMaps=new Map();this.planeFrames=new Map();this.proceduralSurfaces=new Map();this.active=[];this.frozen=new Map();this.resolvedOperations=null;this.animated=false;this.lastWetAt=0;}
+  constructor(canvas,sources){this.generation=0;this.videoBatch=0;this.canvas=canvas;this.detectionCanvas=surface(canvas.width,canvas.height);this.detectionScratches=new Map();this.ctx=canvas.getContext('2d');this.base=canvas.previousElementSibling;this.sources=sources;this.masks=new Map();this.images=new Map();this.videos=new Map();this.offlineVideoGroups=new Map();this.videoGroupKeys=new WeakMap();this.mediaFrames=new Map();this.frameSignals=new Map();this.scratches=new Map();this.deforms=new Map();this.depthMaps=new Map();this.planeFrames=new Map();this.proceduralSurfaces=new Map();this.active=[];this.frozen=new Map();this.resolvedOperations=null;this.animated=false;this.lastWetAt=0;this.ghosts=new GhostPlates();this.fossilStarts=new Map();this.fossilWeights=new Map();}
   invalidate(){this.resolvedOperations=null;}
   resize(width,height){if(this.canvas.width!==width||this.canvas.height!==height){this.canvas.width=width;this.canvas.height=height;this.detectionCanvas.width=width;this.detectionCanvas.height=height;}}
   async mask(op){const src=op.tool==='livingbrush'&&op.progress?`${op.mask}#${op.progress}`:op.mask;let item=this.masks.get(op.id);if(item?.src===src)return item;let image;if(op.previewMask){const ctx=op.previewMask.getContext('2d'),r=op.rect;return{image:op.previewMask,global:!op.previewRect,get data(){return ctx.getImageData(op.previewRect?0:r.x,op.previewRect?0:r.y,r.w,r.h).data;}};}if(op.tool==='livingbrush'&&op.progress){image=surface(op.rect.w,op.rect.h);const ctx=image.getContext('2d');ctx.fillStyle='#fff';drawLivingStroke(ctx,op.points.slice(0,op.progress),op.size,op.shape,op.seed,op.rect);}else{image=new Image();image.src=op.mask;await image.decode();}const probe=surface(image.width,image.height),ctx=probe.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);let data;item={src,image,get data(){return data??=ctx.getImageData(0,0,image.width,image.height).data;}};this.masks.set(op.id,item);return item;}
@@ -110,6 +112,12 @@ export class LivingRenderer{
     try{video=await loading;if(generation!==this.generation){this.releaseVideo(video);throw Error('Living render cancelled.');}this.trackVideo(video);if(pooled)this.videoGroupKeys.set(video,key);this.videos.set(op.id,video);return video;}catch(e){if(pooled)this.offlineVideoGroups.delete(key);throw e;}
   }
 
+  fossilWeight(op,time=null){
+    if(!op.fossil)return 1;
+    if(!this.fossilStarts.has(op.id))this.fossilStarts.set(op.id,performance.now()/1000);
+    return fossilStrength(time??(performance.now()/1000-this.fossilStarts.get(op.id)),op.fossil);
+  }
+  timedFossil(op){return !!op.fossil?.holdSeconds&&(this.fossilWeight(op)>0||this.fossilWeights.get(op.id)!==0);}
   setPlaybackRate(sourceId,rate){for(const op of this.active)if(op.source===sourceId){const video=this.videos.get(op.id);if(video)video.playbackRate=rate;}}
   resolve(operations){
     if(operations===this.resolvedOperations)return this.active;
@@ -123,23 +131,27 @@ export class LivingRenderer{
       }
     }
     this.active=[...fills.values()].filter(op=>!hidden.has(op.id));this.frozen=frozen;this.resolvedOperations=operations;
-    this.animated=this.active.some(op=>!frozen.has(op.id)&&(()=>{const source=this.sources.items.find(s=>s.id===op.source);return !!op.fill||!!source?.procedural||source?.type==='video'||source?.data?.startsWith('data:image/gif')||op.wetShape&&!op.wetShape.dry&&op.wetShape.ticks<op.wetShape.total;})());
-    const activeIds=new Set(this.active.map(op=>op.id));for(const id of this.masks.keys())if(!activeIds.has(id))this.masks.delete(id);for(const id of this.detectionScratches.keys())if(!activeIds.has(id))this.detectionScratches.delete(id);for(const id of this.depthMaps.keys())if(!activeIds.has(id))this.depthMaps.delete(id);for(const id of this.planeFrames.keys())if(!activeIds.has(id))this.planeFrames.delete(id);const needed=new Set(this.active.filter(op=>!frozen.has(op.id)).map(op=>op.id));const retired=new Set();for(const [id,video]of this.videos)if(!needed.has(id)){retired.add(video);this.videos.delete(id);this.mediaFrames.delete(id);}const retained=new Set(this.videos.values());for(const video of retired)if(!retained.has(video)){const group=this.videoGroupKeys.get(video);if(group)this.offlineVideoGroups.delete(group);this.releaseVideo(video);}if(!this.videos.size)this.offlineVideoGroups.clear();for(const [id,scratch]of this.scratches)if(!activeIds.has(id)){scratch.width=scratch.height=1;this.scratches.delete(id);}for(const [id,deformed]of this.deforms)if(!activeIds.has(id)){deformed.width=deformed.height=1;this.deforms.delete(id);}return this.active;
+    this.animated=this.active.some(op=>!frozen.has(op.id)&&(()=>{const source=this.sources.items.find(s=>s.id===op.source);return this.timedFossil(op)||!!op.fill||!!source?.procedural||source?.type==='video'||source?.data?.startsWith('data:image/gif')||op.wetShape&&!op.wetShape.dry&&op.wetShape.ticks<op.wetShape.total;})());
+    const activeIds=new Set(this.active.map(op=>op.id));this.ghosts.retain(new Set(this.active.filter(op=>(op.ghost||op.taffy)&&!frozen.has(op.id)).map(op=>op.id)));for(const id of this.fossilStarts.keys())if(!activeIds.has(id)){this.fossilStarts.delete(id);this.fossilWeights.delete(id);}for(const id of this.masks.keys())if(!activeIds.has(id))this.masks.delete(id);for(const id of this.detectionScratches.keys())if(!activeIds.has(id))this.detectionScratches.delete(id);for(const id of this.depthMaps.keys())if(!activeIds.has(id))this.depthMaps.delete(id);for(const id of this.planeFrames.keys())if(!activeIds.has(id))this.planeFrames.delete(id);const needed=new Set(this.active.filter(op=>!frozen.has(op.id)).map(op=>op.id));const retired=new Set();for(const [id,video]of this.videos)if(!needed.has(id)){retired.add(video);this.videos.delete(id);this.mediaFrames.delete(id);}const retained=new Set(this.videos.values());for(const video of retired)if(!retained.has(video)){const group=this.videoGroupKeys.get(video);if(group)this.offlineVideoGroups.delete(group);this.releaseVideo(video);}if(!this.videos.size)this.offlineVideoGroups.clear();for(const [id,scratch]of this.scratches)if(!activeIds.has(id)){scratch.width=scratch.height=1;this.scratches.delete(id);}for(const [id,deformed]of this.deforms)if(!activeIds.has(id)){deformed.width=deformed.height=1;this.deforms.delete(id);}return this.active;
   }
-  dispose(){this.generation++;this.resolve([]);this.offlineVideoGroups.clear();this.proceduralSurfaces.clear();this.masks.clear();this.images.clear();this.detectionScratches.clear();this.detectionCanvas.width=this.detectionCanvas.height=1;}
+  dispose(){this.generation++;this.resolve([]);this.ghosts.dispose();this.offlineVideoGroups.clear();this.proceduralSurfaces.clear();this.masks.clear();this.images.clear();this.detectionScratches.clear();this.detectionCanvas.width=this.detectionCanvas.height=1;}
   suspend(){for(const video of this.videos.values())video.pause();}
-  mediaChanged(){let changed=false;for(const op of this.active){if(this.frozen.has(op.id))continue;if(op.fill)return true;const source=this.sources.items.find(s=>s.id===op.source);if(source?.procedural||source?.data?.startsWith('data:image/gif'))return true;if(source?.type!=='video')continue;const video=this.videos.get(op.id);if(!video)return true;const signal=this.frameSignals.get(video),frame=signal?signal.serial:video.currentTime;if(!Number.isFinite(frame))return true;const previous=this.mediaFrames.get(op.id);this.mediaFrames.set(op.id,frame);if(previous===undefined||frame!==previous)changed=true;}return changed;}
+  mediaChanged(){let changed=false;for(const op of this.active){if(this.frozen.has(op.id))continue;if(op.fossil&&this.fossilWeight(op)!==this.fossilWeights.get(op.id))return true;if(op.fill)return true;const source=this.sources.items.find(s=>s.id===op.source);if(source?.procedural||source?.data?.startsWith('data:image/gif'))return true;if(source?.type!=='video')continue;const video=this.videos.get(op.id);if(!video)return true;const signal=this.frameSignals.get(video),frame=signal?signal.serial:video.currentTime;if(!Number.isFinite(frame))return true;const previous=this.mediaFrames.get(op.id);this.mediaFrames.set(op.id,frame);if(previous===undefined||frame!==previous)changed=true;}return changed;}
   advanceWet(now=performance.now()){
     if(!this.lastWetAt){this.lastWetAt=now;return false;}const steps=Math.floor((now-this.lastWetAt)/90);if(!steps)return false;this.lastWetAt+=steps*90;let changed=false;for(const op of this.active){const wet=op.wetShape;if(wet&&!wet.dry&&wet.ticks<wet.total){wet.ticks=Math.min(wet.total,wet.ticks+steps);changed=true;}}return changed;
   }
   dryWet(){let changed=false;for(const op of this.active)if(op.wetShape&&!op.wetShape.dry&&op.wetShape.ticks<op.wetShape.total){op.wetShape.dry=true;changed=true;}return changed;}
   async hit(x,y){for(const op of [...this.active].reverse()){const r=op.rect;if(x<r.x||y<r.y||x>=r.x+r.w||y>=r.y+r.h)continue;const m=await this.mask(op),px=Math.floor(x-r.x),py=Math.floor(y-r.y);if(m.data[(py*r.w+px)*4+3]>0)return op;}return null;}
-  async render(operations,{time=null,play=true,offsets={},detection=true}={}){
+  render(operations,options={}){
+    const generation=this.generation,run=()=>{if(generation!==this.generation)throw Error('Living render cancelled.');return this.renderOnce(operations,options);};
+    const pending=(this.renderQueue??Promise.resolve()).then(run);this.renderQueue=pending.catch(()=>{});return pending;
+  }
+  async renderOnce(operations,{time=null,play=true,offsets={},detection=true,fossilTime=time,fossilOffsets={}}={}){
     const unchanged=operations===this.resolvedOperations;
     const base=this.base;this.resize(base?.width||this.canvas.width,base?.height||this.canvas.height);
     this.resolve(operations);
     const wetChanged=time===null&&play&&this.advanceWet();
-    if(wetChanged)this.animated=this.active.some(op=>!this.frozen.has(op.id)&&(()=>{const source=this.sources.items.find(s=>s.id===op.source);return !!op.fill||!!source?.procedural||source?.type==='video'||source?.data?.startsWith('data:image/gif')||op.wetShape&&!op.wetShape.dry&&op.wetShape.ticks<op.wetShape.total;})());
+    if(wetChanged)this.animated=this.active.some(op=>!this.frozen.has(op.id)&&(()=>{const source=this.sources.items.find(s=>s.id===op.source);return this.timedFossil(op)||!!op.fill||!!source?.procedural||source?.type==='video'||source?.data?.startsWith('data:image/gif')||op.wetShape&&!op.wetShape.dry&&op.wetShape.ticks<op.wetShape.total;})());
     if(unchanged&&time===null&&play&&!this.animated)return false;
     if(unchanged&&time===null&&play&&!wetChanged&&!this.mediaChanged())return false;
     const videoBatch=++this.videoBatch;
@@ -164,14 +176,16 @@ export class LivingRenderer{
     const processVideo=(source,media)=>{const frameTime=time===null?this.frameSignals.get(media)?.mediaTime:null,key=frameTime===undefined||frameTime===null?null:source.id+'/'+frameTime+'/'+JSON.stringify(source.solidify);if(key&&solidifiedFrames.has(key))return solidifiedFrames.get(key);const frame=solidifyFrame(source,media,{detection:true,frameTime});if(key)solidifiedFrames.set(key,frame);return frame;};
     for(const op of this.active){
       if(this.frozen.has(op.id)){const frozen=await this.image(this.frozen.get(op.id));this.ctx.drawImage(frozen,op.rect.x,op.rect.y,op.rect.w,op.rect.h);if(detection)detectionCtx.drawImage(frozen,op.rect.x,op.rect.y,op.rect.w,op.rect.h);continue;}
+      const weight=this.fossilWeight(op,fossilTime===null?null:fossilTime-(fossilOffsets[op.id]??0));if(time===null)this.fossilWeights.set(op.id,weight);if(weight===0)continue;
       const source=this.sources.items.find(s=>s.id===op.source),r=op.rect;if(!source&&!op.fill&&!op.image)continue;
       let media=op.image?await this.image(op.image):source?.el;const fill=op.fill||source?.procedural;if(fill){const key=JSON.stringify(fill)+'/'+r.w+'/'+r.h;media=proceduralFrames.get(key);if(!media){const frame=renderProcedural(fill,r.w,r.h,time??performance.now()/1000);media=this.proceduralSurfaces.get(key);if(!media||media.width!==frame.width||media.height!==frame.height){media=surface(frame.width,frame.height);this.proceduralSurfaces.set(key,media);}media.getContext('2d').drawImage(frame,0,0);proceduralFrames.set(key,media);}while(this.proceduralSurfaces.size>16)this.proceduralSurfaces.delete(this.proceduralSurfaces.keys().next().value);}if(!op.fill&&source?.type==='video'){
         media=await this.video(op,source);const rate=Number(source.playbackRate)||1;media.playbackRate=rate;const duration=sourceDuration(source)||(Number.isFinite(op.range?.out)&&op.range.out>0?op.range.out:0);if(duration<=0)continue;const start=Math.max(0,Math.min(duration-.01,Number.isFinite(op.range?.in)?op.range.in:0)),end=Math.max(start+.01,Math.min(duration,Number.isFinite(op.range?.out)?op.range.out:duration)),span=end-start;
         if(time===null){media.loop=start<=.001&&end>=duration-.001;if(media.currentTime<start||(!media.loop&&media.currentTime>=end))media.currentTime=start;if(play&&media.paused)media.play().catch(()=>{});}
         else{media.pause();const offset=op.range?0:(Number(offsets[op.id]??offsets[source.id])||0),target=start+((offset+time*rate)%span+span)%span;if(Math.abs(media.currentTime-target)>.002)await new Promise((resolve,reject)=>{const timer=setTimeout(()=>{media.removeEventListener('seeked',done);reject(Error('Living video seek timed out.'));},4000);function done(){clearTimeout(timer);resolve();}media.addEventListener('seeked',done,{once:true});media.currentTime=target;});}
       }
-      const detectionMedia=detection&&source?.type==='video'?processVideo(source,media):media;
-      const visibleMedia=source?.solidify?.enabled&&source.solidify.applyTo==='visible'?processVideo(source,media):media;
+      let detectionMedia=detection&&source?.type==='video'?processVideo(source,media):media;
+      let visibleMedia=source?.solidify?.enabled&&source.solidify.applyTo==='visible'?processVideo(source,media):media;
+      if(op.ghost||op.taffy){visibleMedia=await this.ghosts.process(op,source,visibleMedia,{time,media});detectionMedia=visibleMedia;}
       const drawRegion=async(media,scratch,target)=>{
       const sw=media.videoWidth||media.naturalWidth||media.width,sh=media.videoHeight||media.naturalHeight||media.height;if(!sw||!sh)return;
       const ctx=scratch.getContext('2d');ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,r.w,r.h);const scale=Math.max(r.w/sw,r.h/sh),dw=sw*scale,dh=sh*scale;
@@ -179,16 +193,20 @@ export class LivingRenderer{
       const cells=livingWetCells(op);if(cells.length){const pad=Math.ceil(Math.max(r.w,r.h)*.35);let deformed=this.deforms.get(op.id);if(!deformed||deformed.width!==r.w+pad*2||deformed.height!==r.h+pad*2){deformed=surface(r.w+pad*2,r.h+pad*2);this.deforms.set(op.id,deformed);}const dc=deformed.getContext('2d');dc.clearRect(0,0,deformed.width,deformed.height);for(const cell of cells)dc.drawImage(scratch,cell.sx,cell.sy,cell.sw,cell.sh,cell.dx+pad,cell.dy+pad,cell.dw,cell.dh);target.drawImage(deformed,r.x-pad,r.y-pad);}else target.drawImage(scratch,r.x,r.y);
       };
       let scratch=this.scratches.get(op.id);if(!scratch||scratch.width!==r.w||scratch.height!==r.h){scratch=surface(r.w,r.h);this.scratches.set(op.id,scratch);}
+      this.ctx.globalAlpha=weight;detectionCtx.globalAlpha=weight;
+      try{
       await drawRegion(visibleMedia,scratch,this.ctx);
       if(detection&&detectionMedia===visibleMedia){const cells=livingWetCells(op);if(cells.length){const pad=Math.ceil(Math.max(r.w,r.h)*.35);detectionCtx.drawImage(this.deforms.get(op.id),r.x-pad,r.y-pad);}else detectionCtx.drawImage(scratch,r.x,r.y);}
       else if(detection){let probe=this.detectionScratches.get(op.id);if(!probe||probe.width!==r.w||probe.height!==r.h){probe=surface(r.w,r.h);this.detectionScratches.set(op.id,probe);}await drawRegion(detectionMedia,probe,detectionCtx);}
+      }finally{this.ctx.globalAlpha=1;detectionCtx.globalAlpha=1;}
 
     }
+    if(time===null)this.animated=this.active.some(op=>!this.frozen.has(op.id)&&(this.timedFossil(op)||!!op.fill||!!this.sources.items.find(s=>s.id===op.source&&(s.type==='video'||s.procedural||s.data?.startsWith('data:image/gif')))||op.wetShape&&!op.wetShape.dry&&op.wetShape.ticks<op.wetShape.total));
     return true;
   }
   async snapshots(operations,targets){
     await this.render(operations);const wanted=new Set(targets),items=[];
-    for(const op of this.active)if(wanted.has(op.id)){if(op.image){items.push({id:op.id,rect:structuredClone(op.rect),image:op.image});continue;}const r=op.rect,c=surface(r.w,r.h);c.getContext('2d').drawImage(this.canvas,r.x,r.y,r.w,r.h,0,0,r.w,r.h);items.push({id:op.id,rect:structuredClone(r),image:c.toDataURL('image/png')});}
+    for(const op of this.active)if(wanted.has(op.id)){if(op.image&&!op.fossil){items.push({id:op.id,rect:structuredClone(op.rect),image:op.image});continue;}const r=op.rect,c=surface(r.w,r.h);c.getContext('2d').drawImage(this.canvas,r.x,r.y,r.w,r.h,0,0,r.w,r.h);items.push({id:op.id,rect:structuredClone(r),image:c.toDataURL('image/png')});}
     return items;
   }
 }

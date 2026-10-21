@@ -308,8 +308,8 @@ export const products = [
       "visual"
     ],
     "category": "Audio / video mosh instrument",
-    "shortDescription": "AuViMosh is a browser-based datamosh and glitch video editor for transforming video through motion, compression artifacts, visual analysis and experimental image processing.",
-    "longDescription": "AuViMosh is a browser-based datamosh and glitch video editor for transforming video through motion, compression artifacts, visual analysis and experimental image processing.",
+    "shortDescription": "AuViMosh is a browser-based datamosh and glitch editor for transforming video and still images through motion transfer, compression artifacts, visual analysis and experimental image processing.",
+    "longDescription": "AuViMosh is a browser-based datamosh and glitch editor for transforming video and still images through motion transfer, compression artifacts, visual analysis and experimental image processing.",
     "image": "assets/products/avm/2026-10-11/source-inputs.png",
     "heroImage": "assets/products/avm/2026-10-11/source-inputs.png",
     "platform": "Web + Windows",
@@ -329,7 +329,10 @@ export const products = [
     "exhibitNotes": "DATAMOSH / AUDIO MOSH / VIDEO PROCESSING",
     "toolsUsedIn": [],
     "features": [
-      "A / B / C video sources",
+      "A / B / C video or still-image sources",
+      "Extra motion-source pool",
+      "Weighted roulette + temporal shuttle",
+      "Motion echo + freeze/release",
       "Motion transfer + inject",
       "Drawable mosh region",
       "Realtime preview",
@@ -668,13 +671,15 @@ export const products = [
     "features": [
       "Import images, videos or camera clips into source wells; original media stays unchanged.",
       "Paint with living video brushes, fields and shapes, or place pigment on depth and form surfaces.",
+      "Process image and video brush samples with Temporal Sculptor, Frequency Weaver, Recursive Feedback, Chromatic Physics or Motion Ecology; strokes replay with their captured processed frames.",
+      "Use Color Territories as a shared color mask for routing supported effects through selected regions.",
       "Place the current 3D view on the flat canvas as a transparent snapshot, then drag or resize it.",
       "Select dry paint or living pigment with Color mask. Color Solidify consolidates similar shades for cleaner selections.",
       "Fill selected masks with video or integrated Moirefield patterns; create Moire pigment directly in source wells.",
       "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."
     ],
-    "longDescription": "MoshPaint is a browser and Windows glitch painting tool for painting, distorting and animating images and video. Use moving pigment, color masks and Moirefield fills to build layered artwork.",
-    "shortDescription": "Paint with images, moving video and camera clips. Clean color masks, add animated Moirefield fills and export stills or video.",
+    "longDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, moving pigment and Moirefield fills.",
+    "shortDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, moving pigment and Moirefield fills.",
     "headline": "glitch art editor",
     "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
     "examples": [
@@ -696,7 +701,7 @@ export const products = [
         "alt": "MoshPaint interface showing a layered landscape glitch composition"
       }
     ],
-    "listingDescription": "Paint images and moving video in your browser, with color masks and animated Moirefield fills.",
+    "listingDescription": "Paint images and moving video in your browser. Apply five live brush engines, use shared color masks and export your results.",
     "softwareGroup": "visual-media-tool",
     "videos": [
       {
@@ -879,6 +884,38 @@ export const products = [
         "src": "assets/products/basement/master-fx.png",
         "caption": "Master FX",
         "alt": "BASEMENT master filter, drive, disperser and modulation"
+      }
+    ]
+  },
+  {
+    "slug": "harmano",
+    "name": "Harmano",
+    "category": "Digital harmonograph",
+    "platform": "Windows + Web",
+    "appUrl": "apps/harmano/",
+    "disciplines": [
+      "visual"
+    ],
+    "standalone": true,
+    "vst3": false,
+    "status": "BROWSER PREVIEW",
+    "image": "assets/products/harmano/interface.png",
+    "heroImage": "assets/products/harmano/interface.png",
+    "homePreview": true,
+    "features": [
+      "Choose a frequency relationship or adjust the oscillators directly.",
+      "Run the drawing and change phase, damping and pen settings to shape the curve.",
+      "Commit drawings to layers, choose the canvas size and export the composition as SVG or PNG."
+    ],
+    "longDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
+    "shortDescription": "Harmano is an animated harmonograph art generator for creating pendulum-inspired mathematical drawings, evolving line patterns and geometric generative art.",
+    "headline": "harmonograph generator",
+    "exhibitNotes": "DIGITAL HARMONOGRAPH",
+    "examples": [
+      {
+        "src": "assets/products/harmano/output-example.png",
+        "alt": "Artwork output from Harmano",
+        "caption": "Exported artwork study"
       }
     ]
   }

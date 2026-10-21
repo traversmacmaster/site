@@ -1,7 +1,7 @@
 {
   "app": "MoshPaint",
   "version": "2.0.0-alpha.7",
-  "browserRelease": "living pigment, Color Solidify, camera, Moirefield, depth/forms and timestamped exports",
+  "browserRelease": "live brush processing with five modular engines, Color Territories, living pigment, Moirefield, depth/forms and timestamped exports",
   "files": [
     {
       "path": "IBM-Plex-Mono-Medium.ttf",
@@ -15,8 +15,8 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 114500,
-      "sha256": "b795fdfff32a8a40910108da4dd95b51a61c8bfe53b3de2ab4ed4a032e312cc1"
+      "bytes": 133059,
+      "sha256": "e9d4879027c66a79b260a3fdbd7541467a5b8cba78f04ac6dd4b5747fe3048f3"
     },
     {
       "path": "browser-platform.mjs",
@@ -29,9 +29,19 @@
       "sha256": "5cd2983b496c6d6cecee0e357c5ef6a841750e429e607cb0f8d651a3b09e1cd5"
     },
     {
+      "path": "brush-processing.mjs",
+      "bytes": 5238,
+      "sha256": "222d5d431bd67411eeb9c5c21ad9361a7f82c97037050d0ecab376e6ca09df25"
+    },
+    {
       "path": "camera.mjs",
       "bytes": 6190,
       "sha256": "f9e693c539397ccb0ee7a8276ffdc40cc34a2bb86cf00459a397f8efec378f47"
+    },
+    {
+      "path": "chromatic-physics.mjs",
+      "bytes": 1097,
+      "sha256": "195f30f41453a361324e9fbca742d2aa0bf3fc68067f2103dd67f4f9fd5a08a5"
     },
     {
       "path": "color-solidify.mjs",
@@ -40,13 +50,13 @@
     },
     {
       "path": "core.mjs",
-      "bytes": 14663,
-      "sha256": "7be07d99e6d1f653fa884397e421d54667e70ffa8e4169f519f6da25a94dc345"
+      "bytes": 18407,
+      "sha256": "8f808844b608dc92a8e97bb3c9b9b02c18a484c17a882712b50f9bef3335729f"
     },
     {
       "path": "engine.mjs",
-      "bytes": 11890,
-      "sha256": "01debcc8e0462b8bf253a77308d26a7b0cdb36f6b932a8bb5bea782e74e01e26"
+      "bytes": 13138,
+      "sha256": "de93869c76ef1cb4c34d165b4384d32195ee55798af1453355dad90fd0fe6e20"
     },
     {
       "path": "export-badge.js",
@@ -74,9 +84,14 @@
       "sha256": "871d5fcbc8df4982da1983f030d2b9176d0881757cc51509e91b741ac1fe5ce2"
     },
     {
+      "path": "frequency-weaver.mjs",
+      "bytes": 1234,
+      "sha256": "7fcc9017dcb99a8c4ba3eb2775db5bfb9fc46af63ee40de54c3a2462e5fc277a"
+    },
+    {
       "path": "index.html",
-      "bytes": 16338,
-      "sha256": "61e75546939bc31af60fa2d1d3f613340a27c8fda2c031deb1203e25bd3d0724"
+      "bytes": 17403,
+      "sha256": "d5ea31ed668999a911c257a4b8c1a98001d258cafecbba2c2b5dad3df92356e7"
     },
     {
       "path": "layout.mjs",
@@ -90,13 +105,18 @@
     },
     {
       "path": "living.mjs",
-      "bytes": 26889,
-      "sha256": "c3ded8ff43395885bc7326b25ee8248c6f5110eff9957365ce13f283ed681ad9"
+      "bytes": 28986,
+      "sha256": "e7b3aa7f7527f09c6b1b0398ecdb82324696d5aeb3b561e0cd28db600d65ada6"
     },
     {
       "path": "media-limits.mjs",
       "bytes": 1389,
       "sha256": "1d34dbf082cd9078ae862c19ce8df5a7179c09b782b859fa019a8fa7ebddeb22"
+    },
+    {
+      "path": "motion-ecology.mjs",
+      "bytes": 1057,
+      "sha256": "8f62420c0fc77f51514b99c517096a3c6b66c1126e0077d4b0a1b0370f39371c"
     },
     {
       "path": "motion-plan.mjs",
@@ -109,14 +129,89 @@
       "sha256": "f8885f8174891731d25298ec37083d9eea98f5d1c285e5d2dcb1b9283c731dbb"
     },
     {
+      "path": "packages/chromatic-physics/gpu.mjs",
+      "bytes": 7136,
+      "sha256": "6e2bf11684ca4dedc906213aa0ca349028288d2927276cdce6158c3ff8f9fc28"
+    },
+    {
+      "path": "packages/chromatic-physics/index.mjs",
+      "bytes": 13134,
+      "sha256": "14899ec8a2f593b7e80d0d9cea7955b78f820d64fedc4f30945630258d98289a"
+    },
+    {
+      "path": "packages/color-territories/gpu.mjs",
+      "bytes": 6376,
+      "sha256": "96e1c167e4c48eeedba02b976fc5b0b7e975a404351270bf4c29123ad19aed58"
+    },
+    {
+      "path": "packages/color-territories/index.mjs",
+      "bytes": 3419,
+      "sha256": "f679c1fe2c50e3d5021acf69ee14b76f4bff8faa6f772be57aae1160b111e575"
+    },
+    {
+      "path": "packages/color-territories/live.mjs",
+      "bytes": 8262,
+      "sha256": "40a9a65373eed2c2c7da40342c1a2d66c7681398cb3d42e1e073bb06af16c7d1"
+    },
+    {
+      "path": "packages/frequency-weaver/gpu.mjs",
+      "bytes": 10717,
+      "sha256": "2360fde29dc6cc66aa08bed5b8ad72ea58926f08aa65f537b37d3a72630e2af3"
+    },
+    {
+      "path": "packages/frequency-weaver/index.mjs",
+      "bytes": 15329,
+      "sha256": "76470ebe59fedf8b21a28413b2447f9c80b9f759905ac43180c7e2edc254ad4b"
+    },
+    {
+      "path": "packages/motion-ecology/gpu.mjs",
+      "bytes": 7350,
+      "sha256": "00d4c4c43f8eee5970cd69b2b6b007b1126ac2d91d2a7a892a4affbcd4dac989"
+    },
+    {
+      "path": "packages/motion-ecology/index.mjs",
+      "bytes": 11246,
+      "sha256": "676972c69839717cbfd41944bea3ea1b0b5ebbcdd391bc33d81f9f7d04c3d9b6"
+    },
+    {
+      "path": "packages/processing-runtime/index.mjs",
+      "bytes": 16170,
+      "sha256": "35a4b42e118ae30f989d27ac4a63d26961808ed5ccc98cf15b9f68ddcabccce4"
+    },
+    {
+      "path": "packages/processing-webgl/index.mjs",
+      "bytes": 14724,
+      "sha256": "c6f524c2b20dcab77f908949ef0e3560b8ffcece5e70ac253d03058e323532c4"
+    },
+    {
+      "path": "packages/recursive-feedback/gpu.mjs",
+      "bytes": 7520,
+      "sha256": "3e6733110179ce60f9b67a1a1ade4e9c06601573fef487a1ec0ebd4ac676e22c"
+    },
+    {
+      "path": "packages/recursive-feedback/index.mjs",
+      "bytes": 11976,
+      "sha256": "1624d68b2dfda106cc1b478be525d7f86c30d94f01f2ea850d6dbd57cafea861"
+    },
+    {
+      "path": "packages/temporal-sculptor/index.mjs",
+      "bytes": 21790,
+      "sha256": "224177e6f765b736420aa3f7921836efd7e4a1d45b699189563a82323949fa81"
+    },
+    {
       "path": "processors.mjs",
       "bytes": 3581,
       "sha256": "5a73955c1878bf61c52e34497f923ed2477b4aed5b1b5d5d44c68cda91e14490"
     },
     {
       "path": "project-assets.mjs",
-      "bytes": 1962,
-      "sha256": "ab9881653be7dde771da125212ce4cf64dd93e6d88ececd60a287db2415db33f"
+      "bytes": 2122,
+      "sha256": "6cf0a9a7ff9240e39b23c5a4dcb00c0f11bc160c33e07daac6d79781aeba16af"
+    },
+    {
+      "path": "recursive-feedback.mjs",
+      "bytes": 1523,
+      "sha256": "5d82fd0cf8b01b593e0b351a01cc6c99b00692b684fdadb3cf2422442b14d2e6"
     },
     {
       "path": "selection.mjs",
@@ -130,13 +225,38 @@
     },
     {
       "path": "sources.mjs",
-      "bytes": 8345,
-      "sha256": "b9917f6dfe5ca7ef0fb2c4e3e51a2af8bac081a5b142474c933a84d0ab0a93ef"
+      "bytes": 8634,
+      "sha256": "f50ea0b7b181d5546c18d302d3b801cee3ae1dcb2ced516af22944f852676774"
     },
     {
       "path": "style.css",
-      "bytes": 23934,
-      "sha256": "995f8fbb0fcd8dae21fb3cb75c247f506288f49b7090cb659d1ecfed2926f678"
+      "bytes": 25592,
+      "sha256": "68fb2033cfded4218ecfeaa4eb8e8e9689de74bbd36feefc0191beaa355cc1a8"
+    },
+    {
+      "path": "temporal-effects.mjs",
+      "bytes": 1598,
+      "sha256": "1ebaf5c1dd667ab20969be3f04448962709d0af5060a694dc949f494ec8b22ed"
+    },
+    {
+      "path": "temporal-fossils.mjs",
+      "bytes": 1746,
+      "sha256": "4c25681e446040241516892a86e64b3418a9180d44c05c9af41c18df71223923"
+    },
+    {
+      "path": "temporal-ghosts.mjs",
+      "bytes": 5251,
+      "sha256": "8c3c9d05ad782bba38bd292f17a75c27a772be0b675c1ab91db49af82467ba11"
+    },
+    {
+      "path": "territories.mjs",
+      "bytes": 39364,
+      "sha256": "e766bf4c58e2f10511ba8f23ed4d5f024c4669741c31906246e1977b61e5c91e"
+    },
+    {
+      "path": "territory-settings.mjs",
+      "bytes": 4237,
+      "sha256": "587b78e9efbe36731c4f68d01ebc4e1f7c63cab2ce535d0a6990d00fc54eeb22"
     },
     {
       "path": "webm-frames.mjs",

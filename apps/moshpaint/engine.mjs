@@ -16,8 +16,15 @@ export function brushPath(ctx,shape,x,y,size,angle=0,seed=1){
   ctx.restore();ctx.clip();
 }
 export class Engine{
-  constructor(canvas,sources){this.canvas=canvas;this.ctx=canvas.getContext('2d',{willReadFrequently:true});this.sources=sources;this.config={width:1200,height:900,background:'#ffffff'};this.clear();}
+  constructor(canvas,sources){this.canvas=canvas;this.ctx=canvas.getContext('2d',{willReadFrequently:true});this.sources=sources;this.config={width:1200,height:900,background:'#ffffff'};this.maskCacheUrl='';this.maskCache=null;this.clear();}
   clear(config=this.config){this.config={...config};this.canvas.width=config.width;this.canvas.height=config.height;this.ctx.clearRect(0,0,config.width,config.height);if(config.background!=='transparent'){this.ctx.fillStyle=config.background;this.ctx.fillRect(0,0,config.width,config.height);}}
+  captureMaskBase(){return this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height);}
+  async applyMask(op,base){
+    const r=op.maskRect;if(!this.maskCache||this.maskCacheUrl!==op.mask){const image=new Image();image.src=op.mask;await image.decode();const canvas=surface(image.naturalWidth,image.naturalHeight);canvas.getContext('2d').drawImage(image,0,0);this.maskCacheUrl=op.mask;this.maskCache=canvas;}
+    const maskCtx=this.maskCache.getContext('2d',{willReadFrequently:true}),coverage=maskCtx.getImageData(0,0,r.w,r.h).data,painted=this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height),out=painted.data,original=base.data;
+    for(let y=0;y<this.canvas.height;y++)for(let x=0;x<this.canvas.width;x++){const i=(y*this.canvas.width+x)*4,mi=(y-r.y)*r.w+(x-r.x),a=x>=r.x&&y>=r.y&&x<r.x+r.w&&y<r.y+r.h?coverage[mi*4+3]/255:0;if(a>=1)continue;if(a<=0){out[i]=original[i];out[i+1]=original[i+1];out[i+2]=original[i+2];out[i+3]=original[i+3];continue;}for(let c=0;c<4;c++)out[i+c]=Math.round(original[i+c]+(out[i+c]-original[i+c])*a);}
+    this.ctx.putImageData(painted,0,0);
+  }
   async dab(op,index){
     const p=op.points[index],prev=op.points[Math.max(0,index-1)],g=gesture(prev,p),ctx=this.ctx;
     const size=clamp(op.size*(p.pressure||1),1,768),random=rng(op.seed+index*113),amount=op.amount;
@@ -98,7 +105,8 @@ export class Engine{
     }
     if(op.kind==='wreck'){if(op.clip){this.ctx.save();this.ctx.beginPath();if(op.clip.path){op.clip.path.forEach((p,i)=>i?this.ctx.lineTo(p.x,p.y):this.ctx.moveTo(p.x,p.y));this.ctx.closePath();}else this.ctx.rect(op.clip.x,op.clip.y,op.clip.w,op.clip.h);this.ctx.clip();}this.wreck(op);if(op.clip)this.ctx.restore();for(let tick=0;tick<(op.settle?.ticks||0);tick++)settlePixels(this.canvas,op.settle.regions,tick);return;}
     if(op.kind==='selection'){if(op.action==='time'){for(const stroke of op.strokes)await this.apply(stroke,onPoint);}else this.selection(op);for(let tick=0;tick<(op.settle?.ticks||0);tick++)settlePixels(this.canvas,op.settle.regions,tick);return;}
+    const maskBase=op.mask?this.captureMaskBase(op):null;
     for(let i=0;i<op.points.length;i++){await this.dab(op,i);if(onPoint)await onPoint(i,op.points.length);else if(i%40===0)await new Promise(r=>setTimeout(r,0));}this.finish(op);
-    for(let tick=0;tick<(op.settle?.ticks||0);tick++){settlePixels(this.canvas,op.settle.regions,tick);if(onPoint)await onPoint(-1,op.settle.ticks,{kind:'wet',duration:90});else if(tick%4===0)await new Promise(r=>setTimeout(r,0));}
+    for(let tick=0;tick<(op.settle?.ticks||0);tick++){settlePixels(this.canvas,op.settle.regions,tick);if(onPoint)await onPoint(-1,op.settle.ticks,{kind:'wet',duration:90});else if(tick%4===0)await new Promise(r=>setTimeout(r,0));}if(maskBase)await this.applyMask(op,maskBase);
   }
 }

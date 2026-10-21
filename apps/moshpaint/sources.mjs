@@ -43,6 +43,7 @@ export class Sources{
     const item={...record,el};this.items.push(item);this.active=item.id;return item;}catch(e){releaseElement(el);throw e;}
   }
   async addProcedural(fill){validateProcedural(fill);const c=surface(512,512);c.getContext('2d').drawImage(renderProcedural(fill,512,512,0),0,0);return this.restore({id:crypto.randomUUID(),name:'Moirefield pigment',type:'image',procedural:structuredClone(fill),data:c.toDataURL(),sample:{x:.5,y:.5},time:0});}
+  async addMaskBrush(mask,rect){if(this.items.length>=32)throw Error('A project can contain up to 32 source wells.');return this.restore({id:crypto.randomUUID(),name:'Territory Mask Brush',type:'image',data:mask,sample:{x:.5,y:.5},time:0,maskBrush:true,maskRect:structuredClone(rect)});}
   generate(type){
     const c=surface(512,512),ctx=c.getContext('2d'),r=rng(781);
     if(type==='noise'){const im=ctx.createImageData(512,512);for(let i=0;i<im.data.length;i+=4){im.data[i]=r()*255;im.data[i+1]=r()*255;im.data[i+2]=r()*255;im.data[i+3]=255;}ctx.putImageData(im,0,0);}

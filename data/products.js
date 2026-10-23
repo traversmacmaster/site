@@ -88,7 +88,8 @@ export const products = [
       }
     ],
     "softwareGroup": "generative-visual-system",
-    "listingDescription": "Layer mathematical patterns, import images or video, and apply five processing engines."
+    "listingDescription": "Layer mathematical patterns, import images or video, and apply five processing engines.",
+    "iconGlyph": "≋"
   },
   {
     "name": "TunnelField",

@@ -17,7 +17,7 @@ function media(p, base) {
 }
 
 function listing(p, base) {
-  return `<article class="machine-listing"><a class="listing-image" href="${base}products/${p.slug}/"><img src="${base}${esc(p.image)}" alt="${esc(p.name)} interface" loading="lazy"></a><div class="listing-copy"><h3><a href="${base}products/${p.slug}/">${esc(p.name)}</a></h3><p>${esc(p.listingDescription || p.shortDescription)}</p></div><details class="listing-examples"><summary><span class="listing-chevron" aria-hidden="true">&gt;</span><span>Examples</span></summary><div class="listing-media">${media(p, base)}</div></details></article>`;
+  return `<article class="machine-listing"><a class="listing-image" href="${base}products/${p.slug}/"><img src="${base}${esc(p.image)}" alt="${esc(p.name)} interface" loading="lazy"></a><div class="listing-copy"><h3><a href="${base}products/${p.slug}/">${p.iconGlyph?`<span class="machine-app-icon" aria-hidden="true">${esc(p.iconGlyph)}</span>`:''}${esc(p.name)}</a></h3><p>${esc(p.listingDescription || p.shortDescription)}</p></div><details class="listing-examples"><summary><span class="listing-chevron" aria-hidden="true">&gt;</span><span>Examples</span></summary><div class="listing-media">${media(p, base)}</div></details></article>`;
 }
 
 export const primaryMachineSlugs = ['timefield', 'stretch', 'basement', 'hexit', 'grain-alchemy', 'drawtable', 'avm', 'moshpaint', 'recursive-symbol-machine', '3field', 'moirefield', 'kaleidofield', 'guillochefield', 'spirofield', 'interferencefield', 'tunnelfield', 'streamarch'];

@@ -307,7 +307,6 @@ export const products = [
     "name": "AuViMosh",
     "slug": "avm",
     "disciplines": [
-      "audio",
       "visual"
     ],
     "category": "Audio / video mosh instrument",

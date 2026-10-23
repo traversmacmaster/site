@@ -1,4 +1,4 @@
-import { getProduct } from './data/products.js?v=basement-order-2026-10-21';
+import { getProduct } from './data/products.js?v=visual-filter-2026-10-22';
 import { esc } from './catalog.js';
 import { examples } from './examples.js';
 const p=getProduct(document.body.dataset.product);

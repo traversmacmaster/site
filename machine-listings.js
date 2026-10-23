@@ -26,6 +26,8 @@ export function secondaryListings(products, base = '../') {
   return products.filter(p => p.collection !== 'other' && !primaryMachineSlugs.includes(p.slug)).map(p => listing(p, base)).join('');
 }
 
+export const featuredMachineSlugs = ['timefield', 'stretch', 'basement', 'moshpaint', 'avm', 'moirefield', 'streamarch'];
+
 export function machineListings(products, base = './') {
   const audioSlugs = ['timefield', 'stretch', 'basement'];
   const visualSlugs = ['moshpaint', 'avm', 'moirefield', 'streamarch'];

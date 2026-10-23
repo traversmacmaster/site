@@ -110,3 +110,5 @@ main > .updates:first-child { margin-top: 32px; }
 /* OddPaint uses the selected minimal sans wordmark on its product page. */
 body[data-product="moshpaint"] .product-title h1{font-family:var(--sans);font-size:clamp(48px,5vw,72px);font-weight:600;font-variant:normal;letter-spacing:-.07em;text-transform:none}
 body[data-product="moshpaint"] .product-title .machine-intent{font-family:var(--sans);font-size:clamp(18px,1.8vw,24px);font-weight:400;letter-spacing:0}
+
+.machine-examples figure{min-width:0}.machine-examples figure video{display:block;width:100%;max-width:100%;height:auto;max-height:75vh;object-fit:contain;background:#111}

@@ -344,13 +344,7 @@ export const products = [
       "Spectral swap + feedback",
       "Video export"
     ],
-    "examples": [
-      {
-        "src": "assets/products/avm/output-example.png",
-        "alt": "Artwork output from AuViMosh",
-        "caption": "Datamoshed video — frame study"
-      }
-    ],
+    "examples": [],
     "screenshots": [
       {
         "src": "assets/products/avm/2026-10-11/source-inputs.png",

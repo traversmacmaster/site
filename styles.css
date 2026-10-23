@@ -86,6 +86,8 @@
 
 /* Compact shared header: centered name and dropdown navigation. */
 .machine-app-icon{display:inline-grid;place-items:center;vertical-align:middle;width:34px;height:34px;margin-right:12px;border:1px solid #52d7d0;background:#080b0d;color:#52d7d0;font:26px/1 "Segoe UI",sans-serif;letter-spacing:0}
+.features.product-content{display:block;max-width:850px;margin-inline:auto;padding:32px 0}
+.features.product-content>div,.features.product-content>p,.features.product-content>ol{width:100%;max-width:none}
 .site-header { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); gap: 18px 24px; padding: 26px 0 22px; min-height: 0; align-items: center; }
 .site-header .brand { grid-column: 1 / -1; grid-row: 1; justify-self: center; text-align: center; }
 .site-header .brand span { font-size: clamp(25px,3vw,38px); letter-spacing: .06em; }

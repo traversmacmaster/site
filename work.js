@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=visual-filter-2026-10-22';
+import { products } from './data/products.js?v=product-cleanup-2026-10-23';
 import { examples } from './examples.js?v=reckd-2026-10-11';
 
 const withoutToolLabels=p=>{

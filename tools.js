@@ -1,4 +1,4 @@
-import { products } from './data/products.js?v=moire-icon-2026-10-23';
+import { products } from './data/products.js?v=product-cleanup-2026-10-23';
 import { machineListings, featuredMachineSlugs } from './machine-listings.js?v=moire-icon-2026-10-23';
 let filter='all';
 const query=document.querySelector('#catalog-query');

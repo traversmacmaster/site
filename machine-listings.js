@@ -20,7 +20,7 @@ function listing(p, base) {
   return `<article class="machine-listing"><a class="listing-image" href="${base}products/${p.slug}/"><img src="${base}${esc(p.image)}" alt="${esc(p.name)} interface" loading="lazy"></a><div class="listing-copy"><h3><a href="${base}products/${p.slug}/">${esc(p.name)}</a></h3><p>${esc(p.listingDescription || p.shortDescription)}</p></div><details class="listing-examples"><summary><span class="listing-chevron" aria-hidden="true">&gt;</span><span>Examples</span></summary><div class="listing-media">${media(p, base)}</div></details></article>`;
 }
 
-export const primaryMachineSlugs = ['timefield', 'stretch', 'basement', 'hexit', 'grain-alchemy', 'drawtable', 'avm', 'moshpaint', 'recursive-symbol-machine', '3field', 'moirefield', 'kaleidofield', 'guillochefield', 'spirofield', 'interferencefield', 'tunnelfield'];
+export const primaryMachineSlugs = ['timefield', 'stretch', 'basement', 'hexit', 'grain-alchemy', 'drawtable', 'avm', 'moshpaint', 'recursive-symbol-machine', '3field', 'moirefield', 'kaleidofield', 'guillochefield', 'spirofield', 'interferencefield', 'tunnelfield', 'streamarch'];
 
 export function secondaryListings(products, base = '../') {
   return products.filter(p => p.collection !== 'other' && !primaryMachineSlugs.includes(p.slug)).map(p => listing(p, base)).join('');
@@ -28,7 +28,7 @@ export function secondaryListings(products, base = '../') {
 
 export function machineListings(products, base = './') {
   const audioSlugs = ['timefield', 'stretch', 'basement'];
-  const visualSlugs = ['moshpaint', 'avm', 'moirefield'];
+  const visualSlugs = ['moshpaint', 'avm', 'moirefield', 'streamarch'];
   const audio = audioSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
   const visual = visualSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
   return '<div class="machine-columns featured-machine-columns"><section class="machine-column" aria-labelledby="audio-list-title"><h2 id="audio-list-title">Audio</h2>' + audio.map(p => listing(p, base)).join('') + '</section><section class="machine-column" aria-labelledby="visual-list-title"><h2 id="visual-list-title">Visual</h2>' + visual.map(p => listing(p, base)).join('') + '</section></div>';

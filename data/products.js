@@ -439,11 +439,12 @@ export const products = [
     "name": "StreamArch",
     "slug": "streamarch",
     "disciplines": [
+      "visual",
       "archive"
     ],
     "category": "Archive film web app",
-    "shortDescription": "Discover, watch and collect cinema history.",
-    "longDescription": "A fully functional browser for films preserved by the Internet Archive.",
+    "shortDescription": "A streaming interface for video from the Internet Archive.",
+    "longDescription": "StreamArch is a web app for browsing and streaming video from archive.org, the Internet Archive.",
     "image": "assets/products/reelvault/card.png",
     "heroImage": "assets/products/reelvault/card.png",
     "platform": "Web",
@@ -458,13 +459,14 @@ export const products = [
     "patreonUrl": "https://www.patreon.com/",
     "featured": true,
     "appUrl": "apps/streamarch/",
-    "headline": "STREAM. PRESERVE. ARCHIVE.",
+    "headline": "Internet Archive video streaming",
     "homePreview": false,
     "exhibitNotes": "ARCHIVE SEARCH / WATCH / COLLECT",
     "toolsUsedIn": [],
     "features": [],
     "collection": "other",
-    "softwareGroup": "web-application"
+    "softwareGroup": "web-application",
+    "listingDescription": "A streaming interface for video from the Internet Archive."
   },
   {
     "name": "DrawTable",

@@ -11,7 +11,7 @@ const float=(id,n)=>{const data=new Uint8Array(8);new DataView(data.buffer).setF
 export function muxWebM(packets,{width,height,fps,frames,codec='V_VP8'}){
   if(!packets.length||packets.length!==frames||!packets[0].key)throw Error('Encoder did not deliver every requested video frame.');
   const header=master(0x1a45dfa3,[number(0x4286,1),number(0x42f7,1),number(0x42f2,4),number(0x42f3,8),text(0x4282,'webm'),number(0x4287,2),number(0x4285,2)]);
-  const info=master(0x1549a966,[number(0x2ad7b1,1000000),text(0x4d80,'MoshPaint'),text(0x5741,'MoshPaint'),float(0x4489,frames/fps*1000)]);
+  const info=master(0x1549a966,[number(0x2ad7b1,1000000),text(0x4d80,'OddPaint'),text(0x5741,'OddPaint'),float(0x4489,frames/fps*1000)]);
   const tracks=master(0x1654ae6b,[master(0xae,[number(0xd7,1),number(0x73c5,1),number(0x83,1),number(0x9c,0),text(0x86,codec),number(0x23e383,Math.round(1e9/fps)),master(0xe0,[number(0xb0,width),number(0xba,height)])])]);
   const clusters=[],cues=[];let blocks=[],start=0,offset=0,previous=-1;
   const finishCluster=()=>{if(!blocks.length)return;const cluster=master(0x1f43b675,[number(0xe7,start),...blocks]);clusters.push(cluster);offset+=cluster.length;blocks=[];};

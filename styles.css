@@ -104,3 +104,7 @@
 .site-header .top-menu-links a:hover { background: #eeeae1; }
 main > .updates:first-child { margin-top: 32px; }
 @media(max-width:700px) { .site-header { grid-template-columns: minmax(0,1fr) auto; gap: 18px; } .site-header .header-note { font-size: 12px; } .site-header nav { grid-column: 2; } .site-header .header-controls { display: none; } .site-header .brand span { font-size: 27px; } }
+
+/* OddPaint uses the selected minimal sans wordmark on its product page. */
+body[data-product="moshpaint"] .product-title h1{font-family:var(--sans);font-size:clamp(48px,5vw,72px);font-weight:600;font-variant:normal;letter-spacing:-.07em;text-transform:none}
+body[data-product="moshpaint"] .product-title .machine-intent{font-family:var(--sans);font-size:clamp(18px,1.8vw,24px);font-weight:400;letter-spacing:0}

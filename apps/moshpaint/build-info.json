@@ -1,7 +1,7 @@
 {
-  "app": "MoshPaint",
+  "app": "OddPaint",
   "version": "2.0.0-alpha.7",
-  "browserRelease": "five modular engines, shared color masks, Moirefield, depth/forms, timestamped exports and linked Zoom Loop canvases with full-view editing",
+  "browserRelease": "Living Canvas tools, shared color masks, Moirefield, depth/forms, timestamped exports, and standalone modular processing engines",
   "files": [
     {
       "path": "IBM-Plex-Mono-Medium.ttf",
@@ -15,8 +15,8 @@
     },
     {
       "path": "app.mjs",
-      "bytes": 139798,
-      "sha256": "d2a430671824cae0ccde81133b4891b9c1a78b1ea59a92d11129011054037112"
+      "bytes": 125409,
+      "sha256": "c0e114c29a6bb207b6430c5faa05a01a4a83de1c053a92230f95376d4f16492a"
     },
     {
       "path": "browser-platform.mjs",
@@ -50,8 +50,8 @@
     },
     {
       "path": "core.mjs",
-      "bytes": 19429,
-      "sha256": "7b100b34ae9f1f1faa010dc88860bc465c2435fb4c763533de2638499825f9ff"
+      "bytes": 19428,
+      "sha256": "a344590181b3ec1d084b33b7e434f5f56835d5e82162fce4ca2f857665a94ba3"
     },
     {
       "path": "engine.mjs",
@@ -90,8 +90,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 17533,
-      "sha256": "30e12b96f5f3178eebe00cdec4c618972c9ed6a58a3280ea39ee77aa28ad283e"
+      "bytes": 16781,
+      "sha256": "3c8d63a04d579d48a0ee002c7b0662cb903a95d0d3291c16cf6e89ed5bf291d1"
     },
     {
       "path": "layout.mjs",
@@ -105,8 +105,8 @@
     },
     {
       "path": "living.mjs",
-      "bytes": 33598,
-      "sha256": "aaab1b0ebb4a3918f25fe26a41cd79386cf6be13461e410501164fe1f9a8d266"
+      "bytes": 33857,
+      "sha256": "404436a8fea44ef465511a2ff9cdc725564243ce0ef6faeb79bdb65ad4b13f16"
     },
     {
       "path": "media-limits.mjs",
@@ -127,6 +127,11 @@
       "path": "motion-render.mjs",
       "bytes": 1624,
       "sha256": "f8885f8174891731d25298ec37083d9eea98f5d1c285e5d2dcb1b9283c731dbb"
+    },
+    {
+      "path": "oddpaint-mark.svg",
+      "bytes": 649,
+      "sha256": "c6d9fcc05143e0cfa860a8b572081df1e2ea81ee4b227e36c551e5960bc86171"
     },
     {
       "path": "packages/chromatic-physics/gpu.mjs",
@@ -230,8 +235,8 @@
     },
     {
       "path": "style.css",
-      "bytes": 25908,
-      "sha256": "556aa3727eaf0ad86f044a8a7d5cdffb983e5a38b0964480ef98ad2ae14a632a"
+      "bytes": 25466,
+      "sha256": "a45a23cf07f9ac0c136d587547ae1878a8696b34fd951745b830062693265e3a"
     },
     {
       "path": "temporal-effects.mjs",
@@ -245,23 +250,23 @@
     },
     {
       "path": "temporal-ghosts.mjs",
-      "bytes": 5251,
-      "sha256": "8c3c9d05ad782bba38bd292f17a75c27a772be0b675c1ab91db49af82467ba11"
+      "bytes": 5893,
+      "sha256": "ce3524c8dcc76d8984c6bf7104282899b1c02a1acc258c11d0405860fb7b1637"
     },
     {
       "path": "territories.mjs",
-      "bytes": 41612,
-      "sha256": "7393355e1c3f818fde29f282336e910312b9e652c7dbd3dd611322dab8a272aa"
+      "bytes": 19241,
+      "sha256": "cdcc9b2075935f0be81e5723647257de992df03b7b0aa59a3e469aaf85249cee"
     },
     {
       "path": "territory-settings.mjs",
-      "bytes": 4237,
-      "sha256": "587b78e9efbe36731c4f68d01ebc4e1f7c63cab2ce535d0a6990d00fc54eeb22"
+      "bytes": 2977,
+      "sha256": "b4ea704c4d09b2e2dcb21fdf92eb780ab3d2c5c83ba001899e51dd7264f54fad"
     },
     {
       "path": "webm-frames.mjs",
-      "bytes": 4765,
-      "sha256": "7e53bb7a262b9c4077d1153d4106f60ed5cfb2b079ecd6a9f938261bf95065a3"
+      "bytes": 4763,
+      "sha256": "9a1a838ab724f5fb610923e883de2199e43f557ff6156d4e8484f7ce17bfe311"
     },
     {
       "path": "wet.mjs",

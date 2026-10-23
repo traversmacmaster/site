@@ -13,7 +13,7 @@ await fs.cp(source,destination,{recursive:true});
 await copySharedPackages(project,destination);
 const index=path.join(destination,'index.html');
 let html=await fs.readFile(index,'utf8');
-html=html.replace('</head>','<meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/moshpaint/"><link rel="icon" href="../../assets/favicon.png"></head>');
+html=html.replace('</head>','<meta name="robots" content="noindex,follow"><link rel="canonical" href="https://traversmacmaster.com/products/moshpaint/"></head>');
 await fs.writeFile(index,html);
 async function list(directory,prefix=''){
   const files=[];
@@ -27,5 +27,5 @@ async function list(directory,prefix=''){
 const names=await list(destination),files=[];
 for(const name of names){if(name==='build-info.json')continue;const bytes=await fs.readFile(path.join(destination,name));files.push({path:name,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});}
 const {version}=JSON.parse(await fs.readFile(path.join(project,'package.json'),'utf8'));
-await fs.writeFile(path.join(destination,'build-info.json'),JSON.stringify({app:'MoshPaint',version,browserRelease:'five modular engines, shared color masks, Moirefield, depth/forms, timestamped exports and linked Zoom Loop canvases with full-view editing',files},null,2)+'\n');
-console.log(`Staged ${files.length} MoshPaint browser files in ${destination}`);
+await fs.writeFile(path.join(destination,'build-info.json'),JSON.stringify({app:'OddPaint',version,browserRelease:'Living Canvas tools, shared color masks, Moirefield, depth/forms, timestamped exports, and standalone modular processing engines',files},null,2)+'\n');
+console.log(`Staged ${files.length} OddPaint browser files in ${destination}`);

@@ -11,8 +11,8 @@ export function migrateProject(project){
 export function rng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
 export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function validateProject(p){
-  if(!p||p.app!=='MoshPaint')throw Error('This is not a MoshPaint project.');
-  if(p.version!==VERSION)throw Error(`Project version ${p.version} is not supported by this version of MoshPaint.`);
+  if(!p||p.app!=='MoshPaint')throw Error('This is not an OddPaint project.');
+  if(p.version!==VERSION)throw Error(`Project version ${p.version} is not supported by this version of OddPaint.`);
   if(!p.canvas||!Number.isInteger(p.canvas.width)||!Number.isInteger(p.canvas.height)||p.canvas.width<32||p.canvas.height<32||p.canvas.width>4096||p.canvas.height>4096||p.canvas.width*p.canvas.height>16777216)throw Error('Canvas dimensions must be between 32 and 4096 pixels.');
   if(!Array.isArray(p.sources)||p.sources.length>32||!Array.isArray(p.operations)||p.operations.length>10000)throw Error('Project contains too many sources or operations.');
   if(p.canvas.background!==undefined&&!/^(transparent|#[0-9a-f]{6})$/i.test(p.canvas.background))throw Error('Invalid canvas background.');

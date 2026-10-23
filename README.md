@@ -4,7 +4,7 @@ Static, GitHub Pages-compatible site for Travers MacMaster's art, sound, experim
 
 The approved visual system uses warm ivory, black ink, fine rules, Cinzel headings, Source Sans 3 body/UI text, and IBM Plex Mono technical labels. Fonts and their open-source licenses are served locally from `assets/fonts/`. The harmonic SVG is an original mathematical plot; the social preview is generated artwork.
 
-The complete machine catalog lives in `data/products.js`. The homepage, searchable Machines collection, Audio, Lab, and machine details read this catalog. `catalog.js` shares card rendering; `site.js` handles the accessible search dialog and mobile navigation. All fourteen catalog machines have static, crawlable detail pages. Browser builds, including SpiroField and MoshPaint, are staged beneath `apps/`; app source remains owned by each machine project.
+The complete machine catalog lives in `data/products.js`. The homepage, searchable Machines collection, Audio, Lab, and machine details read this catalog. `catalog.js` shares card rendering; `site.js` handles the accessible search dialog and mobile navigation. All fourteen catalog machines have static, crawlable detail pages. Browser builds, including SpiroField and OddPaint, are staged beneath `apps/`; app source remains owned by each machine project.
 
 `data/content.js` retains the previous editorial model for future artwork and social links; it is not currently rendered. Do not expose its unfinished placeholder content. Legacy commerce fields remain in the product catalog but are not displayed.
 
@@ -51,18 +51,18 @@ Site copy should be plain and descriptive. Avoid slogans, catchphrases, manifest
 
 Audio plugins: Grain Alchemy, BOTTOMFEEDER, HEXIT, DrawTable, TimeField and STRETCH are VSTs. Some have standalone counterparts; do not infer standalone availability for every plugin. DEADBEAT and WAVE HORROR are also VSTs with working standalones; the supplied T-SYNC pack contains their standalones. T-SYNC connects those standalone applications.
 
-StreamArch and DCLASS are separate web applications with distinct purposes (film archive browsing and document research). MoshPaint and AuViMosh are visual media tools. The remaining visual machines are generative mathematical visual systems. 3FIELD hosts selected 2D systems in 3D. The permanent product name is TimeField.
+StreamArch and DCLASS are separate web applications with distinct purposes (film archive browsing and document research). OddPaint and AuViMosh are visual media tools. The remaining visual machines are generative mathematical visual systems. 3FIELD hosts selected 2D systems in 3D. The permanent product name is TimeField.
 
-Visual listing order: MoshPaint, AuViMosh, MoiréField, 3FIELD, then the remaining visual tools. 3FIELD hosts KaleidoField, MoiréField, SpiroField and Suminagashi. Suminagashi has no separate 2D product listing yet.
+Visual listing order: OddPaint, AuViMosh, MoiréField, 3FIELD, then the remaining visual tools. 3FIELD hosts KaleidoField, MoiréField, SpiroField and Suminagashi. Suminagashi has no separate 2D product listing yet.
 
 
-## MoshPaint browser alpha
+## OddPaint browser application
 
-The current browser application is staged at `apps/moshpaint/`, with its public entry point linked from `products/moshpaint/` and its Web availability in `data/products.js`. It includes living video painting, camera clip pigment, integrated Moirefield fills/source wells, Color Solidify controls for dry and living masks, depth/form tools, responsive tool drawers, timestamped WebM export in supported browsers, and five modular processing engines. The Live Brush Engine processes source samples before they reach image/video brush strokes and can process moving frames inside Living Brush marks. Captured source-brush samples replay with the gesture; processed Living Brush frames stay animated during playback and video export. Color Territories provides shared masks for routing effects through selected color regions. Save projects as `.moshpaint` downloads; browser recovery is local to that browser/origin. Camera access requires permission and HTTPS or localhost.
+The OddPaint browser application is staged at `apps/moshpaint/`, linked from `products/moshpaint/`, and listed in `data/products.js`. OddPaint centers on Living Canvas: image and living brushes, video tools, shared masks, and damage effects. Living pigment stays active while you work and can be baked to the canvas. The five modular processing engines remain in the separate Experimental Processing Studio and work without OddPaint. Export still images and complete videos; browser recovery is local to that browser and site. Camera access requires permission and HTTPS or localhost.
 
 From this directory, run `node scripts/sync-moshpaint.mjs` to refresh the app from the adjacent `MoshPaint-2.0` project. A different project root can be supplied as the first argument. The sync stages browser runtime files and their shared processing packages, rewrites package imports for the nested app route, adds app noindex/product canonical metadata, and writes version/file hashes to `apps/moshpaint/build-info.json`. It does not build Windows installers or publish the site. Update the product copy/catalog when adding user-facing features.
 
-The October 2026 stage was checked under the nested `/apps/moshpaint/` route: product launch link and structured data, mask controls, video playback, project downloads, phone viewport sizing, and a 15-frame / 60-FPS / 0.25-second WebM export. All staged file hashes matched, and the check found no missing resources or JavaScript page errors.
+The October 2026 browser release was checked under the nested `/apps/moshpaint/` route: OddPaint product launch and structured data, mask controls, video playback, project downloads, phone viewport sizing, and a 15-frame / 60-FPS / 0.25-second WebM export. All staged file hashes matched, and the check found no missing resources or JavaScript page errors.
 
 
 ## AuViMosh browser build
@@ -73,4 +73,4 @@ The current staged AuViMosh build was checked under `/apps/auvimosh/`: both sour
 
 Recursive is the current name of the Windows instrument previously called Recursive Symbol Machine. The existing `/products/recursive-symbol-machine/` URL and catalog slug remain in use. Its catalog, static listings, and product page include procedural masks, looping video fills, and 3D depth layers. Current interface and artwork captures are in `assets/products/recursive-symbol-machine/2026-10-17/`. App source remains in the adjacent `RecursiveSymbolMachine` project; the renamed portable build is `dist/Recursive 1.0.0.exe` there. These local site edits do not publish a deployment.
 
-MoshPaint also includes **Place view on canvas**: a transparent still snapshot of the current 3D object, placed above the flat canvas for dragging/resizing with Select. Existing artwork and moving pigment remain underneath. Placements are included in saved projects and exports.
+OddPaint also includes **Place view on canvas**: a transparent still snapshot of the current 3D object, placed above the flat canvas for dragging/resizing with Select. Existing artwork and moving pigment remain underneath. Placements are included in saved projects and exports.

@@ -610,8 +610,8 @@ export const products = [
   },
   {
     "slug": "moshpaint",
-    "name": "MoshPaint",
-    "category": "Glitch painting instrument",
+    "name": "OddPaint",
+    "category": "Living Canvas painting instrument",
     "platform": "Windows + Web",
     "appUrl": "apps/moshpaint/",
     "disciplines": [
@@ -620,56 +620,54 @@ export const products = [
     "standalone": true,
     "vst3": false,
     "status": "ALPHA · WEB + WINDOWS",
-    "image": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
-    "heroImage": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
+    "image": "assets/products/moshpaint/oddpaint-brand.svg",
+    "heroImage": "assets/products/moshpaint/oddpaint-brand.svg",
     "homePreview": true,
     "features": [
       "Import images, videos or camera clips into source wells; original media stays unchanged.",
-      "Paint with living video brushes, fields and shapes, or place pigment on depth and form surfaces.",
-      "Create linked Zoom Loop canvases from clicked areas, edit each crop in full view, and keep pixel changes registered across every linked view.",
-      "Process image and video source-brush samples or moving frames inside Living Brush marks with Temporal Sculptor, Frequency Weaver, Recursive Feedback, Chromatic Physics or Motion Ecology.",
-      "Living Brush keeps the processed image or video moving inside its mask during playback and video export.",
-      "Use Color Territories as a shared color mask for routing supported effects through selected regions.",
-      "Place the current 3D view on the flat canvas as a transparent snapshot, then drag or resize it.",
-      "Select dry paint or living pigment with Color mask. Color Solidify consolidates similar shades for cleaner selections.",
-      "Fill selected masks with video or integrated Moirefield patterns; create Moire pigment directly in source wells.",
-      "Save editable projects and export PNG, JPG, WebP or WebM in the browser. Choose the source frame rate for smoother motion."
+      "Import images, videos or camera clips into source wells; source media stays unchanged.",
+      "Paint with Image Brush and Living Brush, or create living video regions with mask and shape tools.",
+      "Keep one Living Canvas active while painting and applying damage effects; bake when you want to make it permanent.",
+      "Use shared color masks to select regions, clean mask edges and route supported canvas effects.",
+      "Apply classic mosh and damage tools, temporal smears, living depth and form effects to the canvas.",
+      "Export still images and complete videos from the browser or Windows application.",
+      "The five modular processing engines are available in the separate Experimental Processing Studio, where they can be used without OddPaint."
     ],
-    "longDescription": "MoshPaint is a browser and Windows image and video painting tool with five live processing engines, shared color masks, Moirefield fills and linked Zoom Loop canvases. Create nested crops, edit each one in a full-canvas view, and keep the pixel changes aligned across the linked views.",
-    "shortDescription": "Paint images and video with five engines, route effects through shared color masks, and create linked Zoom Loop canvases for full-view editing.",
-    "headline": "glitch art editor",
-    "exhibitNotes": "GLITCH PAINTING INSTRUMENT",
+    "longDescription": "OddPaint is a Living Canvas for painting images and video with Image Brush, Living Brush, masks and damage effects. Keep pigment alive while you work, then bake it to the canvas when ready. The five modular processing engines remain available in the separate Experimental Processing Studio.",
+    "shortDescription": "Paint images and video on a Living Canvas with image and living brushes, masks, damage effects and full-video export.",
+    "headline": "moving pigment. unusual possibilities.",
+    "exhibitNotes": "LIVING CANVAS / MOVING PIGMENT / UNUSUAL POSSIBILITIES",
     "examples": [
       {
         "src": "assets/products/moshpaint/output-example.png",
-        "alt": "Artwork output from MoshPaint",
+        "alt": "Artwork output from OddPaint",
         "caption": "Exported artwork study"
       }
     ],
     "screenshots": [
       {
         "src": "assets/products/moshpaint/2026-10-11/portrait-interface.png",
-        "caption": "MoshPaint / Portrait canvas",
-        "alt": "MoshPaint interface showing a red and black portrait composition"
+        "caption": "OddPaint / Portrait canvas",
+        "alt": "OddPaint interface showing a red and black portrait composition"
       },
       {
         "src": "assets/products/moshpaint/2026-10-11/landscape-interface.png",
-        "caption": "MoshPaint / Landscape canvas",
-        "alt": "MoshPaint interface showing a layered landscape glitch composition"
+        "caption": "OddPaint / Landscape canvas",
+        "alt": "OddPaint interface showing a layered landscape glitch composition"
       }
     ],
-    "listingDescription": "Paint images and video with five live engines, shared color masks, Moirefield fills and linked Zoom Loop canvases you can edit in full view.",
+    "listingDescription": "Paint images and video on a Living Canvas with image and living brushes, masks, damage effects and full-video export.",
     "softwareGroup": "visual-media-tool",
     "videos": [
       {
         "src": "assets/products/moshpaint/ginger.webm",
         "poster": "assets/products/moshpaint/ginger-poster.png",
-        "label": "Ginger — MoshPaint example"
+        "label": "Ginger — OddPaint example"
       },
       {
         "src": "assets/products/moshpaint/circuit-memory.webm",
         "poster": "assets/products/moshpaint/circuit-memory-poster.png",
-        "label": "Circuit Memory — MoshPaint example"
+        "label": "Circuit Memory — OddPaint example"
       }
     ]
   },

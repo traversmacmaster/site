@@ -620,8 +620,8 @@ export const products = [
     "standalone": true,
     "vst3": false,
     "status": "ALPHA · WEB + WINDOWS",
-    "image": "assets/products/moshpaint/oddpaint-brand.svg",
-    "heroImage": "assets/products/moshpaint/oddpaint-brand.svg",
+    "image": "assets/products/moshpaint/2026-10-23/oddpaint-interface.png",
+    "heroImage": "assets/products/moshpaint/2026-10-23/oddpaint-interface.png",
     "homePreview": true,
     "features": [
       "Import images, videos or camera clips into source wells; original media stays unchanged.",
@@ -637,13 +637,7 @@ export const products = [
     "shortDescription": "Paint images and video on a Living Canvas with image and living brushes, masks, damage effects and full-video export.",
     "headline": "moving pigment. unusual possibilities.",
     "exhibitNotes": "LIVING CANVAS / MOVING PIGMENT / UNUSUAL POSSIBILITIES",
-    "examples": [
-      {
-        "src": "assets/products/moshpaint/output-example.png",
-        "alt": "Artwork output from OddPaint",
-        "caption": "Exported artwork study"
-      }
-    ],
+    "examples": [],
     "screenshots": [
       {
         "src": "assets/products/moshpaint/2026-10-11/portrait-interface.png",
@@ -668,6 +662,11 @@ export const products = [
         "src": "assets/products/moshpaint/circuit-memory.webm",
         "poster": "assets/products/moshpaint/circuit-memory-poster.png",
         "label": "Circuit Memory — OddPaint example"
+      },
+      {
+        "src": "assets/products/moshpaint/2026-10-23/oddpaint-living-canvas.webm",
+        "poster": "assets/products/moshpaint/2026-10-23/oddpaint-living-canvas-poster.png",
+        "label": "Living Canvas — OddPaint video example"
       }
     ]
   },

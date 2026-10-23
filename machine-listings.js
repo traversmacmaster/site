@@ -26,17 +26,10 @@ export function secondaryListings(products, base = '../') {
   return products.filter(p => p.collection !== 'other' && !primaryMachineSlugs.includes(p.slug)).map(p => listing(p, base)).join('');
 }
 
-function comingSoon(items) {
-  if (!items.length) return '';
-  return '<section class="upcoming-machines"><h3>Coming soon</h3><ul>' + items.map(p => '<li>' + esc(p.name) + '</li>').join('') + '</ul></section>';
-}
-
 export function machineListings(products, base = './') {
   const audioSlugs = ['timefield', 'stretch', 'basement'];
   const visualSlugs = ['moshpaint', 'avm', 'moirefield'];
   const audio = audioSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
   const visual = visualSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean);
-  const otherAudio = products.filter(p => p.collection !== 'other' && p.disciplines.includes('audio') && !p.disciplines.includes('visual') && !audioSlugs.includes(p.slug));
-  const otherVisual = products.filter(p => p.collection !== 'other' && p.slug !== 'video-mosaic' && p.disciplines.includes('visual') && !visualSlugs.includes(p.slug));
-  return '<div class="machine-columns featured-machine-columns"><section class="machine-column" aria-labelledby="audio-list-title"><h2 id="audio-list-title">Audio</h2>' + audio.map(p => listing(p, base)).join('') + comingSoon(otherAudio) + '</section><section class="machine-column" aria-labelledby="visual-list-title"><h2 id="visual-list-title">Visual</h2>' + visual.map(p => listing(p, base)).join('') + comingSoon(otherVisual) + '</section></div>';
+  return '<div class="machine-columns featured-machine-columns"><section class="machine-column" aria-labelledby="audio-list-title"><h2 id="audio-list-title">Audio</h2>' + audio.map(p => listing(p, base)).join('') + '</section><section class="machine-column" aria-labelledby="visual-list-title"><h2 id="visual-list-title">Visual</h2>' + visual.map(p => listing(p, base)).join('') + '</section></div>';
 }
